@@ -9,11 +9,14 @@ const FooterWrapper = styled.footer`
     justify-content: space-between;
     width: 100%;
     max-width: 2000px;
+    @media (max-width: 800px) {
+        display: none;
+    }
 `
 const Footer = () => {
     return (
         <FooterWrapper>
-            <Description smaller>This website was designed and developed by me</Description>
+            <Description smaller style={{maxWidth: `80ch`}}>This website was designed and developed by me</Description>
             <Description smaller>Thanks for stopping by!</Description>
         </FooterWrapper>
     );

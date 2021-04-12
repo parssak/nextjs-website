@@ -4,7 +4,7 @@ export const primaryColor = "#C8C8C8";
 export const gradient = `linear-gradient(271.88deg, #9C9AFF 3.74%, #BDACDD 73.32%, #FFD19A 105.72%);`
 export const Title = styled.h1`
     color: ${primaryColor};
-    font-size: ${props => props.larger ? 7 : 4}rem;
+    font-size: ${props => props.larger ? 7 : 3.5}rem;
     font-weight: 600;
     letter-spacing: -0.1rem;
     margin: 0;

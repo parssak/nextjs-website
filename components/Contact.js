@@ -7,15 +7,16 @@ const ContactContainer = styled.div`
     justify-content: space-between;
     @media (max-width: 900px) {
         flex-direction: column;
+        margin-bottom: 10rem;
     }
 `
 const ContactForm = styled.form`
     display: flex;
     flex-direction: column;
     min-width: 50%;
-    @media (max-width: 800px) {
-        margin-bottom: 5rem;
-    }
+    /* @media (max-width: 800px) {
+        
+    } */
 `
 const Label = styled.label`
     color: #c0c0c0;
