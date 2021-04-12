@@ -18,13 +18,13 @@ const Nav = styled.nav`
     }
 `
 const Wrapper = styled.div`
-    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     border-radius: 1rem;
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
     padding-left: 0rem;
+    background: rgba(0, 0, 0, 0.1);
     &:last-child {
         margin-left: 0;
     }
@@ -32,9 +32,12 @@ const Wrapper = styled.div`
         justify-content: space-around;
         width: 100%;
         padding: 0.5rem 0;
-        
     }
-`
+    transition: all 0.5s ease;
+    :hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+`   
 const NavButton = styled.button`
     all: unset;
     color: ${primaryColor};
@@ -43,8 +46,11 @@ const NavButton = styled.button`
     transition: all 0.5s ease;
     border-radius: 1rem;
     margin-inline : 2rem;
+    border: 1px solid transparent;
+    mix-blend-mode: difference;
     :hover {
-        background-color: rgba(25, 25, 25, 0.5);
+        border-color: rgba(170, 170, 170, 0.4);
+        background: rgba(255, 255, 255, 0.1);
         cursor: pointer;
         transform: translateY(-5px);
     }
