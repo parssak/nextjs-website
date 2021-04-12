@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import NavBar from './NavBar';
-
 import { Title, Description, Container, ContactButton, gradient } from './styles';
 
 const HeroContainer = styled(Container)`
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    padding-top: 5rem;
     @media (max-width: 800px) {
         margin-top: 0rem;
     }
@@ -28,15 +27,15 @@ const Subtitle = styled.h2`
     }
 `
 
-const size = 800
+const size = 500
 const Ball = styled.div`
     width: ${size}px;
     height: ${size}px;
     background-color: red;
     border-radius: 100%;
     position: absolute;
-    top: -200px;
-    right: -100px;
+    top: 50px;
+    right: -150px;
     z-index: -1;
     background: radial-gradient(120.64% 80.49% at 49.9% 23.98%, rgba(88, 135, 255, 0) 51.66%, #951EBF 100%), radial-gradient(76.84% 51.26% at 49.9% 18.45%, #6951FF 0%, #5B1EBF 100%);
 `
@@ -45,9 +44,18 @@ const HeroTitle = styled(Title)`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
+
+const Bg = styled.img`
+    position: absolute;
+    top: 0;
+    left: -25vw;
+    transform-origin: 0 0 ;
+    transform: scale(1.2)
+`
 const Hero = () => {
     return (
         <HeroContainer>
+            <Bg src="/bg.svg"/>
             <HeroTitle larger>Hi. I'm Parssa</HeroTitle>
             <Subtitle>Fullstack Developer & Designer</Subtitle>
             <Description>Based in Toronto, Canada 📍</Description>
