@@ -1,6 +1,6 @@
 export const projectData = [
     {
-        name: "Kazakan 🎮",
+        name: "Kazakan",
         type: "Mobile Game",
         className: 'kazakan',
         bgColor: "rgba(38, 48, 105, 0.6)",
@@ -27,7 +27,7 @@ export const projectData = [
         }]
     },
     {
-        name: "Darco 📖",
+        name: "Darco",
         type: "iPad App",
         className: 'darco',
         bgColor: "rgba(12, 7, 42, 0.7)",
@@ -49,7 +49,7 @@ export const projectData = [
         }]
     },
     {
-        name: "MixBot 🎛️",
+        name: "MixBot",
         type: "Web App",
         className: 'mixbot',
         bgColor: "rgba(23, 21, 25, 0.56)",

@@ -23,7 +23,7 @@ export const Container = styled.div`
     width: 100%;
     position: relative;
     z-index: 0;
-    overflow-x: hidden;
+    overflow-y: overflow;
     `
 
 export const Description = styled.p`

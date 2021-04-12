@@ -52,7 +52,7 @@ const ProjectName = styled.h2`
     color: ${primaryColor};
     font-size: 3rem;
     font-weight: 500;
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.1rem;
     margin: 0;
     @media (max-width: 800px) {
         font-size: ${2}rem;
@@ -68,7 +68,6 @@ const ProjectImage = styled.img`
     @media (max-width: 1410px) {
         max-width: 80%;
         align-self: center;
-        /* border-radius: 2rem; */
     }
     @media (max-width: 800px) {
         max-width: 70vw;
@@ -86,8 +85,11 @@ const Project = ({ data }) => {
                 <ProjectType>{data.type}</ProjectType>
                 <ProjectName>{data.name}</ProjectName>
             </ProjectDetails>
+            <ProjectImage src={data.media[0]} />
             
-            <ProjectImage src={data.media[0]}/>
+            {data.className === 'kazakan' && <PurpleBall />}
+            {data.className === 'darco' && <PurpleBall2 />}
+            {data.className === 'mixbot' && <OrangeBall />}
         </ProjectContainer>
 
     )
@@ -100,14 +102,19 @@ const RedBall = styled.div`
     right: -70px;
     top: 250px;
     background: radial-gradient(42% 42% at 60.5% 38%, #FF9A9A 0%, #C44149 100%);
+    transition: all 1s ease;
     border-radius: 100%;
+        @media (max-width: 565px) {
+        width: 100px;
+        height: 100px;
+    }
 `
 const PurpleBall = styled.div`
     position: absolute;
     width: 150px;
     height: 150px;
-    top: 60vh;
-    left: 20px;
+    top: 50%;
+    left: -120px;
     z-index: -1;
     border-radius: 100%;
     background: radial-gradient(49.26% 49.26% at 32.22% 39.26%, #9C9AFF 0%, #4441C4 100%);
@@ -117,22 +124,25 @@ const PurpleBall2 = styled.div`
     position: absolute;
     width: 200px;
     height: 200px;
-    top: 120vh;
-    right: 20px;
-    z-index: -1;
+    top: 40%;
+    right: -150px;
     border-radius: 100%;
     background: radial-gradient(44.46% 44.46% at 71.56% 44.06%, #5753EB 0%, #2A1C80 100%);
+    transition: all 1s ease;
+        @media (max-width: 565px) {
+        width: 180px;
+        height: 180px;
+    }
 `
 
 const OrangeBall = styled.div`
     position: absolute;
     width: 300px;
     height: 300px;
-    top: 160vh;
-    left: 5px;
+    top: 60%;
+    left: -10%;
     z-index: -1;
     border-radius: 100%;
-    /* background: radial-gradient(44.46% 44.46% at 71.56% 44.06%, #5753EB 0%, #2A1C80 100%); */
     background: radial-gradient(49.26% 49.26% at 32.22% 39.26%, #FFD19A 0%, #C47041 73.96%, #C46041 100%);
 `
 
@@ -144,9 +154,8 @@ const Projects = () => {
                 projectData.map(project => <Project data={project} key={uuidv4()}/>)
             }
             <RedBall />
-            <PurpleBall/>
-            <PurpleBall2 />
-            <OrangeBall/>
+            {/* <PurpleBall/> */}
+            {/* <PurpleBall2 /> */}
         </ProjectsContainer>
     );
 }
