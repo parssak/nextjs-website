@@ -5,17 +5,21 @@ import { v4 as uuidv4 } from 'uuid';
 const ProjectsContainer = styled(Container)`
 `
 const padding = 4;
+const ProjectWrapper = styled.div`
+    position: relative;
+`
+
 const ProjectContainer = styled.div`
-    backdrop-filter: blur(1rem);
-    background: ${props => props.bgCol};
-    padding: ${padding}rem;
-    margin-top: 2rem;
-    border-radius: 2rem;
-    overflow-y: show;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    background-color: ${props => props.bgCol};
+    padding: ${padding}rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
     @media (max-width: 1410px) {
         align-items: flex-start;
     }
@@ -76,21 +80,23 @@ const ProjectImage = styled.img`
         font-size: ${1.6}rem;
         align-self: center;
     }
-
 `
 const Project = ({ data }) => {
     return (
-        <ProjectContainer bgCol={data.bgColor}>
-            <ProjectDetails>
-                <ProjectType>{data.type}</ProjectType>
-                <ProjectName>{data.name}</ProjectName>
-            </ProjectDetails>
-            <ProjectImage src={data.media[0]} />
-            
-            {data.className === 'kazakan' && <PurpleBall />}
-            {data.className === 'darco' && <PurpleBall2 />}
-            {data.className === 'mixbot' && <OrangeBall />}
-        </ProjectContainer>
+        <>
+            <ProjectWrapper>
+                {data.className === 'kazakan' && <PurpleBall />}
+                {data.className === 'darco' && <PurpleBall2 />}
+                {data.className === 'mixbot' && <OrangeBall />}
+                <ProjectContainer bgCol={data.bgColor}>
+                    <ProjectDetails>
+                        <ProjectType>{data.type}</ProjectType>
+                        <ProjectName>{data.name}</ProjectName>
+                    </ProjectDetails>
+                    <ProjectImage src={data.media[0]} />
+                </ProjectContainer>
+            </ProjectWrapper>
+        </>
 
     )
 }
@@ -101,6 +107,7 @@ const RedBall = styled.div`
     height: 150px;
     right: -70px;
     top: 250px;
+    z-index: 0;
     background: radial-gradient(42% 42% at 60.5% 38%, #FF9A9A 0%, #C44149 100%);
     transition: all 1s ease;
     border-radius: 100%;
@@ -115,7 +122,7 @@ const PurpleBall = styled.div`
     height: 150px;
     top: 50%;
     left: -120px;
-    z-index: -1;
+    /* z-index: 0; */
     border-radius: 100%;
     background: radial-gradient(49.26% 49.26% at 32.22% 39.26%, #9C9AFF 0%, #4441C4 100%);
 `
@@ -151,7 +158,7 @@ const Projects = () => {
         <ProjectsContainer>
             <Title>Selected Work</Title>
             {
-                projectData.map(project => <Project data={project} key={uuidv4()}/>)
+                projectData.map(project => <Project data={project} key={uuidv4()} />)
             }
             <RedBall />
             {/* <PurpleBall/> */}
