@@ -8,17 +8,15 @@ const padding = 4;
 const ProjectContainer = styled.div`
     backdrop-filter: blur(1rem);
     background: ${props => props.bgCol};
-    /* min-height: 60vh; */
     padding: ${padding}rem;
     margin-top: 2rem;
     border-radius: 2rem;
     overflow-y: show;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    position: relative;
     @media (max-width: 1410px) {
-        /* background-color: #0f0f0f; */
         align-items: flex-start;
     }
     @media (max-width: 800px) {
@@ -29,7 +27,7 @@ const ProjectContainer = styled.div`
     }
 `
 const ProjectDetails = styled.div`
-    @media (min-width: 1410px) {
+    @media (min-width: 1409px) {
         position: absolute;
         top: ${padding}rem;
         left: ${padding}rem;
