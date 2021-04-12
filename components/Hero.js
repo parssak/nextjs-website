@@ -50,7 +50,8 @@ const Bg = styled.img`
     top: 0;
     left: -25vw;
     transform-origin: 0 0 ;
-    transform: scale(1.2)
+    transform: scale(1.2);
+    z-index: -1;
 `
 const Hero = () => {
     return (
