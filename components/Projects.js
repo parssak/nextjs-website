@@ -7,21 +7,34 @@ const ProjectsContainer = styled(Container)`
 const padding = 4;
 const ProjectContainer = styled.div`
     backdrop-filter: blur(1rem);
-    background: rgba(38, 48, 105, 0.6);
-    min-height: 60vh;
+    background: ${props => props.bgCol};
+    /* min-height: 60vh; */
     padding: ${padding}rem;
     margin-top: 2rem;
     border-radius: 2rem;
     overflow-y: show;
-    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
+    @media (max-width: 1410px) {
+        /* background-color: #0f0f0f; */
+        align-items: flex-start;
+    }
+    @media (max-width: 800px) {
+        padding: ${padding - 1}rem;
+    }
+    @media (max-width: 565px) {
+           padding: ${padding - 2}rem;
+    }
 `
 const ProjectDetails = styled.div`
-    position: absolute;
-    top: ${padding}rem;
-    left: ${padding}rem;
+    @media (min-width: 1410px) {
+        position: absolute;
+        top: ${padding}rem;
+        left: ${padding}rem;
+    }
+    margin-bottom: 1rem;
 `
 const ProjectType = styled.h3`
     color: ${primaryColor};
@@ -54,11 +67,23 @@ const ProjectName = styled.h2`
 
 const ProjectImage = styled.img`
     max-width: 55vw;
+    @media (max-width: 1410px) {
+        max-width: 80%;
+        align-self: center;
+        /* border-radius: 2rem; */
+    }
+    @media (max-width: 800px) {
+        max-width: 70vw;
+    }
+    @media (max-width: 565px) {
+        font-size: ${1.6}rem;
+        align-self: center;
+    }
 
 `
 const Project = ({ data }) => {
     return (
-        <ProjectContainer style={{ backgroundColor: data.bgColor }}>
+        <ProjectContainer bgCol={data.bgColor}>
             <ProjectDetails>
                 <ProjectType>{data.type}</ProjectType>
                 <ProjectName>{data.name}</ProjectName>
