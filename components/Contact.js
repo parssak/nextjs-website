@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Description, primaryColor, Title } from './styles';
+import { ContactButton, Container, Description, primaryColor, Title } from './styles';
 const ContactContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -50,6 +50,7 @@ font-family: Inter;
 color: whitesmoke;
 outline: none;
 padding: 0.5rem;
+border: 1px solid transparent;
 transition: all 0.5s ease;
 box-shadow: 0px 4px 1rem -10px rgba(154, 147, 147, 0.25);
 :focus {
@@ -59,6 +60,10 @@ box-shadow: 0px 4px 1rem -10px rgba(154, 147, 147, 0.25);
 `
 
 const Contact = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+    
     return (
         <Container>
             <Title style={{ margin: '5rem 0rem', marginTop: '7rem' }}>Get In Touch</Title>
@@ -71,9 +76,11 @@ const Contact = () => {
                     <Input type="emial" id="email" name="email" />
                     <Label for="message">Message</Label>
                     <TextArea type="text" id="message" name="message" />
+                    <ContactButton fill onClick={handleSubmit}>Send Message</ContactButton>
                 </ContactForm>
             </ContactContainer>
         </Container>
+        
     );
 }
 

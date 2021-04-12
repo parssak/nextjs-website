@@ -28,7 +28,7 @@ export const projectData = [
     },
     {
         name: "Darco 📖",
-        type: "iPad App + Web App",
+        type: "iPad App",
         className: 'darco',
         bgColor: "rgba(12, 7, 42, 0.7)",
         tagline: 'Easily convert PDFs to dark mode',
@@ -50,7 +50,7 @@ export const projectData = [
     },
     {
         name: "MixBot 🎛️",
-        type: "Electron / Web App",
+        type: "Web App",
         className: 'mixbot',
         bgColor: "rgba(23, 21, 25, 0.56)",
         tagline: 'Your personal DJ',

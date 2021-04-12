@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import NavBar from './NavBar';
 
-import { Title, Description, primaryColor, Container } from './styles';
-
+import { Title, Description, Container, ContactButton } from './styles';
 
 const HeroContainer = styled(Container)`
     background: radial-gradient(40.29% 68% at 91.8% 8.73%, #5C47DF 0%, rgba(20, 16, 222, 0) 100%), radial-gradient(100.15% 86.93% at 50% -23.2%, #9B5C21 0%, rgba(171, 108, 50, 0) 100%);
     display: flex;
     flex-direction: column;
     `
-
 
 const Subtitle = styled.h2`
     color: #c0c0c0;
@@ -24,31 +22,6 @@ const Subtitle = styled.h2`
     }
     @media (max-width: 565px) {
         font-size: ${1.3}rem;
-    }
-`
-
-
-
-const GetInTouch = styled.button`
-    all: unset;
-    color: white;
-    background-color: #2E75FF;
-    padding: 0.7rem 2rem;
-    border-radius: 0.8rem;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    transition: all 0.4s ease;
-    align-self: flex-start;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-    }
-    @media (max-width: 800px) {
-        font-size: ${1.3}rem;
-    }
-    @media (max-width: 565px) {
-        font-size: ${1.2}rem;
-        align-self: center;
     }
 `
 
@@ -72,7 +45,7 @@ const Hero = () => {
             <Subtitle>Fullstack Developer & Designer</Subtitle>
             <Description>Based in Toronto, Canada 📍</Description>
             <Description>I’m passionate about creating useful tools through software.</Description>
-            <GetInTouch>Get In Touch</GetInTouch>
+            <ContactButton>Get In Touch</ContactButton>
             <Ball/>
         </HeroContainer>
     );
