@@ -13,6 +13,9 @@ const ContactForm = styled.form`
     display: flex;
     flex-direction: column;
     min-width: 50%;
+    @media (max-width: 800px) {
+        margin-bottom: 5rem;
+    }
 `
 const Label = styled.label`
     color: #c0c0c0;
@@ -63,7 +66,7 @@ const Contact = () => {
     const handleSubmit = e => {
         e.preventDefault();
     }
-    
+
     return (
         <Container>
             <Title style={{ margin: '5rem 0rem', marginTop: '7rem' }}>Get In Touch</Title>
@@ -80,7 +83,7 @@ const Contact = () => {
                 </ContactForm>
             </ContactContainer>
         </Container>
-        
+
     );
 }
 

@@ -29,6 +29,15 @@ const ProjectContainer = styled.div`
     @media (max-width: 565px) {
            padding: ${padding - 2}rem;
     }
+    filter: brightness(1);
+    & > * {
+        transition: all 0.2s ease-in-out;
+    }
+    :hover {
+        & > img:first-of-type {
+            transform: scale(1.02);
+        }
+    }
 `
 const ProjectDetails = styled.div`
     @media (min-width: 1409px) {
@@ -68,7 +77,9 @@ const ProjectName = styled.h2`
 `
 
 const ProjectImage = styled.img`
-    max-width: 55vw;
+    position: relative;
+    max-width: min(70%, 55vw);
+    border-radius: 1rem;
     @media (max-width: 1410px) {
         max-width: 80%;
         align-self: center;
@@ -80,6 +91,7 @@ const ProjectImage = styled.img`
         font-size: ${1.6}rem;
         align-self: center;
     }
+
 `
 const Project = ({ data }) => {
     return (
@@ -161,8 +173,6 @@ const Projects = () => {
                 projectData.map(project => <Project data={project} key={uuidv4()} />)
             }
             <RedBall />
-            {/* <PurpleBall/> */}
-            {/* <PurpleBall2 /> */}
         </ProjectsContainer>
     );
 }
