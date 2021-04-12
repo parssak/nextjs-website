@@ -1,10 +1,21 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.container>* {
+  padding: 2rem 4rem;
+}
+
+@media (max-width: 800px) {
+  .container>* {
+    padding: 1rem 2.4rem;
+  }
+}
+
+@media (max-width: 565px) {
+  .container>* {
+    padding: 0rem 1rem;
+  }
 }
 
 .main {
@@ -40,9 +51,7 @@
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
 
@@ -52,8 +61,7 @@
   font-size: 4rem;
 }
 
-.title,
-.description {
+.title, .description {
   text-align: center;
 }
 
@@ -67,8 +75,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -92,9 +99,7 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.card:hover, .card:focus, .card:active {
   color: #0070f3;
   border-color: #0070f3;
 }
