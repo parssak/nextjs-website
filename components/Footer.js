@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Description } from './styles';
 
-
 const FooterWrapper = styled.footer`
     display: flex;
     align-items: center;

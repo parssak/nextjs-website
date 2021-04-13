@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { gradient, primaryColor } from './styles';
 
@@ -64,9 +65,15 @@ const NavBar = () => {
     return (
         <Nav>
             <Wrapper>
-                <NavButton>Home</NavButton>
-                <NavButton>About</NavButton>
-                <NavButton>Projects</NavButton>
+                <Link href="/">
+                    <NavButton>Home</NavButton>
+                </Link>
+                <Link href="/about">
+                    <NavButton>About</NavButton>
+                </Link>
+                <Link href="/projects">
+                    <NavButton>Projects</NavButton>
+                </Link>
                 <NavButton>Contact</NavButton>
             </Wrapper>
         </Nav>

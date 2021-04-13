@@ -3,7 +3,7 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
-import Projects from '../components/Projects'
+import SelectedProjects from '../components/SelectedProjects'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <NavBar />
       <Hero/>
-      <Projects />
+      <SelectedProjects />
       <Contact />
       <Footer/>
     </div>

@@ -5,9 +5,10 @@ const ContactContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 7rem;
     @media (max-width: 900px) {
         flex-direction: column;
-        margin-bottom: 10rem;
+        margin-bottom: 7rem;
     }
 `
 const ContactForm = styled.form`
@@ -70,6 +71,9 @@ const Contact = () => {
 
     return (
         <Container>
+            <br/>
+            <br/>
+            <br/>
             <Title style={{ margin: '5rem 0rem', marginTop: '7rem' }}>Get In Touch</Title>
             <ContactContainer>
                 <Description>If you want to get in touch or just say hi, you can email me at parssak@gmail.com, or use this form, and it’ll go right to my inbox.</Description>

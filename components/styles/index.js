@@ -10,6 +10,11 @@ export const Title = styled.h1`
     margin: 0;
     margin-top: 4rem;
     margin-left: -0.01rem;
+    ${props => props.larger && `
+        background: ${gradient};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    `}
     @media (max-width: 800px) {
         font-size: ${props => props.larger ? 5 : 3}rem;
     }
@@ -17,7 +22,21 @@ export const Title = styled.h1`
         font-size: ${props => props.larger ? 3.2 : 2.5}rem;
     }
 `
-
+export const Subtitle = styled.h2`
+    color: #c0c0c0;
+    font-weight:400;
+    font-size: 2.6rem;
+    margin: 0;
+    margin-bottom: 4rem;
+    margin-top: -0.5rem;
+    letter-spacing: -0.05rem;
+     @media (max-width: 800px) {
+        font-size: ${2}rem;
+    }
+    @media (max-width: 565px) {
+        font-size: ${1.3}rem;
+    }
+`
 export const Container = styled.div`
     min-height: 100vh;
     width: 100%;
