@@ -49,7 +49,7 @@ export const SectionTitle = styled.h3`
         font-size: ${2}rem;
     }
     @media (max-width: 565px) {
-        font-size: ${1.3}rem;
+        font-size: ${2}rem;
     }
 `
 export const Container = styled.div`
@@ -77,7 +77,7 @@ export const Description = styled.p`
         font-size: ${props => props.smaller ? 1.1 : 1.3}rem;
     }
     @media (max-width: 565px) {
-        font-size: ${props => props.smaller ? 0.7 : 1.2}rem;
+        font-size: ${props => props.smaller ? 1 : 1.2}rem;
     }
 `
 
@@ -104,7 +104,12 @@ export const ContactButton = styled.button`
 `
 
 export const HorizontalContentWrapper = styled.div`
-    width: 100%;
+    width: calc(100% - 2rem);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* margin-right: 4rem; */
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+     
 `

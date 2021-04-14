@@ -6,16 +6,16 @@ const HorizontalContent = ({tech, role, date}) => {
         <HorizontalContentWrapper>
             <div>
                 <SectionTitle>Technologies Used</SectionTitle>
-                <Description smaller>{tech}</Description>
+                <Description>{tech}</Description>
             </div>
             <div>
                 <SectionTitle>Role</SectionTitle>
-                <Description smaller>{role}</Description>
+                <Description>{role}</Description>
             </div>
             <div>
 
                 <SectionTitle>Date</SectionTitle>
-                <Description smaller>{date}</Description>
+                <Description>{date}</Description>
             </div>
         </HorizontalContentWrapper>
     );

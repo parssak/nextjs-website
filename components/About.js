@@ -10,8 +10,8 @@ const About = () => {
             <br/>
             <br/>
             <br/>
-            <SectionTitle>Who Am I? </SectionTitle>
-            <Description>Hi, I'm Parssa. I'm a second year student at the University of Toronto for Mathematics, Computer Science, and Statistics. </Description>
+            <SectionTitle>Hi, I'm Parssa.</SectionTitle>
+            <Description>I'm a second year @ UofT for Math + CS.</Description>
             <Description>
             </Description>
             <Description>

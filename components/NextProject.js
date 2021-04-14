@@ -10,7 +10,8 @@ const NextProjectContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 10rem;
+    border-radius:3rem;
+    padding: 4rem 2rem;
     transition: all 0.2s ease;
     margin-top: 10rem;
     & > * {

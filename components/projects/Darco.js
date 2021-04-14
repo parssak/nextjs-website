@@ -1,6 +1,7 @@
 import React from 'react';
+import HorizontalContent from '../HorizontalContent';
 import NextProject from '../NextProject';
-import { Container, SectionTitle, Description, Subtitle, Title } from '../styles';
+import { Container, SectionTitle, Description, Subtitle, Title, HorizontalContentWrapper } from '../styles';
 
 const Darco = () => {
     return (
@@ -12,11 +13,7 @@ const Darco = () => {
             <br /><br />
             <Description>My first commerical project, and a project I hold very dear to my heart, as shipping a commerical game as a newly budding solo game developer was no easy feat.<br /><br /> Kazakan was made with C# in Unity, and I did all the artwork in Aseprite. I released Kazakan for mobile, and I wrote an article on Medium about my experience developing it.</Description>
             <br />
-            <SectionTitle>Technologies Used</SectionTitle>
-            <Description>ReactJS • TypeScript • PDF.JS • Swift</Description>
-            <SectionTitle>Role</SectionTitle>
-            <Description>Creator • Developer</Description>
-            
+            <HorizontalContent tech={"ReactJS • TypeScript • PDF.JS • Swift"} role={"Creator • Developer"} date="2020"/>
             <NextProject nextProjectName={'mixbot'} />
         </Container>
     );
