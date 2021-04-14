@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
 import SelectedProjects from '../components/SelectedProjects'
@@ -17,7 +16,7 @@ export default function Home() {
       <Hero/>
       <SelectedProjects />
       <Contact />
-      <Footer/>
+      
     </div>
   )
 }

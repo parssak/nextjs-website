@@ -5,8 +5,6 @@ import { gradient, primaryColor } from './styles';
 const Nav = styled.nav`
     width: 100%;
     max-width: 2000px;
-    margin-left: -1rem;
-    margin-top: 2rem;
     display: flex;
     justify-content: flex-end;
     position: fixed;
@@ -42,7 +40,7 @@ const Wrapper = styled.div`
 const NavButton = styled.button`
     all: unset;
     color: ${primaryColor};
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 1rem 1.2rem;
     transition: all 0.5s ease;
     border-radius: 1rem;

@@ -37,6 +37,21 @@ export const Subtitle = styled.h2`
         font-size: ${1.3}rem;
     }
 `
+export const SectionTitle = styled.h3`
+    color: #c0c0c0;
+    font-weight:600;
+    font-size: 2.4rem;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.05rem;
+     @media (max-width: 800px) {
+        font-size: ${2}rem;
+    }
+    @media (max-width: 565px) {
+        font-size: ${1.3}rem;
+    }
+`
 export const Container = styled.div`
     min-height: 100vh;
     width: 100%;
@@ -44,6 +59,10 @@ export const Container = styled.div`
     position: relative;
     z-index: 0;
     overflow-y: overflow;
+    margin-top: 4rem;
+    @media (max-width: 800px) {
+        margin-top: 0rem;
+    }
     `
 
 export const Description = styled.p`
@@ -82,4 +101,10 @@ export const ContactButton = styled.button`
         align-self: center;
         font-size: 1.1rem;
     }
+`
+
+export const HorizontalContentWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 `

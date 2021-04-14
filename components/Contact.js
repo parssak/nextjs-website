@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ContactButton, Container, Description, primaryColor, Title } from './styles';
+import Footer from './Footer';
 const ContactContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -78,15 +79,16 @@ const Contact = () => {
             <ContactContainer>
                 <Description>If you want to get in touch or just say hi, you can email me at parssak@gmail.com, or use this form, and it’ll go right to my inbox.</Description>
                 <ContactForm>
-                    <Label for="name">Name</Label>
+                    <Label htmlFor="name">Name</Label>
                     <Input type="text" id="name" name="name" />
-                    <Label for="email">Email</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input type="emial" id="email" name="email" />
-                    <Label for="message">Message</Label>
+                    <Label htmlFor="message">Message</Label>
                     <TextArea type="text" id="message" name="message" />
                     <ContactButton fill onClick={handleSubmit}>Send Message</ContactButton>
                 </ContactForm>
             </ContactContainer>
+            <Footer />
         </Container>
 
     );

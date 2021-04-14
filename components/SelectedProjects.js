@@ -1,8 +1,16 @@
 import styled from "styled-components";
+import { useEffect, useRef } from 'react';
 import { Title, Container, primaryColor } from "./styles"
 import { projectData } from "../data";
 import { v4 as uuidv4 } from 'uuid';
+import Link from "next/link";
+import { gsap } from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(CSSRulePlugin)
 const ProjectsContainer = styled(Container)`
+    position: relative;
 `
 const padding = 4;
 const ProjectWrapper = styled.div`
@@ -34,6 +42,7 @@ const ProjectContainer = styled.div`
         transition: all 0.2s ease-in-out;
     }
     :hover {
+        cursor: pointer;
         & > img:first-of-type {
             transform: scale(1.02);
         }
@@ -94,9 +103,28 @@ const ProjectImage = styled.img`
 
 `
 const Project = ({ data }) => {
+    const ref = useRef(null)
+    useEffect(() => {
+        return () => {
+            gsap.to(ref.current, {
+                duration: 5,
+                scrollTrigger: {
+                    trigger: `#${data.className}`,
+                    start: "top center",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    x: 90,
+                    css: {
+                        scaleX: 0.8
+                    }
+                    //    ,markers: true
+                }
+            })
+        }
+    }, [])
     return (
-        <>
-            <ProjectWrapper>
+        <Link href={`/${data.className}`}>
+            <ProjectWrapper ref={ref} id={data.className}>
                 {data.className === 'kazakan' && <PurpleBall />}
                 {data.className === 'darco' && <PurpleBall2 />}
                 {data.className === 'mixbot' && <OrangeBall />}
@@ -108,7 +136,7 @@ const Project = ({ data }) => {
                     <ProjectImage src={data.media[0]} />
                 </ProjectContainer>
             </ProjectWrapper>
-        </>
+        </Link>
 
     )
 }
@@ -165,13 +193,30 @@ const OrangeBall = styled.div`
 `
 
 const SelectedProjects = () => {
+    // const ref = useRef(null)
+    
+    // useEffect(() => {
+    //     return () => {
+    //         //scrollTrigger: { trigger: "#red-ball", from: "opacity: 0", to: "opacity: 1",stagger: 0.3 }
+    //         gsap.fromTo(ref.current.children, { opacity: 0 }, {
+    //             duration: 4, opacity: 1, scrollTrigger: { trigger: "#trigger" }
+    //         })
+    //         // gsap.fromTo(ref.current.children, { opacity: 0 }, { opacity: 1, duration: 3, stagger: 0.5 });
+    //         // gsap.to(ref.current.children, { opacity: 0, scrollTrigger: { trigger: "#trigger", markers: true } })
+    //     }
+
+        
+    // }, [])
+
     return (
         <ProjectsContainer>
+           
             <Title>Selected Work</Title>
             {
                 projectData.map(project => <Project data={project} key={uuidv4()} />)
             }
             <RedBall />
+            <div id="trigger">aaaaaaa</div>
         </ProjectsContainer>
     );
 }

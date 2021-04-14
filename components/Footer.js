@@ -8,6 +8,7 @@ const FooterWrapper = styled.footer`
     justify-content: space-between;
     width: 100%;
     max-width: 2000px;
+    margin-top: 4rem;
     @media (max-width: 800px) {
         display: none;
     }
