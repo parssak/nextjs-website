@@ -11,7 +11,7 @@ const About = () => {
             <br/>
             <br/>
             <SectionTitle>Hi, I'm Parssa.</SectionTitle>
-            <Description>I'm a second year @ UofT for Math + CS.</Description>
+            <Description>I'm a second year @ UofT for Math + CS. <br/> I'm currently working @AirborneApp as a fullstack developer. </Description>
             <Description>
             </Description>
             <Description>

@@ -1,7 +1,7 @@
 import React from 'react';
 import NextProject from '../NextProject';
 import HorizontalContent from '../HorizontalContent';
-import { Container, Subtitle, SectionTitle, Title, Description, HorizontalContentWrapper } from '../styles';
+import { Container, Subtitle, Title, Description } from '../styles';
 
 const MixBot = () => {
     return (

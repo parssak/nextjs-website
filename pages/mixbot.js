@@ -5,7 +5,7 @@ import MixBot from '../components/projects/MixBot';
 
 const KazakanPage = () => {
     return (
-        <div className={styles.container} style={{ backgroundColor: 'black' }}>
+        <div className={styles.container} >
             <Head>
                 <title>Parssa K | MixBot</title>
                 <link rel="icon" href="/favicon.ico" />

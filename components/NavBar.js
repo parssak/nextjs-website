@@ -52,10 +52,10 @@ const NavButton = styled.button`
         background: rgba(255, 255, 255, 0.1);
         cursor: pointer;
         transform: translateY(-5px);
+        font-weight: 600;
     }
     @media (max-width: 600px) {
         margin-right: 0;
-        font-size: 0.7rem;
         }
 `
 

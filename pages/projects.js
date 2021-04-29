@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 export default function ProjectsPage() {
     return (
-        <div className={styles.container} style={{ backgroundColor: 'black' }}>
+        <div className={styles.container} >
             <Head>
                 <title>Parssa K | Projects</title>
                 <link rel="icon" href="/favicon.ico" />

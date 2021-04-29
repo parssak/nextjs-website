@@ -4,11 +4,10 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .container>* {
-  padding: 2rem 4rem;
+  padding: 2rem 10vw;
 }
 
 @media (max-width: 800px) {

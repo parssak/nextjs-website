@@ -193,30 +193,13 @@ const OrangeBall = styled.div`
 `
 
 const SelectedProjects = () => {
-    // const ref = useRef(null)
-    
-    // useEffect(() => {
-    //     return () => {
-    //         //scrollTrigger: { trigger: "#red-ball", from: "opacity: 0", to: "opacity: 1",stagger: 0.3 }
-    //         gsap.fromTo(ref.current.children, { opacity: 0 }, {
-    //             duration: 4, opacity: 1, scrollTrigger: { trigger: "#trigger" }
-    //         })
-    //         // gsap.fromTo(ref.current.children, { opacity: 0 }, { opacity: 1, duration: 3, stagger: 0.5 });
-    //         // gsap.to(ref.current.children, { opacity: 0, scrollTrigger: { trigger: "#trigger", markers: true } })
-    //     }
-
-        
-    // }, [])
-
     return (
         <ProjectsContainer>
-           
             <Title>Selected Work</Title>
             {
                 projectData.map(project => <Project data={project} key={uuidv4()} />)
             }
             <RedBall />
-            <div id="trigger">aaaaaaa</div>
         </ProjectsContainer>
     );
 }
