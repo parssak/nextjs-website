@@ -50,8 +50,8 @@ const ProjectContainer = styled.div`
         
         & > *:not(img)
         {
-            transform-style: preserve-3d;
-            transform: scale(1.03) translate3d(-0.6vw, -1vh, 1vw);
+            /* transform-style: preserve-3d;
+            transform: scale(1.03) translate3d(-0.6vw, -1vh, 1vw); */
         }
     }
 `

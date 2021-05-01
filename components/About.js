@@ -19,7 +19,7 @@ const About = () => {
                 I'm currently working <LinkText>@AirborneApp</LinkText> as a fullstack developer.
             </Description>
             <Description>
-                I love being creative, and bringing ideas to life through code. I'm passionate about everything design/frontend related, from awesome JS libraries to UX/UI design. I'm constantly improving and learning new skills and technologies, and tinkering around with them. 
+                I love being creative, and bringing ideas to life through code. I'm passionate about everything design/frontend related. I'm constantly improving and learning new skills and technologies, and tinkering around with them. 
             </Description>
             <Description>
 
