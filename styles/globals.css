@@ -3,14 +3,9 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: Inter, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background-color: black; */
   overflow-x: hidden;
   font-size: 100%;
-  /* background-image: url('/buried.png');
-  background-position: 0px 0px;
-  background-size: 150px 150px;
-  background-repeat: repeat; */
-  background-color: hsl(0, 0%, 0%);
+  background-color: black;
 }
 
 @media (min-width: 768px) {
@@ -26,4 +21,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

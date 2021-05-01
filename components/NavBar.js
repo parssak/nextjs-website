@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { gradient, primaryColor } from './styles';
+import { primaryColor } from './styles/constants';
 
 const Nav = styled.nav`
     width: 100%;
@@ -9,6 +9,7 @@ const Nav = styled.nav`
     justify-content: flex-end;
     position: fixed;
     z-index: 99;
+    pointer-events: none;
     @media (max-width: 800px) {
         justify-content: center;
         align-items:center;
@@ -24,6 +25,7 @@ const Wrapper = styled.div`
     padding: 1rem;
     padding-left: 0rem;
     background: rgba(0, 0, 0, 0.1);
+    pointer-events: auto !important;
     &:last-child {
         margin-left: 0;
     }

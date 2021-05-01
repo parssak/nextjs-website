@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import { useEffect, useRef } from 'react';
-import { Title, Container, primaryColor } from "./styles"
+import { Title, Container } from "./styles"
+import { primaryColor } from './styles/constants';
 import { projectData } from "../data";
 import { v4 as uuidv4 } from 'uuid';
 import Link from "next/link";
-import { gsap } from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
-gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(CSSRulePlugin)
+
 const ProjectsContainer = styled(Container)`
     position: relative;
 `
@@ -22,7 +19,6 @@ const ProjectContainer = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-    z-index: 5;
     backdrop-filter: blur(10px);
     background-color: ${props => props.bgCol};
     padding: ${padding}rem;
@@ -37,14 +33,25 @@ const ProjectContainer = styled.div`
     @media (max-width: 565px) {
            padding: ${padding - 2}rem;
     }
-    filter: brightness(1);
     & > * {
         transition: all 0.2s ease-in-out;
+        &:not(img)
+        {
+            z-index: 9999;
+        }
     }
+    
     :hover {
         cursor: pointer;
-        & > img:first-of-type {
+        
+        & > img {
             transform: scale(1.02);
+        }
+        
+        & > *:not(img)
+        {
+            transform-style: preserve-3d;
+            transform: scale(1.03) translate3d(-0.6vw, -1vh, 1vw);
         }
     }
 `
@@ -76,6 +83,8 @@ const ProjectName = styled.h2`
     font-weight: 500;
     letter-spacing: -0.1rem;
     margin: 0;
+    position: relative;
+    z-index: 99999;
     @media (max-width: 800px) {
         font-size: ${2}rem;
     }
@@ -103,28 +112,9 @@ const ProjectImage = styled.img`
 
 `
 const Project = ({ data }) => {
-    const ref = useRef(null)
-    useEffect(() => {
-        return () => {
-            gsap.to(ref.current, {
-                duration: 5,
-                scrollTrigger: {
-                    trigger: `#${data.className}`,
-                    start: "top center",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    x: 90,
-                    css: {
-                        scaleX: 0.8
-                    }
-                    //    ,markers: true
-                }
-            })
-        }
-    }, [])
     return (
         <Link href={`/${data.className}`}>
-            <ProjectWrapper ref={ref} id={data.className}>
+            <ProjectWrapper id={data.className}>
                 {data.className === 'kazakan' && <PurpleBall />}
                 {data.className === 'darco' && <PurpleBall2 />}
                 {data.className === 'mixbot' && <OrangeBall />}

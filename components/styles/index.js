@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { hueRotate } from './animations';
+import { primaryColor, introduce, orange, purple } from './constants';
 
-export const primaryColor = "#C8C8C8";
-export const gradient = `linear-gradient(271.88deg, #9C9AFF 3.74%, #BDACDD 24.32%, #FFD19A 100.72%);`
 
-
+//** Typography */
 export const Title = styled.h1`
     color: ${primaryColor};
     font-size: ${props => props.larger ? 3.5 : 3}rem;
@@ -12,11 +12,12 @@ export const Title = styled.h1`
     margin: 0;
     margin-top: 4rem;
     margin-left: -0.01rem;
-    ${props => props.larger && `
-        background: ${gradient};
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    ${props => props.larger && css`
+        color: white;
+        mix-blend-mode: saturation;
     `}
+    position: relative;
+    ${introduce}
 `
 export const Subtitle = styled.h2`
     color: #c0c0c0;
@@ -26,6 +27,7 @@ export const Subtitle = styled.h2`
     margin-bottom: 10rem;
     margin-top: -0.5rem;
     letter-spacing: -0.05rem;
+    ${introduce}
 `
 export const SectionTitle = styled.h3`
     color: #c0c0c0;
@@ -35,7 +37,21 @@ export const SectionTitle = styled.h3`
     margin-top: 2rem;
     margin-bottom: 0.3rem;
     letter-spacing: -0.05rem;
+    ${introduce}
 `
+
+export const Description = styled.p`
+    color: ${primaryColor};
+    font-size: ${props => props.smaller ? 1 : 1.2}rem;
+    font-weight: 400;
+    margin-top: 0rem;
+    letter-spacing: -0.04rem;
+    max-width: 35ch;
+    line-height: 2rem;
+    ${introduce}
+`
+
+//** Layout */
 export const Container = styled.div`
     min-height: 100vh;
     width: 100%;
@@ -47,18 +63,42 @@ export const Container = styled.div`
     @media (max-width: 800px) {
         margin-top: 0rem;
     }
-    `
-
-export const Description = styled.p`
-    color: ${primaryColor};
-    font-size: ${props => props.smaller ? 1 : 1.2}rem;
-    font-weight: 400;
-    margin-top: 0rem;
-    letter-spacing: -0.04rem;
-    max-width: 35ch;
-    line-height: 2rem;
 `
 
+export const HorizontalContentWrapper = styled.div`
+    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: space-between;
+        flex-direction: column;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+`
+
+export const TitleBall = styled.div`
+    height: 800px;
+    width: 800px;
+    border-radius: 200%;
+    position: absolute;
+    top: 50%;
+    right: -25%;
+    background: radial-gradient(49.71% 101.93% at -1.54% -2.07%, #5C47DF 0%, rgba(20, 16, 222, 0) 100%), radial-gradient(116.82% 101.4% at 76.73% -23.2%, #DC7D25 0%, rgba(171, 108, 50, 0) 100%);
+    transition: all 0.4s ease;
+    animation-fill-mode: forwards;
+    animation: ${props => hueRotate(props.random)} linear infinite 5s;
+    animation-direction: alternate;
+    animation-play-state: paused;
+    :hover {
+        animation-play-state: running;
+    }
+`
+
+export const DelayBox = styled.div`
+    ${introduce}
+`
+
+
+//** Inputs */
 export const ContactButton = styled.button`
     all: unset;
     color: white;
@@ -78,14 +118,77 @@ export const ContactButton = styled.button`
     @media (max-width: 565px) {
         align-self: center;
     }
+    ${introduce}
 `
 
-export const HorizontalContentWrapper = styled.div`
-    width: calc(100% - 2rem);
-    display: flex;
-    justify-content: space-between;
-        flex-direction: column;
-    @media (max-width: 800px) {
-        flex-direction: column;
+export const Input = styled.input`
+    border: 0;
+    font-size: 1.5rem;
+    background: #292929;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: Inter;
+    color: whitesmoke;
+    outline: none;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+    box-shadow: 0px 4px 1rem -10px rgba(154, 147, 147, 0.25);
+    :focus {
+        border-color: rgba(98, 98, 98, 0.58);
+        box-shadow: 0px 4px 1rem rgba(154, 147, 147, 0.25);
+}
+`
+export const TextArea = styled.textarea`
+    border: 0;
+    font-size: 1.5rem;
+    background: #292929;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    resize: none;
+    min-height: 15ch;
+    font-family: Inter;
+    color: whitesmoke;
+    outline: none;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+    box-shadow: 0px 4px 1rem -10px rgba(154, 147, 147, 0.25);
+    :focus {
+        border-color: rgba(98, 98, 98, 0.58);
+        box-shadow: 0px 4px 1rem rgba(154, 147, 147, 0.25);
+    }
+`
+
+export const LinkText = styled.span`
+    font-weight: 600;
+    /* padding: 0.1rem; */
+    padding: 0.1rem 0.1rem;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+    ::before {
+        content: '';
+        height: 2px;
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        bottom: 5px;
+        margin: auto;
+        transform: translateX(40%);
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    border-radius: 0.5rem;
+    &:hover {
+        cursor: pointer;
+        transform: skewX(-5deg);
+        background-color: ${purple}22;
+        color: ${purple};
+        ::before {
+            width: 50%;
+            transform: translateX(50%) translateY(5px);
+            background-color: ${purple};
+
+        }
     }
 `
