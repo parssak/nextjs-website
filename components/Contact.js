@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContactButton, Container, Description, Input, TextArea, Title } from './styles';
+import { ContactButton, Container, Description, Input, TextArea, Title, Label, TitleBall } from './styles';
 import Footer from './Footer';
 
 const ContactContainer = styled.div`
@@ -18,38 +18,36 @@ const ContactForm = styled.form`
     flex-direction: column;
     min-width: 50%;
 `
-const Label = styled.label`
-    color: #c0c0c0;
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-`
-
-
+const ContactSectionContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 const Contact = () => {
     const handleSubmit = e => {
         e.preventDefault();
     }
 
     return (
-        <Container>
-            <br/>
-            <br/>
-            <br/>
-            <Title style={{ margin: '5rem 0rem', marginTop: '7rem' }}>Get In Touch</Title>
+        <ContactSectionContainer>
+            <Title>
+                Get In Touch
+                <TitleBall random={Math.random() * 360} left scale={0.5}/>
+            </Title>
             <ContactContainer>
                 <Description>If you want to get in touch or just say hi, you can email me at parssak@gmail.com, or use this form, and it’ll go right to my inbox.</Description>
                 <ContactForm>
                     <Label htmlFor="name">Name</Label>
-                    <Input type="text" id="name" name="name" />
+                    <Input type="text" name="name" />
                     <Label htmlFor="email">Email</Label>
-                    <Input type="emial" id="email" name="email" />
+                    <Input type="email" name="email" />
                     <Label htmlFor="message">Message</Label>
-                    <TextArea type="text" id="message" name="message" />
+                    <TextArea type="text"  name="message" />
                     <ContactButton fill onClick={handleSubmit}>Send Message</ContactButton>
                 </ContactForm>
             </ContactContainer>
             <Footer />
-        </Container>
+        </ContactSectionContainer>
 
     );
 }

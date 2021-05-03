@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar';
 import MixBot from '../components/projects/MixBot';
 
-const KazakanPage = () => {
+const MixBotPage = () => {
     return (
         <div className={styles.container} >
             <Head>
@@ -16,4 +16,4 @@ const KazakanPage = () => {
     );
 }
 
-export default KazakanPage;
+export default MixBotPage;

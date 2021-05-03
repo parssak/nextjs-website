@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar';
 import Darco from '../components/projects/Darco';
 
-const KazakanPage = () => {
+const DarcoPage = () => {
     return (
         <div className={styles.container} >
             <Head>
@@ -17,4 +17,4 @@ const KazakanPage = () => {
     );
 }
 
-export default KazakanPage;
+export default DarcoPage;

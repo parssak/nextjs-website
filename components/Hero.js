@@ -8,13 +8,11 @@ const HeroContainer = styled(Container)`
     `
     
 const Hero = () => {
-    const randomVal = Math.random() * 360;
-    console.log(randomVal);
     return (
         <HeroContainer>
             <Title larger >
                  <DelayBox delay={1.3} duration={0.8}>
-                    <TitleBall random={randomVal} />
+                    <TitleBall random={Math.random() * 360} />
                  </DelayBox>
                 Hi. I'm Parssa
                 

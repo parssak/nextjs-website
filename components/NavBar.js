@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { primaryColor } from './styles/constants';
 
 const Nav = styled.nav`
     width: 100%;
@@ -20,15 +19,13 @@ const Nav = styled.nav`
 const Wrapper = styled.div`
     backdrop-filter: blur(5px);
     border-radius: 1rem;
-    display: flex;
-    justify-content: flex-end;
     padding: 1rem;
-    padding-left: 0rem;
     background: rgba(0, 0, 0, 0.1);
     pointer-events: auto !important;
-    &:last-child {
-        margin-left: 0;
-    }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    
     @media (max-width: 800px) {
         justify-content: space-around;
         width: 100%;
@@ -41,24 +38,24 @@ const Wrapper = styled.div`
 `   
 const NavButton = styled.button`
     all: unset;
-    color: ${primaryColor};
     font-size: 0.9rem;
-    padding: 1rem 1.2rem;
-    transition: all 0.5s ease;
-    border-radius: 1rem;
-    margin-inline : 2rem;
-    border: 1px solid transparent;
     mix-blend-mode: difference;
+    transition: all 0.3s ease;
+    padding: 1rem 1.2rem;
+    width: min-content;
+    border-radius: 1.2rem;
+    border: 1px solid transparent;
+    text-transform: center;
     :hover {
         border-color: rgba(170, 170, 170, 0.4);
         background: rgba(255, 255, 255, 0.1);
         cursor: pointer;
         transform: translateY(-5px);
-        font-weight: 600;
     }
+    
     @media (max-width: 600px) {
         margin-right: 0;
-        }
+    }
 `
 
 const NavBar = () => {

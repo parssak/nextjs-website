@@ -1,16 +1,15 @@
 import styled, { css } from 'styled-components';
 import { hueRotate } from './animations';
-import { primaryColor, introduce, orange, purple } from './constants';
+import { colors, introduce } from './constants';
 
 
 //** Typography */
 export const Title = styled.h1`
-    color: ${primaryColor};
     font-size: ${props => props.larger ? 3.5 : 3}rem;
     font-weight: 600;
     letter-spacing: -0.1rem;
     margin: 0;
-    margin-top: 4rem;
+    margin-top: 7rem;
     margin-left: -0.01rem;
     ${props => props.larger && css`
         color: white;
@@ -41,7 +40,6 @@ export const SectionTitle = styled.h3`
 `
 
 export const Description = styled.p`
-    color: ${primaryColor};
     font-size: ${props => props.smaller ? 1 : 1.2}rem;
     font-weight: 400;
     margin-top: 0rem;
@@ -51,8 +49,13 @@ export const Description = styled.p`
     ${introduce}
 `
 
+export const Label = styled.label`
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+`
+
 //** Layout */
-export const Container = styled.div`
+export const Container = styled.section`
     min-height: 100vh;
     width: 100%;
     max-width: 2000px;
@@ -81,7 +84,8 @@ export const TitleBall = styled.div`
     border-radius: 200%;
     position: absolute;
     top: 50%;
-    right: -25%;
+    z-index: -1;
+    ${props => props.left ? css`left: -25%` : css`right: -25%`};
     background: radial-gradient(49.71% 101.93% at -1.54% -2.07%, #5C47DF 0%, rgba(20, 16, 222, 0) 100%), radial-gradient(116.82% 101.4% at 76.73% -23.2%, #DC7D25 0%, rgba(171, 108, 50, 0) 100%);
     transition: all 0.4s ease;
     animation-fill-mode: forwards;
@@ -91,6 +95,7 @@ export const TitleBall = styled.div`
     :hover {
         animation-play-state: running;
     }
+    ${props => props.scale > 0 && css`transform: scale(${props.scale});`};
 `
 
 export const DelayBox = styled.div`
@@ -162,32 +167,32 @@ export const TextArea = styled.textarea`
 
 export const LinkText = styled.span`
     font-weight: 600;
-    /* padding: 0.1rem; */
     padding: 0.1rem 0.1rem;
     display: inline-block;
+    border-radius: 0.5rem;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
     ::before {
         content: '';
         height: 2px;
         width: 60%;
-        background-color: rgba(255, 255, 255, 0.3);
-        position: absolute;
         bottom: 5px;
-        margin: auto;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.3);
         transform: translateX(40%);
         transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
-    border-radius: 0.5rem;
+
     &:hover {
         cursor: pointer;
         transform: skewX(-5deg);
-        background-color: ${purple}22;
-        color: ${purple};
+        background-color: ${colors.purple}22;
+        color: ${colors.purple};
+    
         ::before {
             width: 50%;
             transform: translateX(50%) translateY(5px);
-            background-color: ${purple};
+            background-color: ${colors.purple};
 
         }
     }

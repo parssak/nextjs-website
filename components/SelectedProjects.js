@@ -64,7 +64,6 @@ const ProjectDetails = styled.div`
     margin-bottom: 1rem;
 `
 const ProjectType = styled.h3`
-    color: ${primaryColor};
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.05rem;
@@ -78,7 +77,7 @@ const ProjectType = styled.h3`
     }
 `
 const ProjectName = styled.h2`
-    color: ${primaryColor};
+    /* color: ${primaryColor}; */
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: -0.1rem;
