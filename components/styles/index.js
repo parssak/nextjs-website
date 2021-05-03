@@ -133,7 +133,7 @@ export const Input = styled.input`
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     font-family: Inter;
-    color: whitesmoke;
+    color: rgb(235, 235, 235);
     outline: none;
     padding: 0.5rem;
     border: 1px solid transparent;
@@ -142,6 +142,7 @@ export const Input = styled.input`
     :focus {
         border-color: rgba(98, 98, 98, 0.58);
         box-shadow: 0px 4px 1rem rgba(154, 147, 147, 0.25);
+        color: white;
 }
 `
 export const TextArea = styled.textarea`
@@ -165,22 +166,25 @@ export const TextArea = styled.textarea`
     }
 `
 
-export const LinkText = styled.span`
+export const LinkText = styled.a`
     font-weight: 600;
     padding: 0.1rem 0.1rem;
     display: inline-block;
     border-radius: 0.5rem;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.5s ease;
     position: relative;
     ::before {
         content: '';
+        position: absolute;
+        
         height: 2px;
         width: 60%;
-        bottom: 5px;
-        position: absolute;
+        
+        left: 20%;
+        bottom: 0;
+        
         background-color: rgba(255, 255, 255, 0.3);
-        transform: translateX(40%);
-        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: all 0.2s ease;
     }
 
     &:hover {
@@ -190,8 +194,8 @@ export const LinkText = styled.span`
         color: ${colors.purple};
     
         ::before {
+            left: 27%;
             width: 50%;
-            transform: translateX(50%) translateY(5px);
             background-color: ${colors.purple};
 
         }

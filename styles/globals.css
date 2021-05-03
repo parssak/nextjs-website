@@ -15,7 +15,6 @@ html {
 
 body {
     height: 100%;
-    overflow: auto;
 }
 @media (min-width: 768px) {
   html {
@@ -32,6 +31,6 @@ a {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
