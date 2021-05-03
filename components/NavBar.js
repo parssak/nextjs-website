@@ -12,7 +12,6 @@ const Nav = styled.nav`
     @media (max-width: 800px) {
         justify-content: center;
         align-items:center;
-        margin-left: 0rem;
         bottom: 1rem;
     }
 `
