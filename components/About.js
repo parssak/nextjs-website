@@ -7,12 +7,8 @@ const About = () => {
         <Container>
             <Title larger>About Me<TitleBall delay={1.3} duration={0.8} random={Math.random() * 360} /></Title>
             <Subtitle>It's nice to meet you</Subtitle>
-            <br/>
-            <br/>
-            <br/>
             <SectionTitle>Hi, I'm Parssa.</SectionTitle>
-            <br />
-            <Description>
+            <Description >
                 I'm a second year <LinkText>@UofT</LinkText> for Math + CS.
                 <br />
                 <br />
