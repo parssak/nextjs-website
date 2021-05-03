@@ -7,15 +7,14 @@ const About = () => {
         <Container>
             <Title larger>About Me<TitleBall delay={1.3} duration={0.8} random={Math.random() * 360} /></Title>
             <Subtitle>It's nice to meet you</Subtitle>
-            <SectionTitle>Hi, I'm Parssa.</SectionTitle>
+            <SectionTitle>Hi, I'm Parssa</SectionTitle>
             <Description >
-                I'm a second year <LinkText>@UofT</LinkText> for Math + CS.
-                <br />
-                <br />
-                I'm currently working <LinkText>@AirborneApp</LinkText> as a fullstack developer.
+                I'm a fullstack developer <LinkText href="https://www.airborneapp.io/" target="_about">@AirborneApp</LinkText>.
+                <br/>
+                I'm also a Math/CS student <LinkText target="_about">@UofT</LinkText>.
             </Description>
             <Description>
-                I love being creative, and bringing ideas to life through code. I'm passionate about everything design/frontend related. I'm constantly improving and learning new skills and technologies, and tinkering around with them. 
+                I love being creative, and bringing ideas to life through code. I'm passionate about anything design/frontend related, and I put an emphasis on user experience and accessibility. I'm constantly improving and learning new skills and technologies, and tinkering around with them. 
             </Description>
             <Description>
 

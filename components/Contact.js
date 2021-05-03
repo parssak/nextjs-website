@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContactButton, Container, Description, Input, TextArea, Title, Label, TitleBall } from './styles';
+import { ContactButton, Container, Description, Input, TextArea, Title, Label, TitleBall, LinkText } from './styles';
 import Footer from './Footer';
 
 const ContactContainer = styled.div`
@@ -36,7 +36,12 @@ const Contact = () => {
                 <TitleBall random={Math.random() * 360} left scale={0.5}/>
             </Title>
             <ContactContainer>
-                <Description>If you want to get in touch or just say hi, you can email me at parssak@gmail.com, or use this form, and it’ll go right to my inbox.</Description>
+                <Description>
+                    If you want to get in touch or just
+                    say hi, you can email me
+                    at <LinkText onClick={() => navigator.clipboard.writeText('parssak@gmail.com')}> parssak@gmail.com</LinkText>,
+                    or use this form, and it’ll go right to my inbox.
+                </Description>
                 <ContactForm>
                     <Label htmlFor="name">Name</Label>
                     <Input type="text" name="name" />

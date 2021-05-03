@@ -26,9 +26,7 @@ const Wrapper = styled.div`
     grid-column-gap: 1rem;
     
     @media (max-width: 800px) {
-        justify-content: space-around;
-        width: 100%;
-        padding: 0.5rem 0;
+        grid-column-gap: 0.2rem;
     }
     transition: all 0.5s ease;
     :hover {

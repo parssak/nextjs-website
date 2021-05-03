@@ -128,7 +128,7 @@ export const ContactButton = styled.button`
 
 export const Input = styled.input`
     border: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background: #292929;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
@@ -147,7 +147,7 @@ export const Input = styled.input`
 `
 export const TextArea = styled.textarea`
     border: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background: #292929;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
@@ -178,9 +178,9 @@ export const LinkText = styled.a`
         position: absolute;
         
         height: 2px;
-        width: 60%;
+        width: 80%;
         
-        left: 20%;
+        left: 10%;
         bottom: 0;
         
         background-color: rgba(255, 255, 255, 0.3);
@@ -194,8 +194,8 @@ export const LinkText = styled.a`
         color: ${colors.purple};
     
         ::before {
-            left: 27%;
-            width: 50%;
+            left: 23%;
+            width: 60%;
             background-color: ${colors.purple};
 
         }
