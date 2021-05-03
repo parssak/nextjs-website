@@ -9,7 +9,7 @@ export const Title = styled.h1`
     font-weight: 600;
     letter-spacing: -0.1rem;
     margin: 0;
-    margin-top: 7rem;
+    margin-top: 4rem;
     margin-left: -0.01rem;
     ${props => props.larger && css`
         color: white;
