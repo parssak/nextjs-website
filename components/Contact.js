@@ -7,7 +7,6 @@ const ContactContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 7rem;
     @media (max-width: 900px) {
         flex-direction: column;
         margin-bottom: 7rem;
