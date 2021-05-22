@@ -5,11 +5,11 @@ export const colors = {
     primary: '#C8C8C8',
     orange: '#FFD9BD',
     purple: '#BA99FF',
-    success: '#28EA55'
+    green: '#19d464',
+    red: '#ff475a',
+    yellow: '##f5c542',
 }
-// export const primaryColor = "#C8C8C8";
-// export const orange = '#FFD9BD'
-// export const purple = '#BA99FF'
+
 export const gradient = `linear-gradient(20deg, ${colors.orange}, ${colors.purple});`
 export const introduce = css`
     ${props => props.delay && css`

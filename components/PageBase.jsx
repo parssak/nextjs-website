@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
 import Contact from '../components/Contact'
 import NavBar from './NavBar'
@@ -8,6 +8,10 @@ import AlertBox from './AlertBox';
 
 const PageBase = ({ pageTitle, children, nextProjectName }) => {
     const [alertBox, setAlertBox] = useState({}); // {text: string, type: 'success' | 'error'}
+
+    useEffect(() => {
+        document.querySelector("body").scrollTo(0, 0)
+    }, [])
     return (
         <div className={styles.container}>
             <Head>

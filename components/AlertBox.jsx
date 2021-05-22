@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { disappearAnim } from './styles/animations';
-import { colors, introduce } from './styles/constants';
+import { colors } from './styles/constants';
 
 const AlertSection = styled.div`
     width: 100%;
@@ -18,8 +18,20 @@ const AlertBoxWrapper = styled.div`
     padding-top: 1rem;
 `;
 
+const getAlertColor = type => {
+    switch (type) {
+        case 'error':
+            return colors.red;
+        case 'success':
+            return colors.red;
+        case 'pending':
+            return colors.yellow;
+        default:
+            return 'grey';
+    }
+}
 const AlertContainer = styled.div`
-    background-color: ${props => props.type && props.type === 'success' ? colors.success : 'grey'};
+    background-color: ${props => props.type && getAlertColor(props.type)};
     color: black;
     min-width: 25ch;
     font-size: 0.9rem;
