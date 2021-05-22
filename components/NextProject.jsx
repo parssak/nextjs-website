@@ -7,7 +7,7 @@ const NextProjectContainer = styled.div`
     min-height: 25vh;
     display: flex;
     width: calc(100% - 4.8rem);
-
+    max-width: 60rem;
     @media (max-width: 565px) {
         width: calc(100% - 2rem);
     }

@@ -69,6 +69,7 @@ export const Container = styled.section`
 `
 
 export const HorizontalContentWrapper = styled.div`
+    grid-area: p-tech;
     width: calc(100% - 2rem);
     display: flex;
     justify-content: space-between;

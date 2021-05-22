@@ -24,7 +24,6 @@ const Darco = () => {
             </Description>
             <br />
             <HorizontalContent tech={"ReactJS • TypeScript • PDF.JS • Swift"} role={"Creator • Developer"} date="2020"/>
-            {/* <NextProject nextProjectName={'mixbot'} /> */}
         </Container>
     );
 }

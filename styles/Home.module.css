@@ -14,11 +14,18 @@
   .container>* {
     padding: 1rem 2.4rem;
   }
+  .priority-2 {
+    display: none;
+  }
 }
 
 @media (max-width: 565px) {
   .container>* {
     padding: 0rem 1rem;
+  }
+
+  .priority-3 {
+    display: none;
   }
 }
 
