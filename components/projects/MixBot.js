@@ -13,15 +13,15 @@ const MixBot = () => {
             <div className="p-description">
                 <SectionTitle><b>Your personal DJ</b></SectionTitle>
                 <br /><br />
-                <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis velit sunt enim nulla perspiciatis exercitationem id eos ea veritatis! Pariatur odio consequuntur, laborum voluptates aspernatur neque ducimus impedit soluta qui, necessitatibus corrupti quam reprehenderit. Facere cum deserunt eos amet reiciendis ipsam, ipsum sapiente nemo illum nam similique laudantium. In, enim?</Description>
+                <Description>MixBot acts as your personal DJ. MixBot finds songs to mix, loads songs onto two Decks, and mixes an entire DJ set. You can select from 3 different types of mixes, then Mixbot will fetch songs through the Spotify and YouTube APIs, and mixes them using the WebAudio API.</Description>
             </div>
             <div className="p-media">
-                <img src="/media/mix_3.png" />
                 <img src="/media/mix_1.png" />
+                <img src="/media/mix_3.png" />
                 <img src="/media/mix_2.png" />
             </div>
             <div className="p-tech">
-                <HorizontalContent tech={"React • ExpressJS • MongoDB"} role={"Creator"} date={"2020"} />
+                <HorizontalContent tech={"React • Express • MongoDB • Electron"} role={"Creator"} date={"2020"} />
             </div>
         </ProjectContainer>
     );

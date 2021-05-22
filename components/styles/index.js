@@ -84,6 +84,7 @@ export const ProjectContainer = styled(Container)`
     gap: 1rem;
     img {
         width: 100%;
+        border-radius: 1rem;
     }
     .p-media img {
         margin-bottom: 1rem;

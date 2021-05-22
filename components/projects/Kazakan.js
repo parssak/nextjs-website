@@ -18,8 +18,8 @@ const Kazakan = () => {
                 <br />
             </div>
             <div className="p-media">
-                <img src="/media/kaz_3.png" />
                 <img src="/media/kaz_1.png" />
+                <img src="/media/kaz_3.png" />
                 <img src="/media/kaz_2.png" />
             </div>
             <div className="p-tech">

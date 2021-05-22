@@ -55,7 +55,7 @@ const NavButton = styled.button`
     }
 `
 
-const NavBar = () => {
+const NavBar = ({ onContactClick }) => {
     return (
         <Nav>
             <Wrapper>
@@ -68,7 +68,7 @@ const NavBar = () => {
                 <Link href="/projects">
                     <NavButton>Projects</NavButton>
                 </Link>
-                <NavButton>Contact</NavButton>
+                <NavButton onClick={onContactClick}>Contact</NavButton>
             </Wrapper>
         </Nav>
     );

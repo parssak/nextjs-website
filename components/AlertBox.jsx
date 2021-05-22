@@ -23,7 +23,7 @@ const getAlertColor = type => {
         case 'error':
             return colors.red;
         case 'success':
-            return colors.red;
+            return colors.green;
         case 'pending':
             return colors.yellow;
         default:

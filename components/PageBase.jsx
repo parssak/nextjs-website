@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Head from 'next/head'
 import Contact from '../components/Contact'
 import NavBar from './NavBar'
@@ -8,21 +8,29 @@ import AlertBox from './AlertBox';
 
 const PageBase = ({ pageTitle, children, nextProjectName }) => {
     const [alertBox, setAlertBox] = useState({}); // {text: string, type: 'success' | 'error'}
+    const ref = useRef();
 
     useEffect(() => {
         document.querySelector("body").scrollTo(0, 0)
     }, [])
+
+    const onContactClick = () => {
+        console.log(ref);
+        ref.current.scrollIntoView({
+            behavior: "smooth",
+        });
+    }
     return (
         <div className={styles.container}>
             <Head>
                 <title>{pageTitle}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <NavBar />
-            <AlertBox alertBox={alertBox}/>
+            <NavBar onContactClick={onContactClick} />
+            <AlertBox alertBox={alertBox} />
             {children}
             {nextProjectName && <NextProject nextProjectName={nextProjectName} />}
-            <Contact setAlertBox={setAlertBox}/>
+            <Contact setAlertBox={setAlertBox} contactRef={ref} />
         </div>
     );
 }

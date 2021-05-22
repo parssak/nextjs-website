@@ -27,8 +27,8 @@ const Darco = () => {
                 <br />
             </div>
             <div className="p-media">
-                <img src="/media/darco_3.png" />
                 <img src="/media/darco_1.png" />
+                <img src="/media/darco_3.png" />
                 <img src="/media/darco_2.png" />
             </div>
             <div className="p-tech">

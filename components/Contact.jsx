@@ -28,7 +28,7 @@ const ContactSectionContainer = styled(Container)`
   overflow-x: overflow;
 `
 
-const Contact = ({ setAlertBox }) => {
+const Contact = ({ setAlertBox, contactRef }) => {
     const [lock, setLock] = useState(false);
     
     const handleSubmit = e => {
@@ -56,7 +56,7 @@ const Contact = ({ setAlertBox }) => {
         setAlertBox({ id: uuidv4(), text: '🎉 Email copied to clipboard', type: 'success'});
     }
     return (
-        <ContactSectionContainer>
+        <ContactSectionContainer ref={contactRef}>
             <Title>
                 Get In Touch
                 <TitleBall random={Math.random() * 360} left scale={0.5}/>
