@@ -6,6 +6,12 @@ import { Subtitle, Title } from './styles';
 const NextProjectContainer = styled.div`
     min-height: 25vh;
     display: flex;
+    width: calc(100% - 4.8rem);
+
+    @media (max-width: 565px) {
+        width: calc(100% - 2rem);
+    }
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -13,6 +19,7 @@ const NextProjectContainer = styled.div`
     padding: 4rem 2rem;
     transition: all 0.2s ease;
     margin-top: 10rem;
+    background: rgba(255, 255, 255, 0);
     & > * {
         transition: all 0.4s ease-in-out;
         transform: scale(0.75);
@@ -20,7 +27,7 @@ const NextProjectContainer = styled.div`
     }
     :hover {
         cursor: pointer;
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.085);
         & > * {
             transform: scale(0.85);
         }

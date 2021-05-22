@@ -1,7 +1,7 @@
 import React from 'react';
 import HorizontalContent from '../HorizontalContent';
 import NextProject from '../NextProject';
-import { Container, SectionTitle, Description, Subtitle, Title, HorizontalContentWrapper, LinkText } from '../styles';
+import { Container,  Description, Subtitle, Title, LinkText } from '../styles';
 
 const Darco = () => {
     return (
@@ -12,7 +12,7 @@ const Darco = () => {
             <Description><b>Convert any PDF to dark mode with ease</b></Description>
             <br /><br />
             <Description>
-                Darco is an app I made that converts PDFs into dark mode.
+                Darco is an app that converts PDFs into dark mode.
                 I made Darco in Fall 2020, during an online semester at university.
                 As I encountered blindingly-white PDFs, I began searching for
                 a solution. When I realized there was no good iPad solution
@@ -24,7 +24,7 @@ const Darco = () => {
             </Description>
             <br />
             <HorizontalContent tech={"ReactJS • TypeScript • PDF.JS • Swift"} role={"Creator • Developer"} date="2020"/>
-            <NextProject nextProjectName={'mixbot'} />
+            {/* <NextProject nextProjectName={'mixbot'} /> */}
         </Container>
     );
 }

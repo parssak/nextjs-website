@@ -3,7 +3,7 @@ import PageBase from '../components/PageBase';
 
 const DarcoPage = () => {
     return (
-        <PageBase pageTitle='Parssa K | Darco'>
+        <PageBase pageTitle='Parssa K | Darco' nextProjectName='mixbot'>
             <Darco />
         </PageBase>
     );

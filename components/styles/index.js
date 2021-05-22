@@ -29,7 +29,7 @@ export const Subtitle = styled.h2`
     ${introduce}
 `
 export const SectionTitle = styled.h3`
-    color: #c0c0c0;
+    color: #fff;
     font-weight:600;
     font-size: 2rem;
     margin: 0;
@@ -57,8 +57,8 @@ export const Label = styled.label`
 //** Layout */
 export const Container = styled.section`
     min-height: 100vh;
-    width: 100%;
     max-width: 2000px;
+    width: 100%;
     position: relative;
     z-index: 0;
     overflow-y: overflow;
