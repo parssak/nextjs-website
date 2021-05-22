@@ -35,7 +35,13 @@ const Contact = ({ setAlertBox }) => {
         e.preventDefault();
         setLock(true);
         setAlertBox({ id: uuidv4(), text: 'Sending message...', type: 'pending' });
-        emailjs.sendForm('service_cgfcq9r', 'template_u8oi1y8', e.target, 'user_uqFWPOLBqlRmtvJG5zsPg')
+        
+        const combineMessage = {};
+        for (let child of e.target.children) 
+            if (child.name)
+                    combineMessage[child.name] = child.value
+        
+        emailjs.send('service_cgfcq9r', 'template_u8oi1y8', combineMessage, 'user_uqFWPOLBqlRmtvJG5zsPg')
             .then((result) => {
                 console.log(result?.text)
                 setAlertBox({ id: uuidv4(), text: '📨 Message successfully sent', type: 'success' });
