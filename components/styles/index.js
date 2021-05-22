@@ -79,6 +79,29 @@ export const HorizontalContentWrapper = styled.div`
     }
 `
 
+export const ProjectContainer = styled(Container)`
+    display: grid;
+    gap: 1rem;
+    img {
+        width: 100%;
+    }
+    .p-media img {
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.4fr 0.8fr 1.5fr;
+    grid-template-areas:
+      "p-title p-media"
+      "p-description p-media"
+      "p-tech p-media";
+    .p-title { grid-area: p-title; }
+    .p-description { grid-area: p-description; }
+    .p-media { grid-area: p-media; margin-top: 4rem; }
+    .p-media-2 { grid-area: p-media-2; }
+    .p-tech { grid-area: p-tech; }
+    }
+`;
 export const TitleBall = styled.div`
     height: 800px;
     width: 800px;

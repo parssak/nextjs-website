@@ -18,7 +18,7 @@ const NextProjectContainer = styled.div`
     border-radius:3rem;
     padding: 4rem 2rem;
     transition: all 0.2s ease;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     background: rgba(255, 255, 255, 0);
     & > * {
         transition: all 0.4s ease-in-out;

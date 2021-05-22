@@ -1,36 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import HorizontalContent from '../HorizontalContent';
-import { Container, Subtitle, Title, Description } from '../styles';
+import { ProjectContainer, Subtitle, Title, Description } from '../styles';
 
-const ProjectContainer = styled(Container)`
-    display: grid;
-    gap: 1rem;
-    /* .p-title { grid-area: p-title; }
-    .p-description { grid-area: p-description; }
-    .p-media { grid-area: p-media; & > * {margin-bottom:1rem;}}
-    .p-media-2 { grid-area: p-media-2; }
-    .p-tech { grid-area: p-tech; } */
-    img {
-        width: 100%;
-    }
-    .p-media img {
-        margin-bottom: 1rem;
-    }
-    @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.4fr 0.8fr 1.5fr;
-    grid-template-areas:
-      "p-title p-media"
-      "p-description p-media"
-      "p-tech p-media";
-    .p-title { grid-area: p-title; }
-    .p-description { grid-area: p-description; }
-    .p-media { grid-area: p-media;}
-    .p-media-2 { grid-area: p-media-2; }
-    .p-tech { grid-area: p-tech; }
-    }
-`;
 const Kazakan = () => {
     return (
         <ProjectContainer>
