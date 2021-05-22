@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useEffect, useRef } from 'react';
 import { Title, Container } from "./styles"
 import { primaryColor } from './styles/constants';
 import { projectData } from "../data";

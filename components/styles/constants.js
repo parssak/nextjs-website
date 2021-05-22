@@ -5,6 +5,7 @@ export const colors = {
     primary: '#C8C8C8',
     orange: '#FFD9BD',
     purple: '#BA99FF',
+    success: '#28EA55'
 }
 // export const primaryColor = "#C8C8C8";
 // export const orange = '#FFD9BD'

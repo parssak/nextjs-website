@@ -17,3 +17,12 @@ export const introduceAnim = keyframes`
         opacity: 1;
     }
 `
+
+export const disappearAnim = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+`

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContactButton, Container, Description, Input, TextArea, Title, Label, TitleBall, LinkText } from './styles';
 import Footer from './Footer';
+import { v4 as uuidv4 } from 'uuid';
 
 const ContactContainer = styled.div`
     margin-top: 3rem;
@@ -24,11 +25,15 @@ const ContactSectionContainer = styled(Container)`
   justify-content: space-between;
   overflow-x: overflow;
 `;
-const Contact = () => {
+const Contact = ({setAlertBox}) => {
     const handleSubmit = e => {
         e.preventDefault();
     }
 
+    const handleAddClipboard = () => {
+        navigator.clipboard.writeText('parssak@gmail.com')
+        setAlertBox({id: uuidv4(), text: 'Email copied to clipboard', type: 'success'});
+    }
     return (
         <ContactSectionContainer>
             <Title>
@@ -39,7 +44,7 @@ const Contact = () => {
                 <Description>
                     If you want to get in touch or just
                     say hi, you can email me
-                    at <LinkText onClick={() => navigator.clipboard.writeText('parssak@gmail.com')}> parssak@gmail.com</LinkText>,
+                    at <LinkText onClick={() => handleAddClipboard()}> parssak@gmail.com</LinkText>,
                     or use this form, and it’ll go right to my inbox.
                 </Description>
                 <ContactForm>
