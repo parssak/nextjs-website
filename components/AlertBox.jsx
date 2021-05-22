@@ -10,10 +10,12 @@ const AlertSection = styled.div`
     position: fixed;
     z-index: 99;
     pointer-events: none;
+    top: 0;
 `;
 
 const AlertBoxWrapper = styled.div`
     transition: all 0.2s ease;
+    padding-top: 1rem;
 `;
 
 const AlertContainer = styled.div`
@@ -25,11 +27,10 @@ const AlertContainer = styled.div`
     border-radius: 0.25rem;
     pointer-events: none;
     margin-bottom: 0.4rem;
-    transition: all 0.2s ease;
     animation-name: ${disappearAnim};
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.5, 0);
 `;
 
 const AlertBox = ({ alertBox }) => {

@@ -7,9 +7,7 @@ import NextProject from './NextProject';
 import AlertBox from './AlertBox';
 
 const PageBase = ({ pageTitle, children, nextProjectName }) => {
-    // alertBox: {text: string, type: 'success' | 'error'}
-    const [alertBox, setAlertBox] = useState({});
-
+    const [alertBox, setAlertBox] = useState({}); // {text: string, type: 'success' | 'error'}
     return (
         <div className={styles.container}>
             <Head>
