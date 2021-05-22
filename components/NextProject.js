@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import Contact from './Contact';
 import { Subtitle, Title } from './styles';
 
 const NextProjectContainer = styled.div`
@@ -36,7 +35,6 @@ const NextProject = ({ nextProjectName }) => {
                     <Title style={{ textTransform: 'capitalize' }}>{nextProjectName}</Title>
                 </NextProjectContainer>
             </Link>
-            <Contact/>
         </>
     );
 }

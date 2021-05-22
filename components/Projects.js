@@ -1,5 +1,4 @@
 import React from 'react';
-import Contact from './Contact';
 import SelectedProjects from './SelectedProjects';
 import { Container, Description, Subtitle, Title, TitleBall } from './styles';
 
@@ -13,7 +12,6 @@ const Projects = () => {
             <Subtitle>The things I've done</Subtitle>
             <Description>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque facilis architecto non illo itaque cumque nisi error voluptatibus cupiditate!</Description>
             <SelectedProjects/>
-            <Contact/>
         </Container>
     );
 }

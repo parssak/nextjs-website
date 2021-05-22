@@ -1,5 +1,4 @@
 import React from 'react';
-import Contact from './Contact';
 import { Container, Description, LinkText, SectionTitle, Subtitle, Title, TitleBall } from './styles';
 
 const About = () => {
@@ -14,12 +13,8 @@ const About = () => {
                 I'm also a Math/CS student <LinkText target="_about">@UofT</LinkText>.
             </Description>
             <Description>
-                I love being creative, and bringing ideas to life through code. I'm passionate about anything design/frontend related, and I put an emphasis on user experience and accessibility. I'm constantly improving and learning new skills and technologies, and tinkering around with them. 
+                I love being creative, and bringing ideas to life through code. I'm passionate about anything design/frontend related, and I put emphasis on UX and accessibility. I'm constantly learning new skills and technologies, and tinkering around with them. 
             </Description>
-            <Description>
-
-            </Description>
-            <Contact/>
         </Container>
     );
 }

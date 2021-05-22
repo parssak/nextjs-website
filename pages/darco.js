@@ -1,19 +1,11 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css'
-import NavBar from '../components/NavBar';
 import Darco from '../components/projects/Darco';
+import PageBase from '../components/PageBase';
 
 const DarcoPage = () => {
     return (
-        <div className={styles.container} >
-            <Head>
-                <title>Parssa K | Darco</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <NavBar />
+        <PageBase pageTitle='Parssa K | Darco'>
             <Darco />
-
-        </div>
+        </PageBase>
     );
 }
 

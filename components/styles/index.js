@@ -23,7 +23,7 @@ export const Subtitle = styled.h2`
     font-weight:400;
     font-size: 1.4rem;
     margin: 0;
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
     margin-top: -0.5rem;
     letter-spacing: -0.05rem;
     ${introduce}

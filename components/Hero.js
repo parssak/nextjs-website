@@ -15,7 +15,6 @@ const Hero = () => {
                     <TitleBall random={Math.random() * 360} />
                  </DelayBox>
                 Hi. I'm Parssa
-                
             </Title>
             <Subtitle delay={0.5}>Fullstack Developer & Designer</Subtitle>
             <Description delay={0.7}>Based in Toronto, Canada 📍</Description>
