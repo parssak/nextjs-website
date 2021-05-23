@@ -20,7 +20,7 @@ const PageBase = ({ pageTitle, children, nextProjectName, shouldScroll, setShoul
         ref.current.scrollIntoView({
             behavior: "smooth",
         });
-        setShouldScroll(false);
+        setShouldScroll && setShouldScroll(false);
     }
     return (
         <div className={styles.container}>
