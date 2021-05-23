@@ -10,7 +10,7 @@ const About = () => {
             <Description >
                 I'm a fullstack developer <LinkText href="https://www.airborneapp.io/" target="_about">@AirborneApp</LinkText>.
                 <br/>
-                I'm also a Math/CS student <LinkText target="_about">@UofT</LinkText>.
+                I'm also a Math/CS student <LinkText href="https://www.utoronto.ca/" target="_about">@UofT</LinkText>.
             </Description>
             <Description>
                 I enjoy bringing ideas to life through code. I'm passionate about everything frontend & design related, and I put emphasis on UX and accessibility. I'm constantly learning new skills and technologies, and tinkering with them. 

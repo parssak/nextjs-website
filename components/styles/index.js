@@ -66,6 +66,9 @@ export const Container = styled.section`
     @media (max-width: 800px) {
         margin-top: 0rem;
     }
+    @media (min-height: 1300px) {
+        max-height: 1000px;
+    }
 `
 
 export const HorizontalContentWrapper = styled.div`
@@ -93,12 +96,12 @@ export const ProjectContainer = styled(Container)`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.4fr 0.8fr 1.5fr;
     grid-template-areas:
-      "p-title p-media"
+      "p-title p-title"
       "p-description p-media"
       "p-tech p-media";
     .p-title { grid-area: p-title; }
     .p-description { grid-area: p-description; }
-    .p-media { grid-area: p-media; margin-top: 4rem; }
+    .p-media { grid-area: p-media; img {width: 80%; float: right;}}
     .p-media-2 { grid-area: p-media-2; }
     .p-tech { grid-area: p-tech; }
     }

@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 import NextProject from './NextProject';
 import AlertBox from './AlertBox';
 
-const PageBase = ({ pageTitle, children, nextProjectName }) => {
+const PageBase = ({ pageTitle, children, nextProjectName, shouldScroll, setShouldScroll }) => {
     const [alertBox, setAlertBox] = useState({}); // {text: string, type: 'success' | 'error'}
     const ref = useRef();
 
@@ -14,11 +14,13 @@ const PageBase = ({ pageTitle, children, nextProjectName }) => {
         document.querySelector("body").scrollTo(0, 0)
     }, [])
 
+    useEffect(() => shouldScroll && onContactClick(), [shouldScroll]);
+
     const onContactClick = () => {
-        console.log(ref);
         ref.current.scrollIntoView({
             behavior: "smooth",
         });
+        setShouldScroll(false);
     }
     return (
         <div className={styles.container}>

@@ -7,7 +7,7 @@ const HeroContainer = styled(Container)`
     overflow-x: overflow;
     `
     
-const Hero = () => {
+const Hero = ({setShouldScroll}) => {
     return (
         <HeroContainer>
             <Title larger >
@@ -19,7 +19,7 @@ const Hero = () => {
             <Subtitle delay={0.5}>Fullstack Developer & Designer</Subtitle>
             <Description delay={0.7}>Based in Toronto, Canada 📍</Description>
             <Description delay={0.9}>Passionate about creating useful tools through software.</Description>
-            <ContactButton delay={1}>Get In Touch</ContactButton>
+            <ContactButton delay={1} onClick={() => setShouldScroll(true)}>Get In Touch</ContactButton>
         </HeroContainer>
     );
 }
