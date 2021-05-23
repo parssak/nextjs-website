@@ -12,8 +12,10 @@ const ContactContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     @media (max-width: 900px) {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
         margin-bottom: 7rem;
+        gap: 3rem;
     }
 `
 const ContactForm = styled.form`
@@ -70,7 +72,7 @@ const Contact = ({ setAlertBox, contactRef }) => {
                     at <LinkText onClick={() => handleAddClipboard()}> parssak@gmail.com</LinkText>,
                     or use this form, and it’ll go right to my inbox.
                 </Description>
-                    <Socials />
+                    <Socials handleAddClipboard={handleAddClipboard}/>
                 </div>
                 <ContactForm onSubmit={handleSubmit} disabled={lock}>
                     <Label htmlFor="name">Name</Label>
