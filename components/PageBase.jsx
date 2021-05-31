@@ -27,6 +27,13 @@ const PageBase = ({ pageTitle, children, nextProjectName, shouldScroll, setShoul
             <Head>
                 <title>{pageTitle}</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content="Passionate about creating useful tools through software." />
+                
+                <meta property="og:url" content={`www.parssak.com/${pageTitle}`} key="ogurl" />
+                <meta property="og:image" content={`/previewimage.png`} key="ogimage" />
+                <meta property="og:site_name" content="Parssa K" key="ogsitename" />
+                <meta property="og:title" content="Parssa Kyanzadeh" key="ogtitle" />
+        +       <meta property="og:description" content="Parssa Kyanzadeh's personal website/portfolio" key="ogdesc" />
             </Head>
             <NavBar onContactClick={onContactClick} />
             <AlertBox alertBox={alertBox} />
