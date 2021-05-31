@@ -66,8 +66,8 @@ export const Container = styled.section`
     @media (max-width: 800px) {
         margin-top: 0rem;
     }
-    @media (min-height: 1300px) {
-        max-height: 1000px;
+    @media (min-height: 800px) {
+        min-height: 800px;
     }
 `
 
