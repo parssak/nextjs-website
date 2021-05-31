@@ -6,6 +6,7 @@ import PageBase from '../components/PageBase';
 import { ContactButton, Container, Description, Subtitle, Title } from '../components/styles';
 
 const ErrorPage = () => {
+    const router = useRouter()
     useEffect(() => {
         router.push('/')
     }, []);
