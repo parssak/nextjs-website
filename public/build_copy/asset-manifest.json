@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0645698f.chunk.css",
+    "main.js": "/static/js/main.a3b4dd4b.chunk.js",
+    "main.js.map": "/static/js/main.a3b4dd4b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ab696c23.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ab696c23.js.map",
+    "static/js/2.5911b480.chunk.js": "/static/js/2.5911b480.chunk.js",
+    "static/js/2.5911b480.chunk.js.map": "/static/js/2.5911b480.chunk.js.map",
+    "static/js/3.95dd217f.chunk.js": "/static/js/3.95dd217f.chunk.js",
+    "static/js/3.95dd217f.chunk.js.map": "/static/js/3.95dd217f.chunk.js.map",
+    "static/js/4.2f0a2ba7.chunk.js": "/static/js/4.2f0a2ba7.chunk.js",
+    "static/js/4.2f0a2ba7.chunk.js.map": "/static/js/4.2f0a2ba7.chunk.js.map",
+    "static/js/5.d7bf9074.chunk.js": "/static/js/5.d7bf9074.chunk.js",
+    "static/js/5.d7bf9074.chunk.js.map": "/static/js/5.d7bf9074.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0645698f.chunk.css.map": "/static/css/main.0645698f.chunk.css.map",
+    "static/js/2.5911b480.chunk.js.LICENSE.txt": "/static/js/2.5911b480.chunk.js.LICENSE.txt",
+    "static/js/3.95dd217f.chunk.js.LICENSE.txt": "/static/js/3.95dd217f.chunk.js.LICENSE.txt",
+    "static/js/4.2f0a2ba7.chunk.js.LICENSE.txt": "/static/js/4.2f0a2ba7.chunk.js.LICENSE.txt",
+    "static/js/5.d7bf9074.chunk.js.LICENSE.txt": "/static/js/5.d7bf9074.chunk.js.LICENSE.txt",
+    "static/js/pdf.worker.entry.e7398340.worker.js": "/static/js/pdf.worker.entry.e7398340.worker.js",
+    "static/js/pdf.worker.entry.e7398340.worker.js.LICENSE.txt": "/static/js/pdf.worker.entry.e7398340.worker.js.LICENSE.txt",
+    "static/js/pdf.worker.entry.e7398340.worker.js.map": "/static/js/pdf.worker.entry.e7398340.worker.js.map",
+    "static/media/darkmode.adfd070b.svg": "/static/media/darkmode.adfd070b.svg",
+    "static/media/download.f96d8e9e.svg": "/static/media/download.f96d8e9e.svg",
+    "static/media/page.10b16866.svg": "/static/media/page.10b16866.svg",
+    "static/media/share.bd919f0e.svg": "/static/media/share.bd919f0e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab696c23.js",
+    "static/js/3.95dd217f.chunk.js",
+    "static/css/main.0645698f.chunk.css",
+    "static/js/main.a3b4dd4b.chunk.js"
+  ]
+}
