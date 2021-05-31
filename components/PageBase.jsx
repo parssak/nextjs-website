@@ -30,7 +30,6 @@ const PageBase = ({ pageTitle, children, nextProjectName, shouldScroll, setShoul
                 <meta name="description" content="Passionate about creating useful tools through software." />
                 
                 <meta property='og:image' content='//www.parssak.com/p-img.png' />
-                {/* <meta property="og:site_name" content="Parssa K" key="ogsitename" /> */}
                 <meta property="og:title" content="Parssa Kyanzadeh" key="ogtitle" />
         +       <meta property="og:description" content="Parssa Kyanzadeh's personal website/portfolio" key="ogdesc" />
             </Head>
