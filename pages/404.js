@@ -13,7 +13,7 @@ const ErrorPage = () => {
     return (
         <PageBase pageTitle="404 Error :(">
             <Container>
-                <Title>404 Page not found. 😬</Title>
+                {/* <Title>404 Page not found. 😬</Title>
                 <br />
                 <Subtitle>How'd you get here?</Subtitle>
                 <Description>
@@ -21,7 +21,7 @@ const ErrorPage = () => {
                 </Description>
                 <Link href="/">
                     <ContactButton>Get me outta here</ContactButton>
-                </Link>
+                </Link> */}
             </Container>
         </PageBase>
     );
