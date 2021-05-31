@@ -1,5 +1,5 @@
 import React from 'react';
-import HorizontalContent from '../HorizontalContent';
+import ProjectDetails from './ProjectDetails';
 import { Description, ProjectContainer, SectionTitle, Subtitle, Title } from '../styles';
 
 const MixBot = () => {
@@ -21,7 +21,7 @@ const MixBot = () => {
                 <img src="/media/mix_2.png" />
             </div>
             <div className="p-tech">
-                <HorizontalContent tech={"React • Express • MongoDB • Electron"} role={"Creator"} date={"Winter 2020"} />
+                <ProjectDetails tech={"React • Express • MongoDB • Electron"} role={"Creator"} date={"Winter 2020"} />
             </div>
         </ProjectContainer>
     );

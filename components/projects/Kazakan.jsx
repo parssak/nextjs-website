@@ -1,5 +1,5 @@
 import React from 'react';
-import HorizontalContent from '../HorizontalContent';
+import ProjectDetails from './ProjectDetails';
 import { ProjectContainer, Subtitle, Title, Description, LinkText, SectionTitle } from '../styles';
 
 const Kazakan = () => {
@@ -35,7 +35,7 @@ const Kazakan = () => {
                 <img src="/media/kaz_2.png" />
             </div>
             <div className="p-tech">
-                <HorizontalContent tech={"C# • Unity • Aseprite"} role={"Creator • Game Developer"} date={"Summer 2020"} />
+                <ProjectDetails tech={"C# • Unity • Aseprite"} role={"Creator • Game Developer"} date={"Summer 2020"} />
             </div>
         </ProjectContainer>
     );

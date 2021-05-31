@@ -1,9 +1,9 @@
 import React from 'react';
-import { Description, HorizontalContentWrapper, SectionTitle } from './styles';
+import { Description, ProjectDetailsWrapper, SectionTitle } from '../styles';
 
-const HorizontalContent = ({tech, role, date}) => {
+const ProjectDetails = ({tech, role, date}) => {
     return (
-        <HorizontalContentWrapper>
+        <ProjectDetailsWrapper>
             <div>
                 <SectionTitle>Technologies Used</SectionTitle>
                 <Description>{tech}</Description>
@@ -17,8 +17,8 @@ const HorizontalContent = ({tech, role, date}) => {
                 <SectionTitle>Date</SectionTitle>
                 <Description>{date}</Description>
             </div>
-        </HorizontalContentWrapper>
+        </ProjectDetailsWrapper>
     );
 }
 
-export default HorizontalContent;
+export default ProjectDetails;

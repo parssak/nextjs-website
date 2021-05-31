@@ -1,5 +1,5 @@
 import React from 'react';
-import HorizontalContent from '../HorizontalContent';
+import ProjectDetails from './ProjectDetails';
 import { Description, Subtitle, Title, LinkText, ProjectContainer, SectionTitle } from '../styles';
 
 const Darco = () => {
@@ -35,7 +35,7 @@ const Darco = () => {
                 <img src="/media/darco_2.png" />
             </div>
             <div className="p-tech">
-                <HorizontalContent tech={"ReactJS • TypeScript • PDF.JS • Swift"} role={"Creator"} date="Winter 2020" />
+                <ProjectDetails tech={"ReactJS • TypeScript • PDF.JS • Swift"} role={"Creator"} date="Winter 2020" />
             </div>
         </ProjectContainer>
     );

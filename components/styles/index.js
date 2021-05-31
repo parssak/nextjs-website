@@ -71,7 +71,7 @@ export const Container = styled.section`
     }
 `
 
-export const HorizontalContentWrapper = styled.div`
+export const ProjectDetailsWrapper = styled.div`
     grid-area: p-tech;
     width: calc(100% - 2rem);
     display: flex;
