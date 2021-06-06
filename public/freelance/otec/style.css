@@ -2,8 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 
-@import url("http://fonts.cdnfonts.com/css/moonlite-solid-personal-use");
-
 /*! tailwindcss v2.1.4 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -19110,9 +19108,19 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+@font-face {
+  font-family: "Moonlite Solid";
+
+  font-style: normal;
+
+  font-weight: normal;
+
+  src: local("Moonlite Solid Personal Use Regular"), url("fonts/MoonliteSolidPersonalUse-51B9V.woff") format("woff");
+}
+
 h1,
 h2 {
-  font-family: "Moonlite Solid Personal Use", sans-serif;
+  font-family: "Moonlite Solid", sans-serif;
 }
 
 h3,
