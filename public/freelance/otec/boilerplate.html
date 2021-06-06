@@ -12,7 +12,8 @@
 </head>
 
 <body>
-  <div class="h-screen">
+  <div class="border border-black h-screen bg-no-repeat	bg-cover" style="background-image:url(public/hero-img.png);">
+    <div class="z-0 h-screen w-full bg-black bg-opacity-50 absolute top-0 left-0"></div>
     <!-- Navigation Bar -->
     <div class="h-20 lg:h-32">
       <div x-data="{ open: false }" class="nav-container z-50 mb-24">
@@ -143,21 +144,19 @@
         </nav>
       </div>
     </div>
+
     <!-- Hero -->
-    <header class="h-full">
-      <div class="absolute z-0 top-16 left-0 h-full w-full bg-black">
-        <img src="public/hero-img.png" alt="Image of an eye zoomed in" class="object-cover h-full w-full opacity-50">
-      </div>
-      <div class="container text-white flex items-center relative">
-        <div class="z-10">
-          <h1 class="leading-none text-8xl">PATIENT <br>CENTERED CARE</h1>
+    <header class="h-full relative">
+      <div class="container text-white flex items-center h-3/4">
+        <div>
+          <h1 class="leading-none text-8xl">PATIENT <br>CENTERED <br class="mobile:hidden">CARE</h1>
           <br>
-          <p class="md:text-sm">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical and surgical care
+          <h3 class="text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical <br> and surgical care
             where
             the patient
             experience comes
-            first.</p>
-          <div class="flex mt-5 text-xs">
+            first.</h3>
+          <div class="flex mt-10 text-xs">
             <button class="btn bg-white text-black mr-2">About Us <i
                 class="fas fa-arrow-right ml-2 text-accent"></i></button>
             <button class="btn bg-accent text-black">Contact <i class="fas fa-arrow-right ml-2 text-black"></i></button>
@@ -168,6 +167,7 @@
   </div>
 
   <div class="container">
+    <h1>hi</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt cupiditate aut reiciendis harum non, illo totam
       sed reprehenderit aliquam optio ab eaque porro est, fuga cumque atque itaque adipisci ad vitae. Tempora repellat
       architecto voluptatum, incidunt aliquid fugiat. Sit, ratione nam! Distinctio accusamus at sunt necessitatibus
@@ -241,26 +241,26 @@
 
   <!-- Contact Section -->
   <section class="bg-lightestgrey ">
-    <div class="container leading-5 p-3"">
+    <div class="container leading-5 p-3">
       <div class=" with-underline">
-      <div class="flex items-center p-5">
-        <img src="public/icons/phone.svg" alt="Phone Icon" class="mr-5">
-        <span>(000) 000-0000</span>
+        <div class="flex items-center p-5">
+          <img src="public/icons/phone.svg" alt="Phone Icon" class="mr-5">
+          <span>(000) 000-0000</span>
+        </div>
       </div>
-    </div>
-    <div class="with-underline">
-      <div class="flex items-center p-5">
-        <img src="public/icons/mail.svg" alt="Mail Icon" class="mr-5">
-        <span>office@OTeye.ca</span>
+      <div class="with-underline">
+        <div class="flex items-center p-5">
+          <img src="public/icons/mail.svg" alt="Mail Icon" class="mr-5">
+          <span>office@OTeye.ca</span>
+        </div>
       </div>
-    </div>
-    <div class="flex items-center p-5">
-      <img src="public/icons/location.svg" alt="Location Icon" class="mr-5">
-      <span>
-        000 Hospital Gate <br>
-        Oakville, ON L6M 0L8
-      </span>
-    </div>
+      <div class="flex items-center p-5">
+        <img src="public/icons/location.svg" alt="Location Icon" class="mr-5">
+        <span>
+          000 Hospital Gate <br>
+          Oakville, ON L6M 0L8
+        </span>
+      </div>
     </div>
   </section>
   <!-- Footer Section -->

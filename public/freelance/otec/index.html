@@ -29,7 +29,7 @@
           </button>
         </div>
         <nav :class="{'flex': open, 'hidden': !open}"
-          class="flex-col flex-grow md:flex md:flex-row md:justify-end pb-4 md:pb-0 bg-lightestgrey md:bg-white sm:px-8 md:px-0 z-20 h-screen mobile:h-full">
+          class="flex-col flex-grow md:flex md:flex-row md:justify-end pb-4 md:pb-0 bg-lightestgrey md:bg-white sm:px-8 md:px-0 z-20 h-screen tablet:h-full">
           <a href="index.html" class="nav-btn">
             <div class="nav-mobile-btn">
               Home
@@ -48,7 +48,7 @@
             </div>
             <hr>
           </a>
-          <div @click.away="open = false" class="relative hidden md:block" x-data="{ open: false }">
+          <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false" class="relative hidden md:block" x-data="{ open: false }">
             <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
               <a href="patients/index.html" class="p-0">Patients</a>
               <i class="fas fa-chevron-down ml-2 text-accent"></i>
@@ -70,7 +70,7 @@
             </div>
             <hr>
           </a>
-          <div @click.away="open = false" class="relative hidden md:block" x-data="{ open: false }">
+          <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false" class="relative hidden md:block" x-data="{ open: false }">
             <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
               <a href="services/index.html" class="p-0">Services</a>
               <i class="fas fa-chevron-down ml-2 text-accent"></i>
@@ -123,9 +123,9 @@
             <hr>
           </a>
           <div
-            class="pl-4 md:p-0 mt-7 md:mt-0 mb-8 md:mb-0 flex flex-start mobile:justify-center flex-col mobile:flex-row md:flex-col text-sm">
+            class="pl-4 md:p-0 mt-7 md:mt-0 mb-8 md:mb-0 flex flex-start tablet:justify-center flex-col tablet:flex-row md:flex-col text-sm">
             <button
-              class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 mobile:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full">
+              class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full">
               <img src="public/icons/pencil.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
               <span class="mr-5">
                 Pre-Check In
@@ -144,14 +144,15 @@
         </nav>
       </div>
     </div>
-    
+
     <!-- Hero -->
     <header class="h-full relative">
       <div class="container text-white flex items-center h-3/4">
         <div>
-          <h1 class="leading-none text-8xl">PATIENT <br>CENTERED <br class="mobile:hidden">CARE</h1>
+          <h1 class="leading-none text-8xl">PATIENT <br>CENTERED <br class="tablet:hidden">CARE</h1>
           <br>
-          <h3 class="text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical <br> and surgical care where
+          <h3 class="text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical <br class="hidden tablet:block"> and surgical care
+            where
             the patient
             experience comes
             first.</h3>
@@ -240,26 +241,32 @@
 
   <!-- Contact Section -->
   <section class="bg-lightestgrey ">
-    <div class="container leading-5 p-3"">
-      <div class=" with-underline">
-      <div class="flex items-center p-5">
-        <img src="public/icons/phone.svg" alt="Phone Icon" class="mr-5">
-        <span>(000) 000-0000</span>
+    <div class="container leading-5 p-3 tablet:flex">
+      <div class="tablet:w-full">
+        <div class=" with-underline">
+          <div class="flex items-center p-5">
+            <img src="public/icons/phone.svg" alt="Phone Icon" class="mr-5">
+            <span>(000) 000-0000</span>
+          </div>
+        </div>
+        <div class="with-underline">
+          <div class="flex items-center p-5">
+            <img src="public/icons/mail.svg" alt="Mail Icon" class="mr-5">
+            <span>office@OTeye.ca</span>
+          </div>
+        </div>
+        <div class="flex items-center p-5">
+          <img src="public/icons/location.svg" alt="Location Icon" class="mr-5">
+          <span>
+            000 Hospital Gate <br>
+            Oakville, ON L6M 0L8
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="with-underline">
-      <div class="flex items-center p-5">
-        <img src="public/icons/mail.svg" alt="Mail Icon" class="mr-5">
-        <span>office@OTeye.ca</span>
+      <div class="tablet:w-full hidden tablet:block">
+        <!-- TODO GET MAP -->
+        EMBED MAP GOES HERE
       </div>
-    </div>
-    <div class="flex items-center p-5">
-      <img src="public/icons/location.svg" alt="Location Icon" class="mr-5">
-      <span>
-        000 Hospital Gate <br>
-        Oakville, ON L6M 0L8
-      </span>
-    </div>
     </div>
   </section>
   <!-- Footer Section -->
@@ -269,9 +276,10 @@
         <h4 class="uppercase">Subscribe to the OTEC Newspaper</h4>
         <div class="relative mb-10">
           <input type="email" name="email-subscribe"
-            class="text-white border border-lightgrey bg-transparent rounded-sm w-full p-2 h-full btn"
+            class="text-white border border-lightgrey bg-transparent w-full h-full btn"
+            style="font-family: Montserrat"
             placeholder="Email">
-          <button class="btn bg-accent absolute right-0 text-black">Subscribe</button>
+          <button class="btn bg-accent absolute right-0 text-black h-full">Subscribe</button>
         </div>
       </div>
       <div class="px-3 md:px-10 w-full ">
