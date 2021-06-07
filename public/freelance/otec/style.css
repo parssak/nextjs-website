@@ -4538,6 +4538,10 @@ video {
 }
 
 .text-8xl{
+  font-size: 6rem;
+}
+
+.text-9xl{
   font-size: 8rem;
 }
 
@@ -19128,8 +19132,12 @@ video {
   src: local("Moonlite Solid Personal Use Regular"), url("fonts/MoonliteSolidPersonalUse-51B9V.woff") format("woff");
 }
 
+h1, h2{
+  text-transform: uppercase;
+}
+
 h1,
-h2 {
+h2{
   font-family: "Moonlite Solid", sans-serif;
 }
 
@@ -19140,8 +19148,9 @@ nav {
 }
 
 blockquote,
-p {
-  max-width: 50ch;
+p,
+h3 {
+  max-width: 49ch;
 }
 
 .container {
@@ -19363,6 +19372,35 @@ footer h4 {
   bottom: 0;
   width: 100%;
   height: 1px;
+}
+
+.card {
+  --tw-border-opacity: 1;
+  border-color: rgba(139, 139, 139, var(--tw-border-opacity));
+  --tw-border-opacity: 0.3;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  padding: 0.75rem;
+  position: relative;
+}
+
+@media (min-width: 946px){
+  .card{
+    margin-bottom: 0px;
+  }
+}
+
+.card::after {
+  --tw-bg-opacity: 1;
+  background-color: rgba(252, 192, 16, var(--tw-bg-opacity));
+  height: 0.25rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  content: " ";
 }
 
 @media (min-width: 480px){
@@ -23349,6 +23387,10 @@ footer h4 {
   }
 
   .sm\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .sm\:text-9xl{
     font-size: 8rem;
   }
 
@@ -41743,6 +41785,10 @@ footer h4 {
   }
 
   .tablet\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .tablet\:text-9xl{
     font-size: 8rem;
   }
 
@@ -60137,6 +60183,10 @@ footer h4 {
   }
 
   .md\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .md\:text-9xl{
     font-size: 8rem;
   }
 
@@ -78531,6 +78581,10 @@ footer h4 {
   }
 
   .lg\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .lg\:text-9xl{
     font-size: 8rem;
   }
 
@@ -96925,6 +96979,10 @@ footer h4 {
   }
 
   .xl\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .xl\:text-9xl{
     font-size: 8rem;
   }
 
@@ -115319,6 +115377,10 @@ footer h4 {
   }
 
   .\32xl\:text-8xl{
+    font-size: 6rem;
+  }
+
+  .\32xl\:text-9xl{
     font-size: 8rem;
   }
 
