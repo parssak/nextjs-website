@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/dist/style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://kit.fontawesome.com/3a13ad6625.js" crossorigin="anonymous"></script>
-  <title>BOILERPLATE</title>
+  <title>Patients</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
       <div :class="{'fixed': open, 'hidden': !open}"
         class="h-screen w-screen fixed top-0 z-0 bg-black opacity-50 pointer-events-none md:hidden"></div>
       <div class="p-4 md:pl-8 md:py-0 flex md:flex-row items-center justify-between xl:py-5 z-10 bg-white">
-        <a href="/freelance/otec/dist/index.html">
+        <a href="/dist/index.html">
           <img src="/dist/public/otec-logo.png" alt="Oakville Trafalger Eye Clinic Logo"
             class="h-14 md:h-10 lg:h-14 md:pl-0">
         </a>
@@ -28,7 +28,7 @@
       </div>
       <nav :class="{'flex': open, 'hidden': !open}"
         class="flex-col flex-grow md:flex md:flex-row md:justify-end pb-4 md:pb-0 bg-lightestgrey md:bg-white sm:px-8 md:px-0 z-20 h-screen tablet:h-full">
-        <a href="/freelance/otec/dist/index.html" class="nav-btn">
+        <a href="/dist/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             Home
             <div class="grid place-items-center md:hidden">
@@ -37,7 +37,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/about/index.html" class="nav-btn">
+        <a href="/dist/about/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             About Us
             <div class="grid place-items-center md:hidden">
@@ -49,7 +49,7 @@
         <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false"
           class="relative hidden md:block" x-data="{ open: false }">
           <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
-            <a href="/freelance/otec/dist/patients/index.html" class="p-0">Patients</a>
+            <a href="/dist/patients/index.html" class="p-0">Patients</a>
             <i class="fas fa-chevron-down ml-2 text-accent"></i>
           </button>
           <div x-show="open" class="nav-dropdown-container">
@@ -60,7 +60,7 @@
             </div>
           </div>
         </div>
-        <a href="/freelance/otec/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Patients
             <div class="grid place-items-center md:hidden">
@@ -72,7 +72,7 @@
         <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false"
           class="relative hidden md:block" x-data="{ open: false }">
           <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
-            <a href="/freelance/otec/dist/services/index.html" class="p-0">Services</a>
+            <a href="/dist/services/index.html" class="p-0">Services</a>
             <i class="fas fa-chevron-down ml-2 text-accent"></i>
           </button>
           <div x-show="open" class="nav-dropdown-container">
@@ -86,7 +86,7 @@
             </div>
           </div>
         </div>
-        <a href="/freelance/otec/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Services
             <div class="grid place-items-center md:hidden">
@@ -95,7 +95,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/blog/index.html" class="nav-btn">
+        <a href="/dist/blog/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             Blog
             <div class="grid place-items-center md:hidden">
@@ -104,7 +104,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/faq/index.html" class="nav-btn">
+        <a href="/dist/faq/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             FAQ
             <div class="grid place-items-center md:hidden">
@@ -113,7 +113,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/contact/index.html" class="nav-btn md:mr-7">
+        <a href="/dist/contact/index.html" class="nav-btn md:mr-7">
           <div class="nav-mobile-btn">
             Contact
             <div class="grid place-items-center md:hidden">
@@ -146,102 +146,25 @@
 
     <!-- Hero -->
   </div>
-  <header class="h-52 relative overflow-hidden bg-cover bg-no-repeat bg-center" style="background-image: url(/dist/public/eye-doctor.png)">
+  <header class="h-52 relative overflow-hidden bg-cover bg-no-repeat bg-center"
+    style="background-image: url(/dist/public/eye-doctor.png)">
     <div class="absolute h-full w-full bg-black opacity-70"></div>
     <div class="container text-white relative z-10 h-full w-full flex items-center">
-      <h1 class="text-5xl">About Us</h1>
+      <h1 class="text-5xl">Patients</h1>
     </div>
   </header>
-  <div class="bg-accent">
-    <div class="container flex flex-col md:flex-row">
-      <div class="w-full flex items-center my-3 md:my-0">
-        <img src="/dist/public/icons/asterisk.svg" class="w-7 mr-3">
-        <h2 class="text-4xl">Our Mission</h2>
-      </div>
-      <div class="w-full mb-5 md:mb-0">
-        <p class="text-sm font-semibold">
-          We aim to deliver exceptional clinical and surgical care
-          and outcomes, achieved through outstanding skill,
-          experience, and passion, further augmented by state of
-          the art technology in a modern practice setting where the
-          patient experience comes first.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <section class="container mt-10">
-    <div class="flex flex-col md:flex-row">
-      <div class="w-full mb-3 md:mb-0">
-        <img src="/dist/public/dr-dang.png" class="md:max-w-lg">
-      </div>
-      <div class="w-full md:p-3 pt-0">
-        <h3 class="text-3xl">Dr Natasha Dang</h3>
-        <h4 class="text-lg">BMSc MD FRCSC Ophthalmology</h4>
-        <br>
-        <p class="text-lg leading-8">
-          Dr Natasha Dang is a comprehensive Ophthalmologist.
-          Dr Dang is from Edmonton, AB; she completed a Bachelor of
-          Medical Sciences degree at the University of Alberta, followed
-          by her Doctor of Medicine Degree, also at the University of
-          Alberta. She then completed a rigorous residency training
-          program in Ophthalmology at the University of Toronto,
-          graduating as a Fellow of the Royal College of Surgeons in
-          Ophthalmology in 2015. Throughout her training, Dr Dang
-          was the recipient of numerous distinguished awards; she
-          maintained a grade point average in the top 2% of university
-          students throughout her academic career, and, among other
-          things, was one of only twenty students in Canada to receive a
-          prestigious national scholarship for outstanding academics
-          and leadership. Dr Dang has been in practice as a
-          comprehensive ophthalmologist, serving both Peel and
-          Halton regions, since 2015.
-        </p>
-      </div>
+  <section class="container mt-5 relative w-full ">
+    <div class="hidden md:block">
+      <i class="text-5xl text-accent fas fa-laptop my-3"></i>
     </div>
-    <div class="mt-10">
-      <p class="max-w-full text-lg leading-8">
-        Dr Dang has privileges at Oakville Trafalgar Memorial Hospital (OTMH); she performs cataract surgery at OTMH,
-        and also,
-        provides regional emergency after hours coverage through Halton Healthcare. She is a Fellow of the Royal College
-        of
-        Surgeons of Canada, and a member of the Eye Physicians and Surgeons of Ontario, the Canadian Ophthalmology
-        Society,
-        the American Academy of Ophthalmology, and the American Society of Cataract and Refractive Surgeons.
-      </p>
-    </div>
-  </section>
-
-  <div class="text-white banner-yellow-underline h-40 bg-cover bg-no-repeat bg-center" style="background-image: url(/dist/public/eye-doctor.png)">
-    <div class="absolute h-full w-full bg-black opacity-70"></div>
-    <div class="container flex items-center h-full relative z-10">
-      <h2>Meet the team</h2>
-    </div>
-  </div>
-
-  <section class="container flex flex-col items-center">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div>
-        <img src="/dist/public/doctor-img.png">
-        <h4 class="text-xl mt-3">Dr. Name</h4>
-        <p class="text-lg">Position</p>
-      </div>
-      <div>
-        <img src="/dist/public/doctor-img.png">
-        <h4 class="text-xl mt-3">Dr. Name</h4>
-        <p class="text-lg">Position</p>
-      </div>
-      <div>
-        <img src="/dist/public/doctor-img.png">
-        <h4 class="text-xl mt-3">Dr. Name</h4>
-        <p class="text-lg">Position</p>
-      </div>
-      <div>
-        <img src="/dist/public/doctor-img.png">
-        <h4 class="text-xl mt-3">Dr. Name</h4>
-        <p class="text-lg">Position</p>
-      </div>
-    </div>
+    <h3 class="text-3xl md:text-5xl mb-3">Patient Resources</h3>
+    <ul class="list-disc leading-8 pl-5">
+      <li>Eye Physicians and Surgeons of Ontario (EPSO)</li>
+      <li>Canadian Ophthalmological Society (COS)</li>
+      <li>American Academy of Ophthalmology (AAO)</li>
+      <li>American Society of Cataract and Refractive Surgeons (ASCRS)</li>
+    </ul>
   </section>
 
   <!-- Contact Section -->
@@ -291,17 +214,17 @@
         <h4 class="uppercase hidden md:block">Get In Touch</h4>
         <div class="grid grid-cols-2">
           <div>
-            <a href="/freelance/otec/dist/index.html">Home</a>
-            <a href="/freelance/otec/dist/about/index.html">About</a>
-            <a href="/freelance/otec/dist/services/index.html">Services</a>
-            <a href="/freelance/otec/dist/news/index.html">News</a>
-            <a href="/freelance/otec/dist/faq/index.html">FAQ</a>
+            <a href="/dist/index.html">Home</a>
+            <a href="/dist/about/index.html">About</a>
+            <a href="/dist/services/index.html">Services</a>
+            <a href="/dist/news/index.html">News</a>
+            <a href="/dist/faq/index.html">FAQ</a>
           </div>
           <div>
-            <a href="/freelance/otec/dist/contact/index.html">Contact</a>
-            <a href="/freelance/otec/dist/careers/index.html">Careers</a>
-            <a href="/freelance/otec/dist/privacy-policy/index.html">Privacy Policy</a>
-            <a href="/freelance/otec/dist/terms-and-conditions/index.html">Terms & Conditions</a>
+            <a href="/dist/contact/index.html">Contact</a>
+            <a href="/dist/careers/index.html">Careers</a>
+            <a href="/dist/privacy-policy/index.html">Privacy Policy</a>
+            <a href="/dist/terms-and-conditions/index.html">Terms & Conditions</a>
             <br>
             <div class="hidden tablet:flex">
               <a href="facebook.com" class="grid place-items-center">

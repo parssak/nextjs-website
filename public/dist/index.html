@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://kit.fontawesome.com/3a13ad6625.js" crossorigin="anonymous"></script>
-  <title>BOILERPLATE</title>
+  <title>OTEC</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
       <div :class="{'fixed': open, 'hidden': !open}"
         class="h-screen w-screen fixed top-0 z-0 bg-black opacity-50 pointer-events-none md:hidden"></div>
       <div class="p-4 md:pl-8 md:py-0 flex md:flex-row items-center justify-between xl:py-5 z-10 bg-white">
-        <a href="/freelance/otec/dist/index.html">
+        <a href="/dist/index.html">
           <img src="/dist/public/otec-logo.png" alt="Oakville Trafalger Eye Clinic Logo"
             class="h-14 md:h-10 lg:h-14 md:pl-0">
         </a>
@@ -29,7 +29,7 @@
       </div>
       <nav :class="{'flex': open, 'hidden': !open}"
         class="flex-col flex-grow md:flex md:flex-row md:justify-end pb-4 md:pb-0 bg-lightestgrey md:bg-white sm:px-8 md:px-0 z-20 h-screen tablet:h-full">
-        <a href="/freelance/otec/dist/index.html" class="nav-btn">
+        <a href="/dist/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             Home
             <div class="grid place-items-center md:hidden">
@@ -38,7 +38,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/about/index.html" class="nav-btn">
+        <a href="/dist/about/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             About Us
             <div class="grid place-items-center md:hidden">
@@ -50,7 +50,7 @@
         <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false"
           class="relative hidden md:block" x-data="{ open: false }">
           <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
-            <a href="/freelance/otec/dist/patients/index.html" class="p-0">Patients</a>
+            <a href="/dist/patients/index.html" class="p-0">Patients</a>
             <i class="fas fa-chevron-down ml-2 text-accent"></i>
           </button>
           <div x-show="open" class="nav-dropdown-container">
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <a href="/freelance/otec/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Patients
             <div class="grid place-items-center md:hidden">
@@ -73,7 +73,7 @@
         <div @mouseenter="open = true" @mouseleave="open = false" @click.away="open = false"
           class="relative hidden md:block" x-data="{ open: false }">
           <button @click="open = !open" class="nav-btn flex flex-row items-center w-full h-full">
-            <a href="/freelance/otec/dist/services/index.html" class="p-0">Services</a>
+            <a href="/dist/services/index.html" class="p-0">Services</a>
             <i class="fas fa-chevron-down ml-2 text-accent"></i>
           </button>
           <div x-show="open" class="nav-dropdown-container">
@@ -87,7 +87,7 @@
             </div>
           </div>
         </div>
-        <a href="/freelance/otec/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Services
             <div class="grid place-items-center md:hidden">
@@ -96,7 +96,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/blog/index.html" class="nav-btn">
+        <a href="/dist/blog/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             Blog
             <div class="grid place-items-center md:hidden">
@@ -105,7 +105,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/faq/index.html" class="nav-btn">
+        <a href="/dist/faq/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             FAQ
             <div class="grid place-items-center md:hidden">
@@ -114,7 +114,7 @@
           </div>
           <hr>
         </a>
-        <a href="/freelance/otec/dist/contact/index.html" class="nav-btn md:mr-7">
+        <a href="/dist/contact/index.html" class="nav-btn md:mr-7">
           <div class="nav-mobile-btn">
             Contact
             <div class="grid place-items-center md:hidden">
@@ -144,11 +144,12 @@
         </div>
       </nav>
     </div>
+
     <!-- Hero -->
     <header class="h-full relative">
       <div class="container text-white flex items-center h-3/4">
         <div>
-          <h1 class="leading-none text-7xl md:text-9xl">PATIENT <br>CENTERED <br class="tablet:hidden">CARE</h1>
+          <h1 class="leading-none  text-7xl md:text-9xl">PATIENT <br>CENTERED <br class="tablet:hidden">CARE</h1>
           <br>
           <h3 class="md:text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical and surgical care
             where
@@ -216,7 +217,7 @@
         <i class="fas fa-arrow-right text-white text-xl"></i>
       </div>
     </div>
-
+    
   </section>
 
   <section class="flex flex-col tablet:flex-row md:hidden">
@@ -340,7 +341,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Footer Section -->
   <footer class="text-xs">
     <div class="flex flex-col lg:flex-row pb-5 container">
@@ -357,17 +358,17 @@
         <h4 class="uppercase hidden md:block">Get In Touch</h4>
         <div class="grid grid-cols-2">
           <div>
-            <a href="/freelance/otec/dist/index.html">Home</a>
-            <a href="/freelance/otec/dist/about/index.html">About</a>
-            <a href="/freelance/otec/dist/services/index.html">Services</a>
-            <a href="/freelance/otec/dist/news/index.html">News</a>
-            <a href="/freelance/otec/dist/faq/index.html">FAQ</a>
+            <a href="/dist/index.html">Home</a>
+            <a href="/dist/about/index.html">About</a>
+            <a href="/dist/services/index.html">Services</a>
+            <a href="/dist/news/index.html">News</a>
+            <a href="/dist/faq/index.html">FAQ</a>
           </div>
           <div>
-            <a href="/freelance/otec/dist/contact/index.html">Contact</a>
-            <a href="/freelance/otec/dist/careers/index.html">Careers</a>
-            <a href="/freelance/otec/dist/privacy-policy/index.html">Privacy Policy</a>
-            <a href="/freelance/otec/dist/terms-and-conditions/index.html">Terms & Conditions</a>
+            <a href="/dist/contact/index.html">Contact</a>
+            <a href="/dist/careers/index.html">Careers</a>
+            <a href="/dist/privacy-policy/index.html">Privacy Policy</a>
+            <a href="/dist/terms-and-conditions/index.html">Terms & Conditions</a>
             <br>
             <div class="hidden tablet:flex">
               <a href="facebook.com" class="grid place-items-center">
