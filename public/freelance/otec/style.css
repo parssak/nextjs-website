@@ -19403,6 +19403,86 @@ footer h4 {
   content: " ";
 }
 
+.banner-yellow-underline {
+  font-size: 3rem;
+  position: relative;
+}
+
+.banner-yellow-underline::after {
+  --tw-bg-opacity: 1;
+  background-color: rgba(252, 192, 16, var(--tw-bg-opacity));
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  content: " ";
+}
+
+.otec-card {
+  --tw-bg-opacity: 1;
+  background-color: rgba(246, 246, 246, var(--tw-bg-opacity));
+  display: grid;
+  margin-right: 1.25rem;
+  position: relative;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 600px){
+  .otec-card{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 13rem;
+    max-width: 36rem;
+  }
+}
+
+@media (min-width: 946px){
+  .otec-card{
+    --tw-bg-opacity: 1;
+    background-color: rgba(39, 38, 44, var(--tw-bg-opacity));
+    border-radius: 0.5rem;
+    height: 24rem;
+    max-width: 100%;
+    overflow: hidden;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+  }
+}
+
+.otec-card__text {
+  line-height: 1.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+}
+
+@media (min-width: 600px){
+  .otec-card__text{
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 946px){
+  .otec-card__text{
+    line-height: 2.5rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+.otec-card__media {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
 @media (min-width: 480px){
   .sm\:container{
     width: 100%;

@@ -5,16 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/dist/style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://kit.fontawesome.com/3a13ad6625.js" crossorigin="anonymous"></script>
-  <title>OTEC</title>
+  <title>BOILERPLATE</title>
 </head>
 
 <body>
-  <div class="h-screen bg-no-repeat	bg-cover" style="background-image:url(public/hero-img.png);">
-    <div class="z-0 h-screen w-full bg-black bg-opacity-50 absolute top-0 left-0"></div>
-    <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
+  <div class="h-20">
     <div x-data="{ open: false }" class="nav-container z-50">
       <div :class="{'fixed': open, 'hidden': !open}"
         class="h-screen w-screen fixed top-0 z-0 bg-black opacity-50 pointer-events-none md:hidden"></div>
@@ -146,167 +145,101 @@
     </div>
 
     <!-- Hero -->
-    <header class="h-full relative">
-      <div class="container text-white flex items-center h-3/4">
-        <div>
-          <h1 class="leading-none  text-7xl md:text-9xl">PATIENT <br>CENTERED <br class="tablet:hidden">CARE</h1>
-          <br>
-          <h3 class="md:text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical and surgical care
-            where
-            the patient
-            experience comes
-            first.</h3>
-          <div class="flex mt-10 text-xs">
-            <button class="btn bg-white text-black mr-2">About Us <i
-                class="fas fa-arrow-right ml-2 text-accent"></i></button>
-            <button class="btn bg-accent text-black">Contact <i class="fas fa-arrow-right ml-2 text-black"></i></button>
-          </div>
-        </div>
+  </div>
+  <header class="h-52 relative overflow-hidden bg-cover bg-no-repeat bg-center" style="background-image: url(/dist/public/eye-doctor.png)">
+    <div class="absolute h-full w-full bg-black opacity-70"></div>
+    <div class="container text-white relative z-10 h-full w-full flex items-center">
+      <h1 class="text-5xl">About Us</h1>
+    </div>
+  </header>
+  <div class="bg-accent">
+    <div class="container flex flex-col md:flex-row">
+      <div class="w-full flex items-center my-3 md:my-0">
+        <img src="/dist/public/icons/asterisk.svg" class="w-7 mr-3">
+        <h2 class="text-4xl">Our Mission</h2>
       </div>
-    </header>
+      <div class="w-full mb-5 md:mb-0">
+        <p class="text-sm font-semibold">
+          We aim to deliver exceptional clinical and surgical care
+          and outcomes, achieved through outstanding skill,
+          experience, and passion, further augmented by state of
+          the art technology in a modern practice setting where the
+          patient experience comes first.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <section class="container hidden md:grid grid-cols-3 grid-rows-2 gap-3 mt-10">
-    <div class="col-span-2">
-      <h3 class="text-4xl mb-5">Supporting Patients And <br>
-        Referring Doctors
-      </h3>
-      <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do iusmod tempor incididunt ut
-        labore et dolore
-        magna
-        aliqua.</p>
-      <button class="btn border-2 border-grey">FAQ <i class="fas fa-arrow-right ml-2 text-accent"></i></button>
+  <section class="container mt-10">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full mb-3 md:mb-0">
+        <img src="/dist/public/dr-dang.png" class="md:max-w-lg">
+      </div>
+      <div class="w-full md:p-3 pt-0">
+        <h3 class="text-3xl">Dr Natasha Dang</h3>
+        <h4 class="text-lg">BMSc MD FRCSC Ophthalmology</h4>
+        <br>
+        <p class="text-lg leading-8">
+          Dr Natasha Dang is a comprehensive Ophthalmologist.
+          Dr Dang is from Edmonton, AB; she completed a Bachelor of
+          Medical Sciences degree at the University of Alberta, followed
+          by her Doctor of Medicine Degree, also at the University of
+          Alberta. She then completed a rigorous residency training
+          program in Ophthalmology at the University of Toronto,
+          graduating as a Fellow of the Royal College of Surgeons in
+          Ophthalmology in 2015. Throughout her training, Dr Dang
+          was the recipient of numerous distinguished awards; she
+          maintained a grade point average in the top 2% of university
+          students throughout her academic career, and, among other
+          things, was one of only twenty students in Canada to receive a
+          prestigious national scholarship for outstanding academics
+          and leadership. Dr Dang has been in practice as a
+          comprehensive ophthalmologist, serving both Peel and
+          Halton regions, since 2015.
+        </p>
+      </div>
     </div>
-    <div class="bg-darkgrey rounded-md text-white p-5">
-      <img src="public/icons/pencil.svg" alt="File Icon" class="w-8">
-      <h4 class="text-2xl my-5 leading-tight ">Patient <br> Pre-Check In</h4>
-      <p class="text-sm leading-6">
-        Prepare for your appointment <br> and check in ahead of time.
+    <div class="mt-10">
+      <p class="max-w-full text-lg leading-8">
+        Dr Dang has privileges at Oakville Trafalgar Memorial Hospital (OTMH); she performs cataract surgery at OTMH,
+        and also,
+        provides regional emergency after hours coverage through Halton Healthcare. She is a Fellow of the Royal College
+        of
+        Surgeons of Canada, and a member of the Eye Physicians and Surgeons of Ontario, the Canadian Ophthalmology
+        Society,
+        the American Academy of Ophthalmology, and the American Society of Cataract and Refractive Surgeons.
       </p>
-      <div class="w-11 h-11 rounded-full border border-accent grid place-items-center mt-5">
-        <i class="fas fa-arrow-right text-accent text-xl"></i>
-      </div>
-    </div>
-    <div class="bg-darkgrey rounded-md text-white p-5">
-      <img src="public/icons/health-kit.svg" alt="File Icon" class="w-8">
-      <h4 class="text-2xl my-5 leading-tight ">Patient <br> Services</h4>
-      <p class="text-sm leading-6">
-        Explore the conditions we treat <br> and equipment used.
-      </p>
-      <div class="w-11 h-11 rounded-full border border-accent grid place-items-center mt-5">
-        <i class="fas fa-arrow-right text-accent text-xl"></i>
-      </div>
-    </div>
-    <div class="rounded-md p-5" style="background: #FDF6E2">
-      <img src="public/icons/computer.svg" alt="File Icon" class="w-12">
-      <h4 class="text-2xl my-5 leading-tight ">Patient <br> Resources</h4>
-      <p class="text-sm leading-6">
-        Learn more about eye conditions <br> and services at OTEC.
-      </p>
-      <div class="w-11 h-11 rounded-full border border-black grid place-items-center mt-5">
-        <i class="fas fa-arrow-right text-black text-xl"></i>
-      </div>
-    </div>
-    <div class="bg-accent rounded-md text-white p-5">
-      <img src="public/icons/feather-file-text.svg" alt="File Icon" class="w-8">
-      <h4 class="text-2xl my-5 leading-tight ">Easy Referral</h4>
-      <p class="text-sm leading-6">
-        Ready to refer a patient? We <br> make the referral process both <br> easy and efficient
-      </p>
-      <div class="w-11 h-11 rounded-full border border-white grid place-items-center mt-5">
-        <i class="fas fa-arrow-right text-white text-xl"></i>
-      </div>
-    </div>
-    
-  </section>
-
-  <section class="flex flex-col tablet:flex-row md:hidden">
-    <div class="container">
-      <div class="flex items-center mt-10">
-        <h2 class="text-4xl">Patients</h2>
-        <img src="public/icons/people.svg" alt="Mail Icon" class="ml-3">
-      </div>
-      <h3 class="text-lg">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      </h3>
-      <div class="mt-5 mb-16 flex tablet:flex-col tablet:w-3/4 tablet:mb-10">
-        <button class="btn bg-grey text-white w-1/2 tablet:w-full mr-2 tablet:mr-0 tablet:mb-3">Pre Check-In <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
-        <button class="btn bg-grey text-white w-1/2 tablet:w-full">Resources <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
-      </div>
-    </div>
-    <div class="container bg-accent">
-      <div class="flex items-center mt-10">
-        <h2 class="text-4xl">Referring Doctor</h2>
-        <img src="public/icons/medical.svg" alt="Mail Icon" class="ml-3">
-      </div>
-      <h3 class="text-lg">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      </h3>
-      <div class="mt-5 mb-16">
-        <button class="btn bg-white text-black mr-2">Easy Referral <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
-      </div>
     </div>
   </section>
 
-  <div class="bg-grey text-white">
-    <div class="container grid place-items-center">
-      <h2 class="text-4xl mt-10">About OTEC</h2>
-      <h3 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, minus.</h3>
-      <button class="btn bg-accent text-black my-7 mb-10">Learn More <i
-          class="fas fa-arrow-right ml-2 text-grey"></i></button>
+  <div class="text-white banner-yellow-underline h-40 bg-cover bg-no-repeat bg-center" style="background-image: url(/dist/public/eye-doctor.png)">
+    <div class="absolute h-full w-full bg-black opacity-70"></div>
+    <div class="container flex items-center h-full relative z-10">
+      <h2>Meet the team</h2>
     </div>
   </div>
 
   <section class="container flex flex-col items-center">
-    <h3 class="text-center text-xl mb-5">Google Reviews</h3>
-    <div class="flex flex-col md:flex-row">
-      <div class="card">
-        <h4>Reviewer Name</h4>
-        <div class="flex">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <small class="text-xs">4.9</small>
-        </div>
-        <blockquote class="my-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic corporis placeat alias provident necessitatibus
-          officia quisquam impedit, unde optio beatae!
-        </blockquote>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div>
+        <img src="/dist/public/doctor-img.png">
+        <h4 class="text-xl mt-3">Dr. Name</h4>
+        <p class="text-lg">Position</p>
       </div>
-      <div class="card md:ml-3">
-        <h4>Reviewer Name</h4>
-        <div class="flex">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <small class="text-xs">4.9</small>
-        </div>
-        <blockquote class="my-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic corporis placeat alias provident necessitatibus
-          officia quisquam impedit, unde optio beatae!
-        </blockquote>
+      <div>
+        <img src="/dist/public/doctor-img.png">
+        <h4 class="text-xl mt-3">Dr. Name</h4>
+        <p class="text-lg">Position</p>
       </div>
-      <div class="card md:ml-3">
-        <h4>Reviewer Name</h4>
-        <div class="flex">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <img src="public/icons/star.svg" alt="Phone Icon" class="mr-1">
-          <small class="text-xs">4.9</small>
-        </div>
-        <blockquote class="my-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic corporis placeat alias provident necessitatibus
-          officia quisquam impedit, unde optio beatae!
-        </blockquote>
+      <div>
+        <img src="/dist/public/doctor-img.png">
+        <h4 class="text-xl mt-3">Dr. Name</h4>
+        <p class="text-lg">Position</p>
+      </div>
+      <div>
+        <img src="/dist/public/doctor-img.png">
+        <h4 class="text-xl mt-3">Dr. Name</h4>
+        <p class="text-lg">Position</p>
       </div>
     </div>
   </section>
@@ -341,7 +274,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Footer Section -->
   <footer class="text-xs">
     <div class="flex flex-col lg:flex-row pb-5 container">
