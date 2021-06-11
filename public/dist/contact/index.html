@@ -150,113 +150,122 @@
     style="background-image: url(/dist/public/eye-doctor.png)">
     <div class="absolute h-full w-full bg-black opacity-70"></div>
     <div class="container text-white relative z-10 h-full w-full flex items-center">
-      <h1 class="text-5xl">Patients</h1>
+      <h1 class="text-5xl">Contact Us</h1>
     </div>
     <div class="h-2 w-full bg-accent z-20 absolute bottom-0"></div>
   </header>
 
-  <section class="container mt-5 relative w-full ">
-    <div class="hidden md:block">
-      <i class="text-5xl text-accent fas fa-laptop my-3"></i>
-    </div>
-    <h3 class="text-3xl md:text-5xl mb-3">Patient Resources</h3>
-    <ul class="list-disc leading-8 pl-5">
-      <li>Eye Physicians and Surgeons of Ontario (EPSO)</li>
-      <li>Canadian Ophthalmological Society (COS)</li>
-      <li>American Academy of Ophthalmology (AAO)</li>
-      <li>American Society of Cataract and Refractive Surgeons (ASCRS)</li>
-    </ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="bg-lightestgrey ">
-    <div class="container leading-5 p-3 tablet:flex">
-      <div class="tablet:w-full">
-        <div class=" with-underline">
+  <div class="min-h-screen flex flex-col">
+    <section class="container mt-5 relative w-full tablet:grid grid-cols-5 gap-5">
+      <div class="col-span-3">
+        <h3 class="text-3xl my-3">Oakville Trafalgar Eye Center</h3>
+        <div class="tablet:w-full">
+          <div class=" with-underline">
+            <div class="flex items-center p-5">
+              <img src="/dist/public/icons/phone.svg" alt="Phone Icon" class="mr-5">
+              <span>(000) 000-0000</span>
+            </div>
+          </div>
+          <div class="with-underline">
+            <div class="flex items-center p-5">
+              <img src="/dist/public/icons/mail.svg" alt="Mail Icon" class="mr-5">
+              <span>office@OTeye.ca</span>
+            </div>
+          </div>
           <div class="flex items-center p-5">
-            <img src="/dist/public/icons/phone.svg" alt="Phone Icon" class="mr-5">
-            <span>(000) 000-0000</span>
+            <img src="/dist/public/icons/location.svg" alt="Location Icon" class="mr-5">
+            <span>
+              000 Hospital Gate <br>
+              Oakville, ON L6M 0L8
+            </span>
           </div>
         </div>
-        <div class="with-underline">
-          <div class="flex items-center p-5">
-            <img src="/dist/public/icons/mail.svg" alt="Mail Icon" class="mr-5">
-            <span>office@OTeye.ca</span>
+      </div>
+      <div class="col-start-5">
+        <h3 class="text-3xl my-3 mb-5">Follow Us</h3>
+        <div class="flex items-center my-3">
+          <a href="facebook.com" class="grid place-items-center">
+            <img src="/dist/public/icons/facebook-grey.svg" alt="Twitter Icon" class="w-5 mr-3">
+          </a>
+          <span>@facebook</span>
+        </div>
+        <div class="flex items-center my-3">
+          <a href="twitter.com" class="grid place-items-center">
+            <img src="/dist/public/icons/twitter-grey.svg" alt="Twitter Icon" class="w-5 mr-3">
+          </a>
+          <span>@twitter</span>
+        </div>
+        <div class="flex items-center my-3">
+          <a href="instagram.com" class="grid place-items-center">
+            <img src="/dist/public/icons/instagram-grey.svg" alt="Instagram Icon" class="w-5 mr-3">
+          </a>
+          <span>@instagram</span>
+        </div>
+        <a href="instagram.com" class="grid place-items-center">
+          <img src="/dist/public/icons/instagram.svg" alt="Instagram Icon" class="w-5">
+        </a>
+      </div>
+    </section>
+  
+    <!-- Footer Section -->
+    <footer class="text-xs mt-auto">
+      <div class="flex flex-col lg:flex-row pb-5 container">
+        <div class="px-3 md:px-10 w-full">
+          <h4 class="uppercase">Subscribe to the OTEC Newsletter</h4>
+          <div class="relative mb-10">
+            <input type="email" name="email-subscribe"
+              class="text-white border border-lightgrey bg-transparent w-full h-full btn" style="font-family: Montserrat"
+              placeholder="Email">
+            <button class="btn bg-accent text-black absolute right-0 h-full">Subscribe</button>
           </div>
         </div>
-        <div class="flex items-center p-5">
-          <img src="/dist/public/icons/location.svg" alt="Location Icon" class="mr-5">
-          <span>
-            000 Hospital Gate <br>
-            Oakville, ON L6M 0L8
-          </span>
-        </div>
-      </div>
-      <div class="tablet:w-full hidden tablet:block">
-        <!-- TODO GET MAP -->
-        EMBED MAP GOES HERE
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="text-xs">
-    <div class="flex flex-col lg:flex-row pb-5 container">
-      <div class="px-3 md:px-10 w-full">
-        <h4 class="uppercase">Subscribe to the OTEC Newsletter</h4>
-        <div class="relative mb-10">
-          <input type="email" name="email-subscribe"
-            class="text-white border border-lightgrey bg-transparent w-full h-full btn" style="font-family: Montserrat"
-            placeholder="Email">
-          <button class="btn bg-accent text-black absolute right-0 h-full">Subscribe</button>
-        </div>
-      </div>
-      <div class="px-3 md:px-10 w-full ">
-        <h4 class="uppercase hidden md:block">Get In Touch</h4>
-        <div class="grid grid-cols-2">
-          <div>
-            <a href="/dist/index.html">Home</a>
-            <a href="/dist/about/index.html">About</a>
-            <a href="/dist/services/index.html">Services</a>
-            <a href="/dist/news/index.html">News</a>
-            <a href="/dist/faq/index.html">FAQ</a>
-          </div>
-          <div>
-            <a href="/dist/contact/index.html">Contact</a>
-            <a href="/dist/careers/index.html">Careers</a>
-            <a href="/dist/privacy-policy/index.html">Privacy Policy</a>
-            <a href="/dist/terms-and-conditions/index.html">Terms & Conditions</a>
-            <br>
-            <div class="hidden tablet:flex">
+        <div class="px-3 md:px-10 w-full ">
+          <h4 class="uppercase hidden md:block">Get In Touch</h4>
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="/dist/index.html">Home</a>
+              <a href="/dist/about/index.html">About</a>
+              <a href="/dist/services/index.html">Services</a>
+              <a href="/dist/news/index.html">News</a>
+              <a href="/dist/faq/index.html">FAQ</a>
+            </div>
+            <div>
+              <a href="/dist/contact/index.html">Contact</a>
+              <a href="/dist/careers/index.html">Careers</a>
+              <a href="/dist/privacy-policy/index.html">Privacy Policy</a>
+              <a href="/dist/terms-and-conditions/index.html">Terms & Conditions</a>
+              <br>
+              <div class="hidden tablet:flex">
+                <a href="facebook.com" class="grid place-items-center">
+                  <img src="/dist/public/icons/facebook.svg" alt="Facebook Icon" class="w-5 mr-3">
+                </a>
+                <a href="twitter.com" class="grid place-items-center">
+                  <img src="/dist/public/icons/twitter.svg" alt="Twitter Icon" class="w-5 mr-3">
+                </a>
+                <a href="instagram.com" class="grid place-items-center">
+                  <img src="/dist/public/icons/instagram.svg" alt="Instagram Icon" class="w-5">
+                </a>
+              </div>
+            </div>
+            <div class="flex tablet:hidden mt-5">
               <a href="facebook.com" class="grid place-items-center">
-                <img src="/dist/public/icons/facebook.svg" alt="Facebook Icon" class="w-5 mr-3">
+                <img src="/dist/public/icons/facebook.svg" alt="Facebook Icon" class="w-8 mr-3">
               </a>
               <a href="twitter.com" class="grid place-items-center">
-                <img src="/dist/public/icons/twitter.svg" alt="Twitter Icon" class="w-5 mr-3">
+                <img src="/dist/public/icons/twitter.svg" alt="Twitter Icon" class="w-8 mr-3">
               </a>
               <a href="instagram.com" class="grid place-items-center">
-                <img src="/dist/public/icons/instagram.svg" alt="Instagram Icon" class="w-5">
+                <img src="/dist/public/icons/instagram.svg" alt="Instagram Icon" class="w-8">
               </a>
             </div>
           </div>
-          <div class="flex tablet:hidden mt-5">
-            <a href="facebook.com" class="grid place-items-center">
-              <img src="/dist/public/icons/facebook.svg" alt="Facebook Icon" class="w-8 mr-3">
-            </a>
-            <a href="twitter.com" class="grid place-items-center">
-              <img src="/dist/public/icons/twitter.svg" alt="Twitter Icon" class="w-8 mr-3">
-            </a>
-            <a href="instagram.com" class="grid place-items-center">
-              <img src="/dist/public/icons/instagram.svg" alt="Instagram Icon" class="w-8">
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-    <div class="text-center py-5">
-      © Oakville Trafalgar Eye Centre 2021
-    </div>
-  </footer>
+      <div class="text-center py-5">
+        © Oakville Trafalgar Eye Centre 2021
+      </div>
+    </footer>
+  </div>
 </body>
 
 </html>
