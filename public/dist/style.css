@@ -19199,9 +19199,19 @@ h3 {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @media (min-width: 946px){
+  .nav-dropdown-btn:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(246, 246, 246, var(--tw-bg-opacity));
+  }
+
   .nav-dropdown-btn{
     margin-top: 0px;
   }
@@ -19216,9 +19226,19 @@ h3 {
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @media (min-width: 946px){
+  .nav-btn:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(246, 246, 246, var(--tw-bg-opacity));
+  }
+
   .nav-btn{
     font-size: .875rem;
     padding-left: 0.5rem;
@@ -19257,10 +19277,6 @@ h3 {
   width: calc(100% - 2rem);
   bottom: -5px;
   height: 1px;
-}
-
-.nav {
-  /* height: calc(100vh - 4rem); */
 }
 
 .nav hr {
@@ -19345,6 +19361,11 @@ footer h4 {
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @media (min-width: 1100px){
@@ -19481,6 +19502,25 @@ footer h4 {
   height: 100%;
   overflow: hidden;
   width: 100%;
+}
+
+.btn,
+.btn > .fa-arrow-right,
+.arrow-transition,
+.arrow-transition > .fa-arrow-right {
+  transition: all 0.1s ease;
+}
+
+.arrow-transition:hover > .fa-arrow-right {
+  transform: translateX(5px);
+}
+
+.btn:hover {
+  filter: brightness(1.04);
+}
+
+.btn:hover > .fa-arrow-right {
+  transform: translateX(2px);
 }
 
 @media (min-width: 480px){

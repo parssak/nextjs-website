@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/dist/style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://kit.fontawesome.com/3a13ad6625.js" crossorigin="anonymous"></script>
-  <title>Patients</title>
+  <title>Services | Dry Eye</title>
 </head>
 
 <body>
@@ -77,16 +77,16 @@
           </button>
           <div x-show="open" class="nav-dropdown-container">
             <div class="p-2">
-              <a class="nav-dropdown-btn" href="/dist/patients/cataract.html">Cataract</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/diabetes.html">Diabetes</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/glaucoma.html">Glaucoma</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/macular-degeneration.html">Macular
+              <a class="nav-dropdown-btn" href="/dist/services/cataract.html">Cataract</a>
+              <a class="nav-dropdown-btn" href="/dist/services/diabetes.html">Diabetes</a>
+              <a class="nav-dropdown-btn" href="/dist/services/glaucoma.html">Glaucoma</a>
+              <a class="nav-dropdown-btn" href="/dist/services/macular-degeneration.html">Macular
                 Degeneration</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/dry-eye.html">Dry Eye</a>
+              <a class="nav-dropdown-btn" href="/dist/services/dry-eye.html">Dry Eye</a>
             </div>
           </div>
         </div>
-        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/services/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Services
             <div class="grid place-items-center md:hidden">
@@ -124,22 +124,25 @@
         </a>
         <div
           class="pl-4 md:p-0 mt-7 md:mt-0 md:mb-0 flex flex-start tablet:justify-center flex-col tablet:flex-row md:flex-col text-sm">
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full">
+          <a
+            href="/dist/actions/pre-check-in.html"
+            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full arrow-transition">
             <img src="/dist/public/icons/pencil.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Pre Check-In
             </span>
             <i class="fas fa-arrow-right ml-auto text-accent lg:text-lg"></i>
-          </button>
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex">
+          </a>
+          <a
+href="/dist/actions/easy-referral.html"
+
+            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex arrow-transition">
             <img src="/dist/public/icons/feather-file-text.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Easy Referral
             </span>
             <i class="fas fa-arrow-right ml-auto text-darkgrey lg:text-lg"></i>
-          </button>
+          </a>
         </div>
       </nav>
     </div>
@@ -155,43 +158,82 @@
     <div class="h-2 w-full bg-accent z-20 absolute bottom-0"></div>
   </header>
 
-  <section class="container mt-5 relative w-full grid grid-cols-2">
+  <section class="container mt-5 relative w-full grid md:grid-cols-2 gap-5">
     <div>
       <h3 class="text-3xl my-3">What Is Dry Eye?</h3>
-      <p class="leading-7">
-        Blepharitis is extremely common, especially in people with oily skin or underlying rosacea. Blepharitis refers to
-        chronic inflammation of the eyelids and usually presents with symptoms such as red, itchy eyelids, flaky eyelid skin,
-        waking up with sticky discharge, or lids crusted together and difficult to open in the morning. In severe cases,
-        blepharitis may lead to styes.
-        <br><br>
-        Blepharitis is often misdiagnosed and incorrectly treated as pink eye with antibiotics; antibiotics are not effective
-        for blepharitis.
+      <p class="leading-8 max-w-full">
+        Dry eye is perhaps the single most common eye condition faced by our patients. Dry eye occurs when the eye does
+        not
+        produce enough tears, or does not have enough quality tears, to keep the surface of the cornea moist.
+      </p>
+      <h3 class="text-3xl my-3">Causes</h3>
+      <p class="leading-8 max-w-full">
+        Dry eye causes a wide range of symptoms. It is the most common cause of tearing or watering; classically,
+        tearing
+        related to dry eye is exacerbated by with exposure to cold, wind, or sun. Dry eye can be painful and may feel
+        like a
+        dull gritty, or sandy, sensation at times, and like a sharp stabbing pain at other times. Dry eye also causes
+        transient
+        blurry vision, especially blurring of vision after moments of focused visual activity such as reading, TV
+        watching, or
+        driving. Redness may also be a sign of dry eye.
       </p>
     </div>
-    <img src="/dist/public/dry-eye.png">
+      <img src="/dist/public/dry-eye.png" class="w-full object-cover">
   </section>
-  
-  <section class="container mt-5 relative w-full leading-8 ">
-      <h3 class="text-3xl my-3">Treatment Options</h3>
-      <p class="max-w-full mb-3">
-        Blepharitis has no cure but can be managed by adding some simple practices to your daily routine:
-      </p>
-      <ul class="list-disc pl-5 leading-8 mb-3">
-        <li>Warm compresses using a hot towel, or a microwaveable eye mask, such as a Bruder eye mask, for five minutes twice a day.</li>
-        <li>Lid hygiene using baby shampoo diluted in warm water, or alternatively, commercially available eyelid wipes such as
-        Systane Lid Wipes, Blephaclean, Blephagel, Blephadex, or Cliradex to clean along the eyelid
-        margin and eyelashes twice a day.</li>
-      </ul>
-      <p class="max-w-full leading-8">
-        In some cases, where blepharitis is not responsive to conservative therapies, we may suggest a long term course of low
-        dose antibiotics to reduce the skin inflammation. We may also ask you to apply an antibiotic ointment to your eyelashes
-        at bedtime.
-        <br><br>        
-        There are additional, non insured, treatments available for blepharitis such as mechanical expression of the eyelid
-        glands, Lipiflow therapy, or intense pulsed light laser therapy. We do not perform or offer any of these ancillary
-        treatments, however, many of our Optometry colleagues do, and, if you do not have an Optometrist, we can refer you to an
-        Optometrist specializing in blepharitis if you would like to explore one of these therapies.
-      </p>
+
+  <section class="container  leading-8 ">
+    <h3 class="text-3xl my-3">Treatment Options</h3>
+    <p class="max-w-full mb-3">
+      There is no cure for dry eye. Most cases are mild and can be managed simply with conservative treatments:
+    </p>
+    <ul class="list-disc pl-5 leading-8 mb-3">
+      <li>Artifical tears four times a day; preservative free artificial tears if needed more than four times per day.</li>
+      <li>Lubricating gel or ointment at bedtime.</li>
+      <li>Warm compresses using a hot towel, or a microwaveable eye mask, such as a Bruder eye mask, for five minutes twice a day.</li>
+      <li>Omega-3 fatty acid supplements.</li>
+      <li>Humidifier on in bedroom at night.</li>
+      <li>Directing car heating vents away from face.</li>
+      <li>Limiting screen time.</li>
+    </ul>
+    <p class="max-w-full leading-8">
+      Many patients ask us which brand of artificial tears to use. We advise patients that artificial tears are a personal
+      preference, much like a choice of facial lotion or hand moisturizer, and we cannot predict which brands may suit you
+      best or be at a suitable price point. For mild cases of dry eye in younger patients who have not had eye surgery, and
+      don’t take glaucoma drops, any of the readily available drop formulations on drug store shelves should be suitable
+      including: Refresh Optive Advanced, Systane Ultra, Systane Complete, or Hydrasense. Moderate to severe cases, especially
+      in patients who use glaucoma drops, or have had laser eye surgery or cataract surgery, would benefit from preservative
+      free artificial tears. A common combination we recommend is Hylo drops four times a day with Ocunox gel at night; both
+      products are available in drugstores, and at our office. Hylo Gel, Hylo Dual, Hyabak, Thealoz, and Thealoz Duo are other
+      well known preservative free options. Many patients also ask us why artificial tears are not covered by OHIP or their
+      insurance plans; again, analogous to facial moisturizers or hand creams, lubricating eye drops are not covered.
+    </p>
+  </section>
+
+  <section class="container  leading-8 ">
+    <h3 class="text-3xl my-3">Moderate to Severe Cases</h3>
+    <p class="max-w-full mb-3">
+      Moderate to severe cases of dry eye can be treated with medical management including:
+    </p>
+    <ul class="list-disc pl-5 leading-8 mb-3">
+      <li>Topical Restasis eye drops.</li>
+      <li>Topical Xiidra eye drops.</li>
+      <li>A course of low dose oral antibiotics.</li>
+    </ul>
+    <p class="max-w-full leading-8">
+      Topical Restasis and Xiidra are slow-acting medications intended for long term use, only in patients with dry eye
+      refractory to conservative management. Very severe cases of intractable dry eye may benefit from serum tears and/or
+      punctal plugs or punctal cautery.
+      <br><br>
+      There are additional, non insured, treatments available for dry eye such as mechanical expression of the eyelid glands,
+      Lipiflow therapy, or intense pulsed light laser therapy. We do not perform or offer any of these ancillary treatments,
+      however, many of our Optometry colleagues do, and, if you do not have an Optometrist, we can refer you to an Optometrist
+      specializing in dry eye if you would like to explore one of these therapies.
+      <br><br>
+      Rarely, some cases of dry eye feature pain out of proportion to findings and do not resolve with any of the treatments
+      described above. In these cases, we suspect that the pain is neuropathic, or nerve-based, in origin and we enlist the
+      help of other specialists such as Neurologists to help manage your symptoms with oral medications.
+    </p>
   </section>
   <!-- Contact Section -->
   <section class="bg-lightestgrey ">

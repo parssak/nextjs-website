@@ -41,8 +41,8 @@
         <a href="/dist/about/index.html" class="nav-btn">
           <div class="nav-mobile-btn">
             About Us
-            <div class="grid place-items-center md:hidden">
-              <i class="fas fa-chevron-right mt-2 text-darkgrey"></i>
+            <div class="grid place-items-center md:hidden>
+              <i class=" fas fa-chevron-right mt-2 text-darkgrey"></i>
             </div>
           </div>
           <hr>
@@ -78,16 +78,16 @@
           </button>
           <div x-show="open" class="nav-dropdown-container">
             <div class="p-2">
-              <a class="nav-dropdown-btn" href="/dist/patients/cataract.html">Cataract</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/diabetes.html">Diabetes</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/glaucoma.html">Glaucoma</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/macular-degeneration.html">Macular
+              <a class="nav-dropdown-btn" href="/dist/services/cataract.html">Cataract</a>
+              <a class="nav-dropdown-btn" href="/dist/services/diabetes.html">Diabetes</a>
+              <a class="nav-dropdown-btn" href="/dist/services/glaucoma.html">Glaucoma</a>
+              <a class="nav-dropdown-btn" href="/dist/services/macular-degeneration.html">Macular
                 Degeneration</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/dry-eye.html">Dry Eye</a>
+              <a class="nav-dropdown-btn" href="/dist/services/dry-eye.html">Dry Eye</a>
             </div>
           </div>
         </div>
-        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/services/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Services
             <div class="grid place-items-center md:hidden">
@@ -125,22 +125,22 @@
         </a>
         <div
           class="pl-4 md:p-0 mt-7 md:mt-0 md:mb-0 flex flex-start tablet:justify-center flex-col tablet:flex-row md:flex-col text-sm">
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full">
+          <a href="/dist/actions/pre-check-in.html"
+            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full arrow-transition">
             <img src="/dist/public/icons/pencil.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Pre Check-In
             </span>
             <i class="fas fa-arrow-right ml-auto text-accent lg:text-lg"></i>
-          </button>
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex">
+          </a>
+          <a href="/dist/actions/easy-referral.html"
+            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex arrow-transition">
             <img src="/dist/public/icons/feather-file-text.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Easy Referral
             </span>
             <i class="fas fa-arrow-right ml-auto text-darkgrey lg:text-lg"></i>
-          </button>
+          </a>
         </div>
       </nav>
     </div>
@@ -148,7 +148,7 @@
     <!-- Hero -->
     <header class="h-full relative">
       <div class="container text-white flex items-center h-3/4">
-        <div>
+        <div class="mt-40">
           <h1 class="leading-none  text-7xl md:text-9xl">PATIENT <br>CENTERED <br class="tablet:hidden">CARE</h1>
           <br>
           <h3 class="md:text-lg">Oakville Trafalgar Eye Centre aims to deliver exceptional clinical and surgical care
@@ -159,7 +159,8 @@
           <div class="flex mt-10 text-xs">
             <a class="btn bg-white text-black mr-2" href="/dist/about/index.html">About Us <i
                 class="fas fa-arrow-right ml-2 text-accent"></i></a>
-            <a class="btn bg-accent text-black" href="/dist/contact/index.html">Contact <i class="fas fa-arrow-right ml-2 text-black"></i></a>
+            <a class="btn bg-accent text-black" href="/dist/contact/index.html">Contact <i
+                class="fas fa-arrow-right ml-2 text-black"></i></a>
           </div>
         </div>
       </div>
@@ -175,9 +176,10 @@
         labore et dolore
         magna
         aliqua.</p>
-      <a class="btn border-2 border-grey" href="/dist/faq/index.html">FAQ <i class="fas fa-arrow-right ml-2 text-accent"></i></a>
+      <a class="btn border-2 border-grey" href="/dist/faq/index.html">FAQ <i
+          class="fas fa-arrow-right ml-2 text-accent"></i></a>
     </div>
-    <div class="bg-darkgrey rounded-md text-white p-5">
+    <a class="bg-darkgrey rounded-md text-white p-5" href="/dist/actions/pre-check-in.html">
       <img src="public/icons/pencil.svg" alt="File Icon" class="w-8">
       <h4 class="text-2xl my-5 leading-tight ">Patient <br> Pre-Check In</h4>
       <p class="text-sm leading-6">
@@ -186,7 +188,7 @@
       <div class="w-11 h-11 rounded-full border border-accent grid place-items-center mt-5">
         <i class="fas fa-arrow-right text-accent text-xl"></i>
       </div>
-    </div>
+    </a>
     <a class="bg-darkgrey rounded-md text-white p-5" href="/dist/services/index.html">
       <img src="public/icons/health-kit.svg" alt="File Icon" class="w-8">
       <h4 class="text-2xl my-5 leading-tight ">Patient <br> Services</h4>
@@ -197,7 +199,7 @@
         <i class="fas fa-arrow-right text-accent text-xl"></i>
       </div>
     </a>
-    <div class="rounded-md p-5" style="background: #FDF6E2" href="/dist/patients/resources.html">
+    <a class="rounded-md p-5" style="background: #FDF6E2" href="/dist/patients/resources.html">
       <img src="public/icons/computer.svg" alt="File Icon" class="w-12">
       <h4 class="text-2xl my-5 leading-tight ">Patient <br> Resources</h4>
       <p class="text-sm leading-6">
@@ -206,8 +208,8 @@
       <div class="w-11 h-11 rounded-full border border-black grid place-items-center mt-5">
         <i class="fas fa-arrow-right text-black text-xl"></i>
       </div>
-    </div>
-    <div class="bg-accent rounded-md text-white p-5">
+    </a>
+    <a class="bg-accent rounded-md text-white p-5" href="/dist/actions/easy-referral.html">
       <img src="public/icons/feather-file-text.svg" alt="File Icon" class="w-8">
       <h4 class="text-2xl my-5 leading-tight ">Easy Referral</h4>
       <p class="text-sm leading-6">
@@ -216,8 +218,7 @@
       <div class="w-11 h-11 rounded-full border border-white grid place-items-center mt-5">
         <i class="fas fa-arrow-right text-white text-xl"></i>
       </div>
-    </div>
-    
+    </a>
   </section>
 
   <section class="flex flex-col tablet:flex-row md:hidden">
@@ -230,10 +231,11 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </h3>
       <div class="mt-5 mb-16 flex tablet:flex-col tablet:w-3/4 tablet:mb-10">
-        <button class="btn bg-grey text-white w-1/2 tablet:w-full mr-2 tablet:mr-0 tablet:mb-3">Pre Check-In <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
-        <button class="btn bg-grey text-white w-1/2 tablet:w-full">Resources <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
+        <a href="/dist/actions/pre-check-in.html"
+          class="btn bg-grey text-white w-1/2 tablet:w-full mr-2 tablet:mr-0 tablet:mb-3 flex items-center arrow-transition">Pre
+          Check-In <i class="fas fa-arrow-right ml-auto text-lightgrey"></i></a>
+        <a class="btn bg-grey text-white w-1/2 tablet:w-full mr-2 tablet:mr-0 tablet:mb-3 flex items-center arrow-transition"
+          href="/dist/patients/resources.html">Resources <i class="fas fa-arrow-right ml-auto text-lightgrey"></i></a>
       </div>
     </div>
     <div class="container bg-accent">
@@ -245,8 +247,8 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </h3>
       <div class="mt-5 mb-16">
-        <button class="btn bg-white text-black mr-2">Easy Referral <i
-            class="fas fa-arrow-right ml-2 text-lightgrey"></i></button>
+        <a href="/dist/actions/easy-referral.html" class="btn bg-white text-black mr-2">Easy Referral <i
+            class="fas fa-arrow-right ml-2 text-lightgrey"></i></a>
       </div>
     </div>
   </section>
@@ -341,7 +343,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Footer Section -->
   <footer class="text-xs">
     <div class="flex flex-col lg:flex-row pb-5 container">

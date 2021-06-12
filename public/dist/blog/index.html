@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/dist/style.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://kit.fontawesome.com/3a13ad6625.js" crossorigin="anonymous"></script>
-  <title>Patients</title>
+  <title>OTEC | Blog</title>
 </head>
 
 <body>
@@ -77,16 +77,16 @@
           </button>
           <div x-show="open" class="nav-dropdown-container">
             <div class="p-2">
-              <a class="nav-dropdown-btn" href="/dist/patients/cataract.html">Cataract</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/diabetes.html">Diabetes</a>
-              <a class="nav-dropdown-btn" href="/dist/patients/glaucoma.html">Glaucoma</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/macular-degeneration.html">Macular
+              <a class="nav-dropdown-btn" href="/dist/services/cataract.html">Cataract</a>
+              <a class="nav-dropdown-btn" href="/dist/services/diabetes.html">Diabetes</a>
+              <a class="nav-dropdown-btn" href="/dist/services/glaucoma.html">Glaucoma</a>
+              <a class="nav-dropdown-btn" href="/dist/services/macular-degeneration.html">Macular
                 Degeneration</a>
-              <a class="block px-4 py-2 mt-2 md:mt-0" href="/dist/patients/dry-eye.html">Dry Eye</a>
+              <a class="nav-dropdown-btn" href="/dist/services/dry-eye.html">Dry Eye</a>
             </div>
           </div>
         </div>
-        <a href="/dist/patients/index.html" class="md:hidden nav-btn">
+        <a href="/dist/services/index.html" class="md:hidden nav-btn">
           <div class="nav-mobile-btn">
             Services
             <div class="grid place-items-center md:hidden">
@@ -124,22 +124,22 @@
         </a>
         <div
           class="pl-4 md:p-0 mt-7 md:mt-0 md:mb-0 flex flex-start tablet:justify-center flex-col tablet:flex-row md:flex-col text-sm">
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full">
+          <a href="/dist/actions/pre-check-in.html"
+            class="py-5 px-7 rounded-md flex items-center mt-4 sm:mt-2 mr-0 tablet:mr-2 md:mr-0 bg-darkgrey text-white md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:uppercase md:flex md:h-full arrow-transition">
             <img src="/dist/public/icons/pencil.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Pre Check-In
             </span>
             <i class="fas fa-arrow-right ml-auto text-accent lg:text-lg"></i>
-          </button>
-          <button
-            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex">
+          </a>
+          <a href="/dist/actions/easy-referral.html"
+            class="py-5 px-7 rounded-md flex items-center mt-2 bg-accent text-darkgrey md:px-5 md:rounded-none w-max md:w-full md:m-0 md:p-5 md:py-4 md:h-full md:uppercase md:flex arrow-transition">
             <img src="/dist/public/icons/feather-file-text.svg" alt="File Icon" class="w-3 mr-4 lg:w-4">
             <span class="mr-5">
               Easy Referral
             </span>
             <i class="fas fa-arrow-right ml-auto text-darkgrey lg:text-lg"></i>
-          </button>
+          </a>
         </div>
       </nav>
     </div>
