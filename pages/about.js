@@ -1,22 +1,49 @@
-import PageBase from '../components/PageBase'
-import { Container, Description, LinkText, SectionTitle, Subtitle, Title, TitleBall } from '../components/styles'
+import PageBase from "../components/PageBase";
+import {
+  Container,
+  Description,
+  LinkText,
+  SectionTitle,
+  Subtitle,
+  Title,
+  TitleBall,
+} from "../components/styles";
 
 export default function AboutPage() {
-    return (
-        <PageBase pageTitle='Parssa K | About'>
-            <Container>
-                <Title larger>About Me<TitleBall delay={1.3} duration={0.8} random={Math.random() * 360} /></Title>
-                <Subtitle>It's nice to meet you</Subtitle>
-                <SectionTitle>Hi, I'm Parssa</SectionTitle>
-                <Description >
-                    I'm a fullstack developer <LinkText href="https://www.airborneapp.io/" target="_about">@AirborneApp</LinkText>.
-                <br />
-                I'm also a Math/CS student <LinkText href="https://www.utoronto.ca/" target="_about">@UofT</LinkText>.
-            </Description>
-                <Description>
-                    I enjoy bringing ideas to life through code. I'm passionate about everything frontend & design related, and I put emphasis on UX and accessibility. I'm constantly learning new skills and technologies, and tinkering with them.
-            </Description>
-            </Container>
-        </PageBase>
-    )
+  return (
+    <PageBase pageTitle="Parssa K | About">
+      <Container>
+        <Title larger>
+          About Me
+          <TitleBall delay={1.3} duration={0.8} random={Math.random() * 360} />
+        </Title>
+        <Subtitle>It's nice to meet you</Subtitle>
+        <SectionTitle>Hi, I'm Parssa</SectionTitle>
+        <Description>
+          I'm a fullstack developer{" "}
+          <LinkText href="https://www.airborneapp.io/" target="_about">
+            @AirborneApp
+          </LinkText>
+          , and a front-end developer at{" "}
+          <LinkText href="https://www.airwhistle.com/" target="_about">
+            @AirWhistleMedia
+          </LinkText>
+          . I'm also a Math/CS student{" "}
+          <LinkText href="https://www.utoronto.ca/" target="_about">
+            @UofT
+          </LinkText>
+          .
+        </Description>
+        <Description>
+          I enjoy bringing ideas to life through code. I'm passionate about
+          everything frontend & design related, and I put emphasis on UX and
+          accessibility. I'm constantly learning new skills and technologies,
+          and tinkering with them.
+        </Description>
+      </Container>
+      <Container>
+        <Title>Skills</Title>
+      </Container>
+    </PageBase>
+  );
 }

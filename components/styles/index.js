@@ -44,7 +44,7 @@ export const Description = styled.p`
     font-weight: 400;
     margin-top: 0rem;
     letter-spacing: -0.04rem;
-    max-width: 35ch;
+    max-width: 50ch;
     line-height: 2rem;
     ${introduce}
 `
