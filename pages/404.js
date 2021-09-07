@@ -11,7 +11,7 @@ const ErrorPage = () => {
         router.push('/')
     }, []);
     return (
-        <PageBase pageTitle="404 Error :(">
+        <PageBase pageTitle="Parssa K">
             <Container>
                 {/* <Title>404 Page not found. 😬</Title>
                 <br />
