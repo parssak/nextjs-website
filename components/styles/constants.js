@@ -7,7 +7,7 @@ export const colors = {
     purple: '#BA99FF',
     green: '#19d464',
     red: '#ff475a',
-    yellow: '##f5c542',
+    yellow: '#f5c542',
 }
 
 export const gradient = `linear-gradient(20deg, ${colors.orange}, ${colors.purple});`

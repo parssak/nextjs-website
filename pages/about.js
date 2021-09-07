@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import PageBase from "../components/PageBase";
 import {
   Container,
@@ -8,6 +9,33 @@ import {
   Title,
   TitleBall,
 } from "../components/styles";
+import { colors } from "../components/styles/constants";
+
+const Tag = styled.div`
+  background: ${(props) => props.color};
+  display: grid;
+  place-items: center;
+  text-align: center;
+  /* color: ${(props) =>
+    props.color === colors.yellow ? "black" : "whitesmoke"}; */
+  color: rgba(30, 30, 30, 0.9);
+  filter: contrast(1.3) brightness(0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+`;
+
+const skills = [
+  { label: "TypeScript", color: colors.yellow },
+  { label: "React", color: colors.yellow },
+  { label: "Vue", color: colors.yellow },
+  { label: "Node.js", color: colors.purple },
+  { label: "Express", color: colors.purple },
+  { label: "Go", color: colors.purple },
+  { label: "SQL", color: colors.purple },
+  { label: "Three.js", color: colors.red },
+  { label: "TailwindCSS", color: colors.red },
+  { label: "SCSS", color: colors.red },
+];
 
 export default function AboutPage() {
   return (
@@ -40,9 +68,20 @@ export default function AboutPage() {
           accessibility. I'm constantly learning new skills and technologies,
           and tinkering with them.
         </Description>
-      </Container>
-      <Container>
-        <Title>Skills</Title>
+        <br /><br />
+        <SectionTitle>Technologies I use every day</SectionTitle>
+        <br />
+        <Description>
+          I work with these technologies at my places of work, or in side
+          projects I have on the side.
+        </Description>
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", maxWidth: "70ch" }}>
+          {skills.map((skill) => (
+            <Tag key={skill.label} color={skill.color}>
+              {skill.label}
+            </Tag>
+          ))}
+        </div>
       </Container>
     </PageBase>
   );
