@@ -50,15 +50,15 @@ const BrowserEngine = () => {
         <br />
       </div>
       <div className="p-media">
-        <img src="/media/darco_1.png" />
-        <img src="/media/darco_3.png" />
-        <img src="/media/darco_2.png" />
+        <img src="/media/be_1.png" />
+        <img src="/media/be_3.png" />
+        <img src="/media/be_2.png" />
       </div>
       <div className="p-tech">
         <ProjectDetails
-          tech={"ReactJS • TypeScript • PDF.JS • Swift"}
+          tech={"ReactJS • TypeScript • Three.JS"}
           role={"Creator"}
-          date="Winter 2020"
+          date="Summer 2021"
         />
       </div>
     </ProjectContainer>
