@@ -10,7 +10,8 @@ const ContactContainer = styled.div`
     margin-top: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr;
+    gap: 1rem;
     @media (max-width: 900px) {
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 1fr;
