@@ -83,6 +83,7 @@ export const projectData = [
   {
     name: "Browser Engine",
     type: "Web App",
+    className: "browser-engine",
     description: `A 3D game engine that runs entirely in the browser. I'm currently working on this project, but there is a demo available if you want to check it out!  `,
     media: ["/media/be_1.png", "/media/be_2.png", "/media/be_3.png"],
     tech: ["TypeScript", "ReactJS", "ThreeJS"],
