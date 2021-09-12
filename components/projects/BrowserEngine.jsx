@@ -31,9 +31,8 @@ const BrowserEngine = () => {
           scripting using{" "}
           <LinkText href="https://threejs.org/" target="_about">
             three.js
-          </LinkText>{" "}. Shader scripting is also fully supported, with shaders being written in
+          </LinkText>{" "}. Shader scripting is also fully supported, with shaders being written in {" "}
           <LinkText href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_about">
-            {" "}
             GLSL
           </LinkText>.
           <br />
