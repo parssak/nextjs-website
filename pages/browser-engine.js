@@ -3,7 +3,7 @@ import PageBase from '../components/PageBase';
 
 const DarcoPage = () => {
     return (
-        <PageBase pageTitle='Parssa K | Browser Engine' nextProjectName='kazakan'>
+        <PageBase pageTitle='Parssa K | Browser Game Engine' nextProjectName='kazakan'>
             <BrowserEngine />
         </PageBase>
     );

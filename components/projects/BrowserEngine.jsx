@@ -13,7 +13,7 @@ const BrowserEngine = () => {
   return (
     <ProjectContainer>
       <div className="p-title">
-        <Title larger>Browser Engine</Title>
+        <Title larger>Browser Game Engine</Title>
         <Subtitle>Web App</Subtitle>
         <br />
         <br />
@@ -25,7 +25,7 @@ const BrowserEngine = () => {
         <br />
         <br />
         <Description>
-          Browser Engine (name is a work-in-progress) is a 3D game engine that
+          Browser Game Engine (name is a work-in-progress) is a 3D game engine that
           runs entirely in the browser. It allows for 3D scenes to be created
           directly inside the browser, and fully supports custom component
           scripting using{" "}
@@ -42,7 +42,7 @@ const BrowserEngine = () => {
         <SectionTitle>Links</SectionTitle>
         <Description>
           Disclaimer: I'm still actively working on this project, and things are subject to change.
-          <br />→ Try Browser Engine in the{" "}
+          <br />→ Try Browser Game Engine in the{" "}
           <LinkText href="https://parssak.github.io/browser-engine/" target="_about">
             browser
           </LinkText>
