@@ -40,7 +40,7 @@ const NavButton = styled.button`
     transition: all 0.3s ease;
     padding: 1rem 1.2rem;
     width: min-content;
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
     border: 1px solid transparent;
     text-transform: center;
     :hover {

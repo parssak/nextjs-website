@@ -15,11 +15,16 @@ const Tag = styled.div`
   background: ${(props) => props.color};
   display: grid;
   place-items: center;
-  text-align: center;
-  color: whitesmoke;
+  text-align: center;  
   filter: contrast(1.3) brightness(0.8);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+
+  & > span {
+    color: white;
+    mix-blend-mode: difference;
+    text-align: center;
+  }
 `;
 
 const skills = [
@@ -76,7 +81,7 @@ export default function AboutPage() {
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", maxWidth: "70ch" }}>
           {skills.map((skill) => (
             <Tag key={skill.label} color={skill.color}>
-              {skill.label}
+              <span>{skill.label}</span>
             </Tag>
           ))}
         </div>
