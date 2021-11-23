@@ -16,9 +16,7 @@ const Tag = styled.div`
   display: grid;
   place-items: center;
   text-align: center;
-  /* color: ${(props) =>
-    props.color === colors.yellow ? "black" : "whitesmoke"}; */
-  color: rgba(30, 30, 30, 0.9);
+  color: whitesmoke;
   filter: contrast(1.3) brightness(0.8);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
