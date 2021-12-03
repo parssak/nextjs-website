@@ -16,19 +16,25 @@ const Tag = styled.div`
   display: grid;
   place-items: center;
   text-align: center;  
-  filter: contrast(1.3) brightness(0.8);
+  filter: contrast(1) brightness(1.1);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    filter: contrast(1.1) brightness(1.2);
+  }
 
   & > span {
-    color: white;
-    mix-blend-mode: difference;
+    color: black;
+    /* mix-blend-mode: difference; */
     text-align: center;
   }
 `;
 
 const skills = [
-  { label: "TypeScript", color: colors.yellow },
+  { label: "TypeScript", color: `${colors.yellow}` },
   { label: "React", color: colors.yellow },
   { label: "Vue", color: colors.yellow },
   { label: "Node.js", color: colors.purple },
@@ -52,6 +58,10 @@ export default function AboutPage() {
         <SectionTitle>Hi, I'm Parssa</SectionTitle>
         <Description>
           I'm a fullstack developer{" "}
+          <LinkText href="https://demandscience.com/" target="_about">
+            @DemandScience
+          </LinkText>{" "}
+          working on{" "}
           <LinkText href="https://www.airborneapp.io/" target="_about">
             @AirborneApp
           </LinkText>
@@ -59,26 +69,33 @@ export default function AboutPage() {
           <LinkText href="https://www.airwhistle.com/" target="_about">
             @AirWhistleMedia
           </LinkText>
-          . I'm also a Math/CS student{" "}
+          . I'm currently studying at{" "}
           <LinkText href="https://www.utoronto.ca/" target="_about">
             @UofT
-          </LinkText>
-          .
+          </LinkText> as a 3rd year Mathematics & Computer Science student.
         </Description>
         <Description>
           I enjoy bringing ideas to life through code. I'm passionate about
           everything frontend & design related, and I put emphasis on UX and
           accessibility. I'm constantly learning new skills and technologies,
-          and tinkering with them.
+          and tinkering with them. 
         </Description>
-        <br /><br />
+        <br />
+        <br />
         <SectionTitle>Technologies I use every day</SectionTitle>
         <br />
         <Description>
           I work with these technologies at my places of work, or in side
           projects I have on the side.
         </Description>
-        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", maxWidth: "70ch" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "0.5rem",
+            flexWrap: "wrap",
+            maxWidth: "70ch",
+          }}
+        >
           {skills.map((skill) => (
             <Tag key={skill.label} color={skill.color}>
               <span>{skill.label}</span>
