@@ -63,7 +63,6 @@ const Contact = ({ setAlertBox, contactRef }) => {
       )
       .then(
         (result) => {
-          console.log(result?.text);
           setAlertBox({
             id: uuidv4(),
             text: "📨 Message successfully sent",
@@ -71,7 +70,6 @@ const Contact = ({ setAlertBox, contactRef }) => {
           });
         },
         (error) => {
-          console.log(error?.text);
           setAlertBox({
             id: uuidv4(),
             text: "An error occurred. :(",
@@ -119,12 +117,18 @@ const Contact = ({ setAlertBox, contactRef }) => {
           <Socials handleAddClipboard={handleAddClipboard} />
         </div>
         <ContactForm onSubmit={handleSubmit} disabled={lock}>
-          <Label htmlFor="name">Name</Label>
-          <Input type="text" name="user_name" />
-          <Label htmlFor="email">Email</Label>
-          <Input type="email" name="user_email" />
-          <Label htmlFor="message">Message</Label>
-          <TextArea type="text" name="message" />
+          <Label>
+            Name
+          <Input type="text" name="user_name" required />
+          </Label>
+          <Label>
+            Email
+            <Input type="email" name="user_email" required />
+          </Label>
+          <Label>
+            Message
+            <TextArea type="text" name="message" required />
+          </Label>
           <ContactButton fill type="submit" disabled={lock}>
             Send Message
           </ContactButton>

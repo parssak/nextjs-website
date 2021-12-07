@@ -50,9 +50,11 @@ export const Description = styled.p`
 `
 
 export const Label = styled.label`
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-`
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  display: grid;
+  gap: 0.2rem;
+`;
 
 //** Layout */
 export const Container = styled.section`
