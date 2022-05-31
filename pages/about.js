@@ -7,7 +7,7 @@ import {
   SectionTitle,
   Subtitle,
   Title,
-  TitleBall,
+  TitleBall
 } from "../components/styles";
 import { colors } from "../components/styles/constants";
 
@@ -15,7 +15,7 @@ const Tag = styled.div`
   background: ${(props) => props.color};
   display: grid;
   place-items: center;
-  text-align: center;  
+  text-align: center;
   filter: contrast(1) brightness(1.1);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -43,7 +43,7 @@ const skills = [
   { label: "SQL", color: colors.purple },
   { label: "Three.js", color: colors.red },
   { label: "TailwindCSS", color: colors.red },
-  { label: "SCSS", color: colors.red },
+  { label: "SCSS", color: colors.red }
 ];
 
 export default function AboutPage() {
@@ -57,43 +57,40 @@ export default function AboutPage() {
         <Subtitle>It's nice to meet you</Subtitle>
         <SectionTitle>Hi, I'm Parssa</SectionTitle>
         <Description>
-          I'm a fullstack developer{" "}
-          <LinkText href="https://demandscience.com/" target="_about">
-            @DemandScience
+          I'm a software developer{" "}
+          <LinkText href="fig.io/" target="_about">
+            @fig
           </LinkText>{" "}
-          working on{" "}
-          <LinkText href="https://www.airborneapp.io/" target="_about">
-            @AirborneApp
-          </LinkText>
-          , and a front-end developer at{" "}
+          working on bringing autocomplete & better tooling for dotfiles to the terminal, and a
+          front-end developer at{" "}
           <LinkText href="https://www.airwhistle.com/" target="_about">
             @AirWhistleMedia
           </LinkText>
           . I'm currently studying at{" "}
           <LinkText href="https://www.utoronto.ca/" target="_about">
             @UofT
-          </LinkText> as a 3rd year Mathematics & Computer Science student.
+          </LinkText>{" "}
+          as a 4th year Mathematics & Computer Science student.
         </Description>
         <Description>
-          I enjoy bringing ideas to life through code. I'm passionate about
-          everything frontend & design related, and I put emphasis on UX and
-          accessibility. I'm constantly learning new skills and technologies,
-          and tinkering with them. 
+          I enjoy bringing ideas to life through code. I'm passionate about everything frontend &
+          design related, and I put emphasis on UX and accessibility. I'm constantly learning new
+          skills and technologies, and tinkering with them.
         </Description>
         <br />
         <br />
         <SectionTitle>Technologies I use every day</SectionTitle>
         <br />
         <Description>
-          I work with these technologies at my places of work, or in side
-          projects I have on the side.
+          I work with these technologies at my places of work, or in side projects I have on the
+          side.
         </Description>
         <div
           style={{
             display: "flex",
             gap: "0.5rem",
             flexWrap: "wrap",
-            maxWidth: "70ch",
+            maxWidth: "70ch"
           }}
         >
           {skills.map((skill) => (
