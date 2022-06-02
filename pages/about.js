@@ -58,7 +58,7 @@ export default function AboutPage() {
         <SectionTitle>Hi, I'm Parssa</SectionTitle>
         <Description>
           I'm a software developer{" "}
-          <LinkText href="fig.io/" target="_about">
+          <LinkText href="https://www.fig.io/" target="_about">
             @fig
           </LinkText>{" "}
           working on bringing autocomplete & better tooling for dotfiles to the terminal, and a
