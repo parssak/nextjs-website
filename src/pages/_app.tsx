@@ -11,23 +11,29 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Parssa Kyanzadeh</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="color-scheme" content="light dark" />
+        <script defer async src="//static.getclicky.com/101310723.js"></script>
+        <noscript>
+          <p>
+            <img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101310723ns.gif" />
+          </p>
+        </noscript>
       </Head>
       <UniversalUIConfigProvider
         config={{
           components: {
             text: ({ variant, size }) => {
-              let classes = ''
+              let classes = "";
               if (variant === "p" || !variant) {
                 classes += " leading-loose";
-                if (size !== 'lg') {
+                if (size !== "lg") {
                   classes += " text-theme-active/90";
                 }
               }
-              if (variant === 'h2') {
-                classes += ' font-medium text-2xl'
+              if (variant === "h2") {
+                classes += " font-medium text-2xl";
               }
               return classes;
-            },
+            }
             // 'card.content': 'px-5'
           }
         }}
