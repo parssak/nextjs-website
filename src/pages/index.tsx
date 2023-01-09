@@ -36,7 +36,7 @@ const things = [
   {
     emoji: "✨",
     text: "Obsessed with intuitive & delightful interfaces"
-  },
+  }
   // {
   //   emoji: "📍",
   //   text: "Based in Toronto, Canada"
@@ -128,7 +128,7 @@ const projects = [
       {
         title: "Artwork",
         href: "https://medium.com/@parssa/lessons-learned-from-building-my-first-mobile-game-c9fbb7a7809e",
-        description: "did all pixel artwork in Aseprite, including animations"
+        description: "made all the pixel-art in Aseprite, including animations"
       }
     ]
     // note: "Exploration project, not maintained anymore"
@@ -138,6 +138,68 @@ const projects = [
 const FancyTopGradient = ({ shouldParty }: { shouldParty: boolean }) => {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-0">
+      <div
+        aria-hidden="true"
+        className={`absolute 
+        transition-all
+        duration-[3000ms]
+        ${shouldParty ? "animate-hue-rotate h-screen" : "h-48"}
+        -inset-x-2
+        -top-4
+        blur
+        bg-gradient-to-tr
+        from-[#FFB67D0a]
+        via-[#B363750e]
+        to-[#C6ACCD99]
+        dark:from-[#0B1F39]
+        dark:to-[#5895AE88]
+        dark:via-[#EF6D3622]
+        saturate-200
+        contrast-150
+        dark:contrast-100`}
+      />
+      <div
+        aria-hidden="true"
+        className={`absolute 
+        transition-all
+        duration-[3000ms]
+        ${shouldParty ? "animate-hue-rotate h-screen" : "h-48"}
+        -inset-x-2
+        -top-4
+        blur
+        bg-gradient-to-tl
+        from-[#D58AA90e]
+        via-[#D58AA940]
+        to-[#7690BEa0]
+        
+        dark:from-[#0B1F39]
+        dark:to-[#5895AE88]
+        dark:via-[#EF6D3622]
+        saturate-200
+        contrast-150
+        dark:contrast-100`}
+      />
+
+      <div
+        aria-hidden="true"
+        className={`
+        absolute inset-x-0 top-0
+        transition-all
+        duration-[3000ms]
+        
+        ${shouldParty ? "h-screen via-theme-pure" : "h-48 via-theme-pure/60 "}
+        
+        bg-gradient-to-t from-theme-pure to-theme-pure/20`}
+      />
+
+      {/* Global grain */}
+    </div>
+  );
+};
+
+const FancyBottomGradient = ({ shouldParty }: { shouldParty: boolean }) => {
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 rotate-180 z-0">
       <div
         aria-hidden="true"
         className={`absolute 
@@ -230,13 +292,14 @@ export default function Page() {
   return (
     <>
       <FancyTopGradient shouldParty={shouldParty} />
+      
       <div className="grain opacity-70 fixed inset-0" />
 
-      <div className="container pt-36">
+      <div className="container pt-24">
         <div className="relative">
           <HeaderSection
             title={
-              <Text className="flex-shrink-0 gradient-text " variant="h1">
+              <Text className="flex-shrink-0" variant="h1">
                 Parssa Kyanzadeh
               </Text>
             }
@@ -247,7 +310,7 @@ export default function Page() {
             }
           />
 
-          <Text size="lg" className="my-size-2y">
+          <Text size="lg" className="my-size-2y leading-6">
             <strong>
               <span
                 contentEditable
@@ -259,7 +322,7 @@ export default function Page() {
                   }
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "I build products that make people productive"
+                  __html: "I build products that make people productive",
                 }}
               />
               .
@@ -316,9 +379,14 @@ export default function Page() {
                   className="bg-theme-pure/20 backdrop-blur w-full"
                 >
                   <div className="flex w-full justify-between items-center">
-                    <Text variant="h5" className="font-medium">
-                      {project.title}
-                    </Text>
+                    <div className="flex items-center">
+                      {/* <div className="w-5 h-5 rounded bg-gradient-to-t from-violet-500 to-indigo-600 mr-2">
+                        <img src="/fig.png" alt="" className='w-full h-full object-cover scale-110' />
+                      </div> */}
+                      <Text variant="h5" className="font-medium">
+                        {project.title}
+                      </Text>
+                    </div>
                     <Text size="xs" className="border-0  opacity-50">
                       {project.date}
                     </Text>
