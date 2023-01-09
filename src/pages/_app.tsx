@@ -44,7 +44,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         }}
       >
-        <div className={`min-h-screen bg-theme-pure overflow-hidden ${inter.className} ${comicNeue.className}`}>
+        <div
+          className={`min-h-screen bg-theme-pure overflow-hidden ${comicNeue.className} ${inter.className}`}
+        >
           <Component {...pageProps} />
         </div>
         <Footer />
