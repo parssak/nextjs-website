@@ -261,7 +261,7 @@ export default function Page() {
                 }}
                 dangerouslySetInnerHTML={{
                   __html:
-                    "Making useful <span>&</span> <span class=''>fun</span> things for the web"
+                    "Building practical tools for the web"
                 }}
               />
               .
