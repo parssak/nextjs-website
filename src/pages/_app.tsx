@@ -3,9 +3,12 @@ import { AppProps } from "next/app";
 import { ThemeProvider, UniversalUIConfigProvider } from "@parssa/universal-ui";
 import "styles/index.css";
 import { Footer } from "components/Footer";
-import { Inter } from "@next/font/google";
+import { Inter, Comic_Neue } from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const comicNeue = Comic_Neue({
+  weight: ["700"]
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -41,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         }}
       >
-        <div className={`min-h-screen bg-theme-pure overflow-hidden ${inter.className}`}>
+        <div className={`min-h-screen bg-theme-pure overflow-hidden ${inter.className} ${comicNeue.className}`}>
           <Component {...pageProps} />
         </div>
         <Footer />
