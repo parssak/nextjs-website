@@ -277,7 +277,7 @@ export const useDebouncedEffect = (
 
 export default function Page() {
   const [shouldParty, setShouldParty] = useState(false);
-  const [content, setContent] = useState("I build products that make people productive");
+  const [content, setContent] = useState("Building products that make people productive");
 
   useDebouncedEffect(() => {
     setShouldParty(
@@ -292,7 +292,7 @@ export default function Page() {
   return (
     <>
       <FancyTopGradient shouldParty={shouldParty} />
-      
+
       <div className="grain opacity-70 fixed inset-0" />
 
       <div className="container pt-24">
@@ -322,7 +322,8 @@ export default function Page() {
                   }
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "I build products that make people productive",
+                  __html:
+                    "Making useful <span>&</span> <span class='font-bold font-serif text-green-500 animate-hue-rotate-reverse-slow'>fun</span> things for the web"
                 }}
               />
               .
