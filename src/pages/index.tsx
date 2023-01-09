@@ -261,7 +261,7 @@ export default function Page() {
                 }}
                 dangerouslySetInnerHTML={{
                   __html:
-                    "Making useful <span>&</span> <span class='text-green-500 animate-hue-rotate-reverse-slow'>fun</span> things for the web"
+                    "Making useful <span>&</span> <span class=''>fun</span> things for the web"
                 }}
               />
               .
