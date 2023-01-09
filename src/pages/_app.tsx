@@ -3,6 +3,9 @@ import { AppProps } from "next/app";
 import { ThemeProvider, UniversalUIConfigProvider } from "@parssa/universal-ui";
 import "styles/index.css";
 import { Footer } from "components/Footer";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -38,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         }}
       >
-        <div className="min-h-screen bg-theme-pure overflow-hidden">
+        <div className={`min-h-screen bg-theme-pure overflow-hidden ${inter.className}`}>
           <Component {...pageProps} />
         </div>
         <Footer />

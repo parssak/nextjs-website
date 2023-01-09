@@ -1,6 +1,3 @@
-@import "https://rsms.me/inter/inter.css";
-@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
