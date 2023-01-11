@@ -8,6 +8,8 @@ const nextConfig = {
       {
         source: "/browser-engine",
         destination: "https://parssak.github.io/browser-engine",
+        permanent: false,
+        basePath: false
       }
     ];
   }
