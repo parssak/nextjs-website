@@ -4,22 +4,7 @@ import { useState } from "react";
 import { cx } from "utils";
 
 const Emojis = ({ didCopy }: { didCopy: boolean }) => {
-  const emojisBase = [
-    "✉️",
-    "🦅",
-    "📩",
-    "📲",
-    "📧",
-    "📨",
-    "📬",
-    "📭",
-    "🐥",
-    "📪",
-    "📫",
-    "📥",
-    "📤",
-    "📦"
-  ];
+  const emojisBase = ["✉️","🦅","📩","📲","📧","📨","📬","📭","🐥","📪","📫","📥","📤","📦"];
 
   const emojis = Array.from({ length: 40 }, () => {
     const emoji = emojisBase[Math.floor(Math.random() * emojisBase.length)];
@@ -125,39 +110,7 @@ export const ExternalLink = ({
           className={externalLinkClasses(className)}
         >
           {children}
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-4 h-4 ml-1"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-              clipRule="evenodd"
-            />
-            <path
-              fillRule="evenodd"
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ease-spring"
-              d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
-              clipRule="evenodd"
-            />
-          </svg> */}
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-            className="w-4 h-4"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-              clipRule="evenodd"
-              className=" group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ease-spring"
-            />
-          </svg> */}
+
           <svg
             width="15"
             height="15"
@@ -198,10 +151,7 @@ export const ExternalLink = ({
             />
           )}
           {props.href.includes("mailto") && (
-            <div
-              data-theme={copied ? "success" : "info"}
-              className="h-36 relative"
-            >
+            <div data-theme={copied ? "success" : "info"} className="h-36 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-theme-base to-theme-base/20" />
               <div className="absolute inset-0 bg-gradient-to-t from-theme-base saturate-200 dark:saturate-100 to-theme-active opacity-0 group-hover:opacity-100 transition-all duration-500" />
               <Emojis didCopy={copied} />
