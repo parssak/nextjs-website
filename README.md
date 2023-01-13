@@ -1,6 +1,6 @@
 # My Website
 
-This site has been built with my starter-template [https://github.com/parssak/nextjs-tailwind-ts](found here!). 
+This site has been built with my starter-template [found here](https://github.com/parssak/nextjs-tailwind-ts). 
 
-It's built on TailwindCSS, and my component library, [https://universal-ui.vercel.app/](UniversalUI).
+It's built on TailwindCSS, and my component library, [UniversalUI](https://universal-ui.vercel.app/).
 
