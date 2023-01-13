@@ -1,11 +1,6 @@
-# nextjs-tailwind-ts
+# My Website
 
-A starter template for `Next.js` with `TailwindCSS` and `TypeScript` preconfigured. 
+This site has been built with my starter-template [https://github.com/parssak/nextjs-tailwind-ts](found here!). 
 
-Paths have also been set up to compile from `/src`, making component imports go from
-`../../../components/Nav` to `components/Nav`. :)
+It's built on TailwindCSS, and my component library, [https://universal-ui.vercel.app/](UniversalUI).
 
-To use this template, clone the repository, or click "Use this template" on Github. 
-
-Run `yarn` to download all dependencies, and `yarn dev` to start the development
-environment. 
