@@ -8,7 +8,6 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
-      serif: ["Comic Neue", "cursive"],
       mono: ["JetBrains Mono", "monospace"]
     },
     container: {
