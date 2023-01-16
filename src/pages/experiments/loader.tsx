@@ -32,7 +32,7 @@ export default ({ ...props }: DivProps & {}) => {
       <Text as={Link} href="/" className="underline mb-size-2y">
         &larr; back to main
       </Text>
-      <Text className="font-medium mb-size-8y">/experiments/spinner</Text>
+      <Text className="font-medium mb-size-8y">/experiments/loader</Text>
       <Text>
         rotating loading animation — inspired by{" "}
         <ExternalLink
