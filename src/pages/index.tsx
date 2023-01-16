@@ -2,6 +2,7 @@ import { Card, Text } from "@parssa/universal-ui";
 import { ExternalLink } from "components/ExternalLink";
 import { HeaderSection } from "components/HeaderSection";
 import { useEffect, useState } from "react";
+import { useDebouncedEffect } from "utils";
 
 const things = [
   {
@@ -197,22 +198,6 @@ const FancyTopGradient = ({ shouldParty }: { shouldParty: boolean }) => {
   );
 };
 
-export const useDebouncedEffect = (
-  effect: () => void,
-  deps: React.DependencyList = [],
-  delayMs = 500
-) => {
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      effect();
-    }, delayMs);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [effect, delayMs, ...deps]);
-};
-
 export default function Page() {
   const [shouldParty, setShouldParty] = useState(false);
   const [content, setContent] = useState("Building products that make people productive");
@@ -260,8 +245,7 @@ export default function Page() {
                   }
                 }}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    "Building practical tools for the web"
+                  __html: "Building practical tools for the web"
                 }}
               />
               .
