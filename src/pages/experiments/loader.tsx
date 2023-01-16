@@ -1,10 +1,10 @@
 import { Input, Text } from "@parssa/universal-ui";
 import { ExternalLink } from "components/ExternalLink";
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import { useRequestAnimationFrame } from "utils";
 
 type DivProps = React.HTMLAttributes<HTMLDivElement>;
-
 
 export default ({ ...props }: DivProps & {}) => {
   const [amplitude, setAmplitude] = useState(0);
@@ -23,13 +23,15 @@ export default ({ ...props }: DivProps & {}) => {
     [speed]
   );
 
-
   const abs = Math.abs(amplitude);
   const percentAmplitude = abs / BOUND;
   const stepsArray = useMemo(() => [...Array(steps)], [steps]);
 
   return (
     <div {...props} className="container pt-24">
+      <Text as={Link} href="/" className="underline mb-size-2y">
+        &larr; back to main
+      </Text>
       <Text className="font-medium mb-size-8y">/experiments/spinner</Text>
       <Text>
         rotating loading animation — inspired by{" "}
