@@ -8,7 +8,7 @@ type DivProps = React.HTMLAttributes<HTMLDivElement>;
 
 export default ({ ...props }: DivProps & {}) => {
   const [amplitude, setAmplitude] = useState(0);
-  const [speed, setSpeed] = useState(0.06);
+  const [speed, setSpeed] = useState(0.04);
   const [steps, setSteps] = useState(7);
   const BOUND = 45;
   const dir = React.useRef(1);
