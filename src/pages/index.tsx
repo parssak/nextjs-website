@@ -365,7 +365,7 @@ export default function Page() {
             <HeaderSection title="Contact" subtitle="how to reach me" />
             <Text>
               If you want to chat, feel free to send me an email at{" "}
-              <ExternalLink href="mailto:parssak@gmail.com">parssak@gmail.com</ExternalLink>. You
+              <ExternalLink href="mailto:parssak@gmail.com">parssak[at]gmail[dot]com</ExternalLink>. You
               can also find me on{" "}
               <ExternalLink
                 href="https://twitter.com/ParssaKyanzadeh"
