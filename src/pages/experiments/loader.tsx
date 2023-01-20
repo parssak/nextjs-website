@@ -48,7 +48,7 @@ export default ({ ...props }: DivProps & {}) => {
           <Input
             type="number"
             value={speed}
-            step={0.001}
+            step={0.01}
             onChange={(e) => setSpeed(Number(e.target.value))}
             className="mb-4 sm:mb-0"
           />
