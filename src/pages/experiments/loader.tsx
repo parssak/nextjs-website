@@ -50,7 +50,7 @@ export default ({ ...props }: DivProps & {}) => {
             value={speed}
             step={0.01}
             onChange={(e) => setSpeed(Number(e.target.value))}
-            className="mb-4 sm:mb-0"
+            className="mb-4 sm:mb-0 backdrop-blur-lg"
           />
           <Text>Steps</Text>
           <Input
@@ -58,7 +58,7 @@ export default ({ ...props }: DivProps & {}) => {
             value={steps}
             step={1}
             onChange={(e) => setSteps(Number(e.target.value))}
-            className="mb-4 sm:mb-0"
+            className="mb-4 sm:mb-0 backdrop-blur-lg"
           />
         </div>
       </div>
