@@ -4,9 +4,7 @@ import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import { useRequestAnimationFrame } from "utils";
 
-type DivProps = React.HTMLAttributes<HTMLDivElement>;
-
-export default ({ ...props }: DivProps & {}) => {
+export default () => {
   const [amplitude, setAmplitude] = useState(0);
   const [speed, setSpeed] = useState(0.04);
   const [steps, setSteps] = useState(7);
@@ -28,7 +26,7 @@ export default ({ ...props }: DivProps & {}) => {
   const stepsArray = useMemo(() => [...Array(steps)], [steps]);
 
   return (
-    <div {...props} className="container pt-24">
+    <div className="container pt-24">
       <Text as={Link} href="/" className="underline mb-size-2y">
         &larr; back to main
       </Text>
