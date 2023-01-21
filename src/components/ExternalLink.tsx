@@ -4,7 +4,22 @@ import { useState } from "react";
 import { cx } from "utils";
 
 const Emojis = ({ didCopy }: { didCopy: boolean }) => {
-  const emojisBase = ["✉️","🦅","📩","📲","📧","📨","📬","📭","🐥","📪","📫","📥","📤","📦"];
+  const emojisBase = [
+    "✉️",
+    "🦅",
+    "📩",
+    "📲",
+    "📧",
+    "📨",
+    "📬",
+    "📭",
+    "🐥",
+    "📪",
+    "📫",
+    "📥",
+    "📤",
+    "📦"
+  ];
 
   const emojis = Array.from({ length: 40 }, () => {
     const emoji = emojisBase[Math.floor(Math.random() * emojisBase.length)];
@@ -27,12 +42,9 @@ const Emojis = ({ didCopy }: { didCopy: boolean }) => {
                 : "group-hover:bottom-1/4"
             }`}
             style={{
-              transform: `scale(${
-                isCheckMark ? Math.random() + 0.3 : Math.random() * 0.5 + 0.5
-              }) rotate(${Math.random() * 90 - 45}deg) translateX(${
-                Math.random() * 100 - 50
-              }%) translateY(${Math.random() * 200 - 100}%)`,
-
+              transform: `scale(${isCheckMark ? Math.random() + 0.3 : Math.random() * 0.5 + 0.5}) 
+                rotate(${Math.random() * 90 - 45}deg) 
+                translateX(${Math.random() * 100 - 50}%) translateY(${Math.random() * 200 - 100}%)`,
               left: 8 * index,
               opacity: Math.random() * 0.5 + 0.5,
               transitionDuration: `${Math.random() * 200 + 1000}ms`
