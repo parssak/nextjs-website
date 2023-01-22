@@ -64,6 +64,7 @@ export default () => {
       <div className="h-96 relative overflow-hidden rounded-3xl">
         {Object.entries(timesToColors).map(([t, colors]) => (
           <div
+            key={t}
             className={`absolute inset-0 transition-all
             ${t === timeOfDay ? "opacity-100 duration-500 z-20" : "opacity-0 duration-500 z-10"}`}
           >
