@@ -24,7 +24,7 @@ body {
   .grain {
     background-image: url("/grain.png");
     background-repeat: repeat;
-    background-size: 300px;
+    background-size: 500px;
   }
 
   .gradient-text {
