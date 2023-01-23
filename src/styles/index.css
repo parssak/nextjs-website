@@ -27,6 +27,12 @@ body {
     background-size: 500px;
   }
 
+  .thin-grain {
+    background-image: url("/grain.png");
+    background-repeat: repeat;
+    background-size: 250px;
+  }
+
   .gradient-text {
     background: linear-gradient(
       to right bottom,
@@ -56,4 +62,9 @@ body::-webkit-scrollbar {
   transform: translate3d(0, 0, 0);
   width: 0.5rem;
   height: 0.5rem;
+}
+
+
+.animate-gold-text {
+  
 }
