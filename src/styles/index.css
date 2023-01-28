@@ -27,13 +27,13 @@ body {
     background-size: 500px;
   }
 
-  .thin-grain {
+  /* .thin-grain {
     background-image: url("/grain.png");
     background-repeat: repeat;
     background-size: 250px;
-  }
+  } */
 
-  .gradient-text {
+  /* .gradient-text {
     background: linear-gradient(
       to right bottom,
       rgb(var(--color-text-base) / 1) 60%,
@@ -43,9 +43,9 @@ body {
     background-clip: text;
     color: unset;
     -webkit-text-fill-color: transparent;
-  }
+  } */
 
-  .gradient-text-subtle {
+  /* .gradient-text-subtle {
     background: linear-gradient(
       to right bottom,
       rgb(var(--color-text-base)) 10%,
@@ -55,6 +55,13 @@ body {
     background-clip: text;
     color: unset;
     -webkit-text-fill-color: transparent;
+  } */
+
+  .danger-zone {
+    /* background-color: #000; */
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='0.5' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+    /* -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); */
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); */
   }
 }
 
@@ -64,7 +71,18 @@ body::-webkit-scrollbar {
   height: 0.5rem;
 }
 
+@layer utilities {
+  /* animation for repeating background x axis */
+  @keyframes bg-animation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
 
-.animate-gold-text {
-  
+  .animate-repeat-x {
+    animation: bg-animation 20s linear infinite;
+  }
 }

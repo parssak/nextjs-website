@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/components/**/*.{ts,tsx,js,jsx}",
@@ -6,6 +7,7 @@ module.exports = {
     "./node_modules/@parssa/universal-ui/src/components/**/*.{ts,tsx,js,jsx}"
   ],
   theme: {
+    
     fontFamily: {
       sans: ["Inter", "sans-serif"],
       mono: ["JetBrains Mono", "monospace"]

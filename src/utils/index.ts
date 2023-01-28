@@ -45,5 +45,48 @@ export const useRequestAnimationFrame = (
     return () => cancelAnimationFrame(requestRef.current!);
   }, deps ?? []); // Make sure the effect runs only once
 
+  // Make sure when you focus on the window, the animation continues
+  useEffect(() => {
+    window.addEventListener("focus", () => {
+      console.debug("focus")
+      requestRef.current = requestAnimationFrame(animate);
+    });
+
+    return () => window.removeEventListener("focus", () => {
+      console.debug("blur")
+      cancelAnimationFrame(requestRef.current!);
+    });
+    
+  }, [animate, requestRef]);
+
+
   return requestRef;
 };
+
+export const lerpColor = (a: string, b: string, amount: number) => {
+  var ah = parseInt(a.replace(/#/g, ""), 16),
+    ar = ah >> 16,
+    ag = (ah >> 8) & 0xff,
+    ab = ah & 0xff,
+    bh = parseInt(b.replace(/#/g, ""), 16),
+    br = bh >> 16,
+    bg = (bh >> 8) & 0xff,
+    bb = bh & 0xff,
+    rr = ar + amount * (br - ar),
+    rg = ag + amount * (bg - ag),
+    rb = ab + amount * (bb - ab);
+
+  return "#" + (((1 << 24) + (rr << 16) + (rg << 8) + rb) | 0).toString(16).slice(1);
+};
+
+export const lerp = (a: number, b: number, amount: number) => {
+  return a + amount * (b - a);
+};
+
+export const useKeyDown = (callback: (event: KeyboardEvent) => void, deps?: React.DependencyList) => {
+  useEffect(() => {
+    window.addEventListener("keydown", callback);
+    return () => window.removeEventListener("keydown", callback);
+  }, [callback, ...deps ?? []]);
+}
+  

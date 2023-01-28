@@ -1,7 +1,7 @@
 import { Card, Text } from "@parssa/universal-ui";
-import { ExperimentHeader } from "components/ExperimentHeader";
+import { ExperimentWrapper } from "components/ExperimentWrapper";
 import React, { useEffect, useMemo, useState } from "react";
-import { cx } from "utils";
+import { cx, lerp, lerpColor, useKeyDown } from "utils";
 
 const HOURS_TO_TOD = {
   0: "midnight",
@@ -20,10 +20,10 @@ const HOURS_TO_TOD = {
   13: "afternoon",
   14: "afternoon",
   15: "afternoon",
-  16: "afternoon",
-  17: "afternoon",
+  16: "evening",
+  17: "evening",
   18: "evening",
-  19: "evening",
+  19: "dusk",
   20: "dusk",
   21: "night",
   22: "night",
@@ -42,33 +42,19 @@ const TIMES_TO_COLORS = {
 type Hour = keyof typeof HOURS_TO_TOD;
 type TimeOfDay = typeof HOURS_TO_TOD[Hour];
 
-const lerpColor = (a: string, b: string, amount: number) => {
-  var ah = parseInt(a.replace(/#/g, ""), 16),
-    ar = ah >> 16,
-    ag = (ah >> 8) & 0xff,
-    ab = ah & 0xff,
-    bh = parseInt(b.replace(/#/g, ""), 16),
-    br = bh >> 16,
-    bg = (bh >> 8) & 0xff,
-    bb = bh & 0xff,
-    rr = ar + amount * (br - ar),
-    rg = ag + amount * (bg - ag),
-    rb = ab + amount * (bb - ab);
-
-  return "#" + (((1 << 24) + (rr << 16) + (rg << 8) + rb) | 0).toString(16).slice(1);
-};
-
-const lerp = (a: number, b: number, amount: number) => {
-  return a + amount * (b - a);
-};
-
-const TODContainer = ({
+export const TODContainer = ({
   timeOfDay,
   as = "div",
   children,
   wrapperClasses = "",
+  backgroundClasses = "",
   ...props
-}: { timeOfDay?: TimeOfDay; as?: string; wrapperClasses?: string } & DivProps) => {
+}: {
+  timeOfDay?: TimeOfDay;
+  as?: string;
+  wrapperClasses?: string;
+  backgroundClasses?: string;
+} & DivProps) => {
   const tod = timeOfDay || (HOURS_TO_TOD[new Date().getHours()] as TimeOfDay);
 
   const isDark = ["midnight", "night", "dusk"].includes(tod);
@@ -95,24 +81,6 @@ const TODContainer = ({
   useEffect(() => {
     const interval = setInterval(() => {
       let isSame = false;
-      // setcurrentColors[0]((prev) => {
-      //   const newColor = lerpColor(prev, colorA, 0.05);
-      //   if (newColor.toUpperCase() === colorA.toUpperCase()) {
-      //     isSame = true;
-      //   }
-      //   return newColor;
-      // });
-      // setcurrentColors[1]((prev) => {
-      //   const newColor = lerpColor(prev, colorB, 0.04);
-      //   if (newColor.toUpperCase() === colorB.toUpperCase()) {
-      //     isSame = true;
-      //   }
-      //   return newColor;
-      // });
-
-      // if (isSame) {
-      //   clearInterval(interval);
-      // }
 
       setCurrentColors((prev) => {
         const newColors = prev.map((prevColor, i) => {
@@ -159,13 +127,13 @@ const TODContainer = ({
     as,
     {
       ...props,
-      className: cx(`relative overflow-hidden isolate rounded-xl`, props.className),
+      className: cx(`relative overflow-hidden isolate`, props.className),
       "data-dark": isDark,
       "data-override": "true",
       "data-theme": "neutral"
     },
     <div className={wrapperClasses}>
-      <div className={`absolute inset-0 transition-all`}>
+      <div className={cx(`absolute inset-0 transition-all`, backgroundClasses)}>
         <div
           className="absolute inset-0 transition-all duration-1000"
           style={{
@@ -173,7 +141,7 @@ const TODContainer = ({
               conic-gradient(from ${currentDegrees[0]}deg at 25.21% 60%, ${currentColors[0]}aa 0deg, ${currentColors[1]}aa 360deg),
               conic-gradient(from ${currentDegrees[1]}deg at 80.6% 75%, ${currentColors[1]}ff 0deg, ${currentColors[0]}ee 360deg),
               linear-gradient(180deg, ${currentColors[1]} 0%, ${currentColors[0]} 96%), 
-                 #000000`
+              #000000`
           }}
         />
         <div
@@ -183,7 +151,7 @@ const TODContainer = ({
               conic-gradient(from ${currentDegrees[2]}deg at 25.21% 60%, ${currentColors[0]}aa 0deg, ${currentColors[1]}aa 360deg),
               conic-gradient(from ${currentDegrees[3]}deg at 80.6% 75%, ${currentColors[1]}ff 0deg, ${currentColors[0]}ee 360deg),
               linear-gradient(180deg, ${currentColors[1]} 0%, ${currentColors[0]} 96%), 
-                 #000000`
+              #000000`
           }}
         />
         <div
@@ -193,7 +161,7 @@ const TODContainer = ({
               conic-gradient(from ${currentDegrees[4]}deg at 25.21% 60%, ${currentColors[0]}aa 0deg, ${currentColors[1]}aa 360deg),
               conic-gradient(from ${currentDegrees[5]}deg at 80.6% 75%, ${currentColors[1]}ff 0deg, ${currentColors[0]}ee 360deg),
               linear-gradient(180deg, ${currentColors[1]} 0%, ${currentColors[0]} 96%), 
-                 #000000`
+              #000000`
           }}
         />
         <div className="absolute inset-0" />
@@ -205,14 +173,38 @@ const TODContainer = ({
 
 export default () => {
   const [timeOfDay, setTod] = useState(HOURS_TO_TOD[new Date().getHours()] as TimeOfDay);
-
-  // const times = Object.keys(hours) as TimeOfDay[];
   const times = Array.from(new Set(Object.values(HOURS_TO_TOD)));
+
+  useKeyDown((e) => {
+    if (e.key === "ArrowRight") {
+      let setTo;
+      setTod((prev) => {
+        const index = times.indexOf(prev);
+        setTo = times[index + 1] || times[0];
+        return setTo;
+      });
+      if (document.activeElement && document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+      document.getElementById(setTo)?.focus();
+    } else if (e.key === "ArrowLeft") {
+      let setTo;
+      setTod((prev) => {
+        const index = times.indexOf(prev);
+        setTo = times[index - 1] || times[times.length - 1];
+        return setTo;
+      });
+      if (document.activeElement && document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+      document.getElementById(setTo)?.focus();
+    }
+  });
+
   return (
-    <div>
-      <ExperimentHeader />
-      <div className="container pt-6">
-        <TODContainer className="h-96 grid place-items-center" timeOfDay={timeOfDay}>
+    <ExperimentWrapper description="adaptive background based on time of day">
+      <div className="pt-6">
+        <TODContainer className="h-96 grid place-items-center rounded-xl" timeOfDay={timeOfDay}>
           <div className="contrast-200 ">
             <Text className="px-size-x text-theme-active italic">{timeOfDay}</Text>
           </div>
@@ -220,31 +212,9 @@ export default () => {
 
         <div
           className="grid grid-cols-2 md:flex md:flex-row gap-y-size-y mt-size-4y"
-          onKeyDownCapture={(e) => {
-            if (e.key === "ArrowRight") {
-              let setTo;
-              setTod((prev) => {
-                const index = times.indexOf(prev);
-                setTo = times[index + 1] || times[0];
-                return setTo;
-              });
-              if (document.activeElement && document.activeElement instanceof HTMLElement) {
-                document.activeElement.blur();
-              }
-              document.getElementById(setTo)?.focus();
-            } else if (e.key === "ArrowLeft") {
-              let setTo;
-              setTod((prev) => {
-                const index = times.indexOf(prev);
-                setTo = times[index - 1] || times[times.length - 1];
-                return setTo;
-              });
-              if (document.activeElement && document.activeElement instanceof HTMLElement) {
-                document.activeElement.blur();
-              }
-              document.getElementById(setTo)?.focus();
-            }
-          }}
+          // onKeyDownCapture={(e) => {
+
+          // }}
         >
           {times.map((tod) => (
             <div
@@ -258,7 +228,7 @@ export default () => {
                 id={tod}
                 key={tod}
                 onClick={() => setTod(tod as TimeOfDay)}
-                className={`focus:outline-none py-size-8y w-full cursor-pointer md:py-size-8x grid place-items-center border-4 transition-all 
+                className={`rounded-xl focus:outline-none py-size-8y w-full cursor-pointer md:py-size-8x grid place-items-center border-4 transition-all 
               ${timeOfDay === tod ? "border-blue-600 scale-100" : "border-transparent scale-100"}`}
                 timeOfDay={tod as any}
               >
@@ -270,6 +240,6 @@ export default () => {
           ))}
         </div>
       </div>
-    </div>
+    </ExperimentWrapper>
   );
 };
