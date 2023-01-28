@@ -203,7 +203,7 @@ export default () => {
 
   return (
     <ExperimentWrapper description="adaptive background based on time of day">
-      <div className="pt-6">
+      <div>
         <TODContainer className="h-96 grid place-items-center rounded-xl" timeOfDay={timeOfDay}>
           <div className="contrast-200 ">
             <Text className="px-size-x text-theme-active italic">{timeOfDay}</Text>

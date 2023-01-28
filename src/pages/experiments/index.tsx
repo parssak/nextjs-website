@@ -21,7 +21,7 @@ const ExperimentCard = ({
     <Card
       as={Link}
       href={href}
-      className={cx("overflow-hidden rounded-xl  border-theme-muted p-2", className)}
+      className={cx("overflow-hidden rounded-xl border-theme-muted p-2 select-none", className)}
     >
       <div {...props} className="rounded-lg overflow-hidden border border-theme-muted" />
       <Text size="sm" className='pt-4 pb-2 border-theme-muted leading-none'>{description}</Text>
@@ -31,7 +31,7 @@ const ExperimentCard = ({
 export default () => {
   return (
     <ExperimentWrapper description="where i try out new ideas">
-      <div className="grid gap-size-x md:grid-cols-3 mt-size-8y">
+      <div className="grid gap-size-x md:grid-cols-2 lg:grid-cols-3 mt-size-8y">
         <ExperimentCard
           href="/experiments/time-of-day"
           description={"adaptive background based on time of day"}
