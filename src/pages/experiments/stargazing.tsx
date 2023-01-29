@@ -259,9 +259,15 @@ export const StargazingContainer = ({
             width={dimensions?.width ?? 0}
             height={dimensions?.height ?? 0}
             onMouseMove={(e) => {
-              const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+              const { left, top } = e.currentTarget.getBoundingClientRect();
               const x = e.clientX - left;
               const y = e.clientY - top;
+              setMousePos({ x, y });
+            }}
+            onTouchMove={(e) => {
+              const { left, top } = e.currentTarget.getBoundingClientRect();
+              const x = e.touches[0].clientX - left;
+              const y = e.touches[0].clientY - top;
               setMousePos({ x, y });
             }}
             onMouseLeave={() => setMousePos({ x: 0, y: 0 })}
