@@ -250,7 +250,7 @@ export const StargazingContainer = ({
           </div>
           <canvas
             ref={ref}
-            className="relative scale-110"
+            className="relative scale-105 touch-none"
             width={dimensions?.width ?? 0}
             height={dimensions?.height ?? 0}
             onMouseMove={(e) => {
