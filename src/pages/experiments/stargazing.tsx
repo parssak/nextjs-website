@@ -125,7 +125,7 @@ export const StargazingContainer = ({
             distanceFromMouse = fastDistance(x, y, relativeMousePos.x, relativeMousePos.y);
           }
 
-          distanceFromMouse &&  console.debug({ distanceFromMouse });
+          distanceFromMouse && console.debug({ distanceFromMouse });
           let newX = x + vx * speed * (distanceFromMouse > 0.01 ? 0.1 : 1.2);
           let newY = y + vy * speed * (distanceFromMouse > 0.01 ? 0.1 : 1.2);
 
@@ -177,7 +177,7 @@ export const StargazingContainer = ({
             // opacity: nearMouse ? Math.min(newOpacity + CHANGE_SPEED, 1) : Math.max(newOpacity - CHANGE_SPEED, 0.2),
             opacity: nearMouse
               ? Math.min(newOpacity + CHANGE_SPEED, 1)
-              : Math.max(newOpacity - UN_CHANGE_SPEED, 0.2),  
+              : Math.max(newOpacity - UN_CHANGE_SPEED, 0.2)
           };
         });
         return next;
@@ -269,7 +269,7 @@ export const StargazingContainer = ({
         </div>
         <div className="relative text-center">
           {props.children}
-          {mousePos && (
+          {mousePos && DEBUG && (
             <div className="absolute top-0 left-0 text-white">
               {relativeMousePos.x.toFixed(2)}, {relativeMousePos.y.toFixed(2)}
             </div>

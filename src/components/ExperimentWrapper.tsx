@@ -35,7 +35,7 @@ export const ExperimentWrapper = ({
                           .slice(0, index + 1)
                           .join("/")
                           .replace(INDEX, "")
-                          .replaceAll("//", "/")}`;
+                          }`;
 
                   return (
                     <span key={crumb}>
