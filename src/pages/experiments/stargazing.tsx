@@ -155,25 +155,24 @@ export const StargazingContainer = ({
             newY = 1;
           }
 
-          let newOpacity = opacity;
-
           const nearMouse = distanceFromMouse < 0.01 && distanceFromMouse > 0;
 
           const CHANGE_SPEED = 0.5;
           const UN_CHANGE_SPEED = 0.01;
+
+          const newSize = nearMouse
+            ? Math.min(size + CHANGE_SPEED, 1.2)
+            : Math.max(size - UN_CHANGE_SPEED, 0.5);
+          const newOpacity = nearMouse
+            ? Math.min(opacity + CHANGE_SPEED, 1)
+            : Math.max(opacity - UN_CHANGE_SPEED, opacityMap[i] ?? 0.2);
+
           return {
-            // size: nearMouse ? Math.min(size + 0.1, 2) : Math.max(size - 0.1, 0.5),
-            size: nearMouse
-              ? Math.min(size + CHANGE_SPEED, 1.2)
-              : Math.max(size - UN_CHANGE_SPEED, 0.5),
+            size: newSize,
             x: newX,
             y: newY,
             color,
-            // opacity: nearMouse ? Math.min(newOpacity + 0.1, 1) : Math.max(newOpacity - 0.1, 0.2),
-            // opacity: nearMouse ? Math.min(newOpacity + CHANGE_SPEED, 1) : Math.max(newOpacity - CHANGE_SPEED, 0.2),
-            opacity: nearMouse
-              ? Math.min(newOpacity + CHANGE_SPEED, 1)
-              : Math.max(newOpacity - UN_CHANGE_SPEED, opacityMap[i] ?? 0.2)
+            opacity: newOpacity
           };
         });
         return next;
