@@ -24,6 +24,20 @@ export const useDebouncedEffect = (
   }, [effect, delayMs, ...deps]);
 };
 
+export const useDebouncedValue = <T>(value: T, deps: React.DependencyList = [], delayMs = 500) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useDebouncedEffect(
+    () => {
+      setDebouncedValue(value);
+    },
+    [value, ...deps],
+    delayMs
+  );
+
+  return debouncedValue;
+};
+
 export const useRequestAnimationFrame = (
   callback: (delta?: number, total?: number) => void,
   deps?: React.DependencyList
@@ -48,7 +62,6 @@ export const useRequestAnimationFrame = (
   // Make sure when you focus on the window, the animation continues
   useEffect(() => {
     window.addEventListener("focus", () => {
-      console.debug("focus");
       requestRef.current = requestAnimationFrame(animate);
     });
 

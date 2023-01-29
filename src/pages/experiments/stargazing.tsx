@@ -1,7 +1,7 @@
 import { Button, Input, Text } from "@parssa/universal-ui";
 import { ExperimentWrapper } from "components/ExperimentWrapper";
 import React, { useEffect, useMemo, useState } from "react";
-import { cx, lerp, useDimensions, useRequestAnimationFrame } from "utils";
+import { cx, lerp, useDebouncedValue, useDimensions, useRequestAnimationFrame } from "utils";
 
 const useCanvasContext = (
   callback?: (ctx: CanvasRenderingContext2D) => void,
@@ -51,6 +51,11 @@ export const StargazingContainer = ({
   const parentRef = React.useRef<HTMLDivElement>(null);
   const dimensions = useDimensions(parentRef);
 
+  // const dimensions = useDebouncedValue(actualDimensions, [
+  //   actualDimensions?.width,
+  //   actualDimensions?.height,
+  // ]);
+
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const relativeMousePos = useMemo(() => {
     if (!dimensions) return { x: 0, y: 0 };
@@ -84,6 +89,12 @@ export const StargazingContainer = ({
     });
   };
 
+  const generateOpacityMap = (count: number) => {
+    return Array.from({ length: count }).map((_, i) => {
+      return Math.random() * 0.5 + 0.01;
+    });
+  };
+
   const generateItems = (count: number) => {
     return Array.from({ length: count }).map((_, i) => {
       const size = DEBUG ? 10 : Math.random() * 1.4;
@@ -109,6 +120,7 @@ export const StargazingContainer = ({
   }, [count]);
 
   const vectorMap = useMemo(() => generateVectorMap(count), [count]);
+  const opacityMap = useMemo(() => generateOpacityMap(count), [count]);
 
   const [paused, setPaused] = useState(false);
 
@@ -125,24 +137,8 @@ export const StargazingContainer = ({
             distanceFromMouse = fastDistance(x, y, relativeMousePos.x, relativeMousePos.y);
           }
 
-          distanceFromMouse && console.debug({ distanceFromMouse });
           let newX = x + vx * speed * (distanceFromMouse > 0.01 ? 0.1 : 1.2);
           let newY = y + vy * speed * (distanceFromMouse > 0.01 ? 0.1 : 1.2);
-
-          // stay in bounds of 0-1
-          // newY = Math.abs(newY) > 1 ? Math.abs(newY) - 1 : newY;
-          // newX = Math.abs(newX) > 1 ? Math.abs(newX) - 1 : newX;
-
-          // console.debug({ newX, newY });
-
-          // stay in bounds of 0-1
-          // newY = Math.abs(newY) > 1 ? Math.abs(newY) - 1 : newY;
-          // newX = Math.abs(newX) > 1 ? Math.abs(newX) - 1 : newX;
-
-          // newX = Math.abs(newX) > 1 ? Math.random() : newX;
-          // newY = Math.abs(newY) > 1 ? Math.random() : newY;
-
-          // const dist = Math.sqrt((newX - 0.5) ** 2 + (newY - 0.5) ** 2);
 
           newX = lerp(x, newX, delta * 0.001);
           newY = lerp(y, newY, delta * 0.001);
@@ -177,13 +173,13 @@ export const StargazingContainer = ({
             // opacity: nearMouse ? Math.min(newOpacity + CHANGE_SPEED, 1) : Math.max(newOpacity - CHANGE_SPEED, 0.2),
             opacity: nearMouse
               ? Math.min(newOpacity + CHANGE_SPEED, 1)
-              : Math.max(newOpacity - UN_CHANGE_SPEED, 0.2)
+              : Math.max(newOpacity - UN_CHANGE_SPEED, opacityMap[i] ?? 0.2)
           };
         });
         return next;
       });
     },
-    [paused, vectorMap, speed, relativeMousePos]
+    [paused, vectorMap, opacityMap, speed, relativeMousePos]
   );
 
   useEffect(() => {
@@ -271,6 +267,7 @@ export const StargazingContainer = ({
               setMousePos({ x, y });
             }}
             onMouseLeave={() => setMousePos({ x: 0, y: 0 })}
+            onTouchEnd={() => setMousePos({ x: 0, y: 0 })}
           />
         </div>
         <div className="relative text-center">
