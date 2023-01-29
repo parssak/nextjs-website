@@ -1,4 +1,4 @@
-import { Card, Text } from "@parssa/universal-ui";
+import { Button, Card, Text } from "@parssa/universal-ui";
 import { ExperimentWrapper } from "components/ExperimentWrapper";
 import React, { useEffect, useMemo, useState } from "react";
 import { cx, lerp, lerpColor, useKeyDown } from "utils";
@@ -202,7 +202,7 @@ export default () => {
   });
 
   return (
-    <ExperimentWrapper description="adaptive background based on time of day">
+    <ExperimentWrapper description="adaptive based on time of day">
       <div>
         <TODContainer className="h-96 grid place-items-center rounded-xl" timeOfDay={timeOfDay}>
           <div className="contrast-200 ">

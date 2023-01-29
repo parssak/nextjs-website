@@ -85,4 +85,18 @@ body::-webkit-scrollbar {
   .animate-repeat-x {
     animation: bg-animation 20s linear infinite;
   }
+
+  /* animation for spinning */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin 10s linear infinite;
+  }
 }

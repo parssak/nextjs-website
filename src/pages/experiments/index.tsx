@@ -34,8 +34,8 @@ export default () => {
       <div className="grid gap-size-x md:grid-cols-2 lg:grid-cols-3 mt-size-8y">
         <ExperimentCard
           href="/experiments/time-of-day"
-          description={"adaptive background based on time of day"}
-        >
+            description={"adaptive based on time of day"}
+          >
           <TODContainer
             className="p-size-4y group h-48 grid place-items-center text-center"
             backgroundClasses="group-hover:scale-110 transition-all duration-500"

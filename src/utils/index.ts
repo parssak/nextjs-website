@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const cx = (...classes: Array<string | undefined | false | null>) => {
   return Array.from(classes)
@@ -48,17 +48,16 @@ export const useRequestAnimationFrame = (
   // Make sure when you focus on the window, the animation continues
   useEffect(() => {
     window.addEventListener("focus", () => {
-      console.debug("focus")
+      console.debug("focus");
       requestRef.current = requestAnimationFrame(animate);
     });
 
-    return () => window.removeEventListener("focus", () => {
-      console.debug("blur")
-      cancelAnimationFrame(requestRef.current!);
-    });
-    
+    return () =>
+      window.removeEventListener("focus", () => {
+        console.debug("blur");
+        cancelAnimationFrame(requestRef.current!);
+      });
   }, [animate, requestRef]);
-
 
   return requestRef;
 };
@@ -83,10 +82,40 @@ export const lerp = (a: number, b: number, amount: number) => {
   return a + amount * (b - a);
 };
 
-export const useKeyDown = (callback: (event: KeyboardEvent) => void, deps?: React.DependencyList) => {
+export const useKeyDown = (
+  callback: (event: KeyboardEvent) => void,
+  deps?: React.DependencyList
+) => {
   useEffect(() => {
     window.addEventListener("keydown", callback);
     return () => window.removeEventListener("keydown", callback);
-  }, [callback, ...deps ?? []]);
-}
-  
+  }, [callback, ...(deps ?? [])]);
+};
+
+export const useDimensions = (ref: React.RefObject<HTMLElement>) => {
+  const [dimensions, setDimensions] = useState<DOMRect>();
+  // ResizeObserver
+
+  const [resizeObserver] = useState<null | ResizeObserver>(() =>
+    typeof window === "undefined"
+      ? null
+      : new ResizeObserver((entries) => {
+          if (entries[0]) {
+            setDimensions(entries[0].contentRect);
+          }
+        })
+  );
+
+  useEffect(() => {
+    if (ref.current) {
+      resizeObserver.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        resizeObserver.unobserve(ref.current);
+      }
+    };
+  }, [ref, resizeObserver]);
+
+  return dimensions;
+};
