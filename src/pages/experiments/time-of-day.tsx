@@ -36,7 +36,7 @@ const TIMES_TO_COLORS = {
   morning: ["#79ADE3", "#AE8178"],
   afternoon: ["#7ACDE2", "#5086D9"],
   evening: ["#7983E3", "#84C6EC"],
-  dusk: ["#89240D", "#1E1803"]
+  dusk: ["#1E1803", "#89240D"]
 };
 
 type Hour = keyof typeof HOURS_TO_TOD;
@@ -56,21 +56,20 @@ export const useTimeOfDay = (hrOrDate?: Hour | Date) => {
 
     return HOURS_TO_TOD[hrs] as TimeOfDay;
   }, [hrOrDate]);
-  
 };
 
 export const TODContainer = ({
   timeOfDay,
   as = "div",
   children,
-  wrapperClasses = "",
   backgroundClasses = "",
+  childrenClasses = "",
   ...props
 }: {
   timeOfDay?: TimeOfDay;
   as?: string | React.ComponentType<any>;
-  wrapperClasses?: string;
   backgroundClasses?: string;
+  childrenClasses?: string;
 } & DivProps) => {
   const tod = timeOfDay || (HOURS_TO_TOD[new Date().getHours()] as TimeOfDay);
 
@@ -149,7 +148,7 @@ export const TODContainer = ({
       "data-override": "true",
       "data-theme": "neutral"
     },
-    <div className={wrapperClasses}>
+    <>
       <div className={cx(`absolute inset-0 transition-all`, backgroundClasses)}>
         <div
           className="absolute inset-0 transition-all duration-1000"
@@ -183,8 +182,8 @@ export const TODContainer = ({
         />
         <div className="absolute inset-0" />
       </div>
-      <div className="relative z-20">{children}</div>
-    </div>
+      <div className={cx("relative z-20", childrenClasses)}>{children}</div>
+    </>
   );
 };
 
@@ -221,15 +220,14 @@ export default () => {
   return (
     <ExperimentWrapper description="adaptive based on time of day">
       <div>
-        <TODContainer
-          as={Card}
-          className="h-96 grid place-items-center rounded-xl"
-          timeOfDay={timeOfDay}
-        >
-          <div className="contrast-200 ">
-            <Text className="px-size-x text-theme-active italic">{timeOfDay}</Text>
-          </div>
-        </TODContainer>
+        <Card className="rounded-xl overflow-hidden">
+          <TODContainer childrenClasses="h-96 grid place-items-center" timeOfDay={timeOfDay}>
+            <div className="contrast-200 ">
+              <Text className="px-size-x text-theme-active italic">{timeOfDay}</Text>
+            </div>
+            <div className="absolute inset-0 "></div>
+          </TODContainer>
+        </Card>
 
         <div
           className="grid grid-cols-2 md:flex md:flex-row gap-y-size-y mt-size-4y"

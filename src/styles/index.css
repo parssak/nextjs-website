@@ -99,4 +99,17 @@ body::-webkit-scrollbar {
   .animate-spin-slow {
     animation: spin 10s linear infinite;
   }
+
+  @keyframes repeat-x {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .animate-repeat-x-slow {
+    animation: repeat-x 60s linear infinite;
+  }
 }

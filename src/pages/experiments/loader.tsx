@@ -30,8 +30,7 @@ export const Loader = ({ steps = 7, speed = 0.04 }: { steps?: number; speed?: nu
           <div
             key={i}
             data-theme="warning"
-            className={`w-96 h-96 will-change-transform 
-              absolute border border-theme-active/20`}
+            className={`w-96 h-96 will-change-transform absolute border border-theme-active/20`}
             style={{
               borderRadius: `${abs * (1 + i)}%`,
               transform: `rotate(${amplitude * (i + 1)}deg) scale(${1 - (i * 1.3) / steps})`,

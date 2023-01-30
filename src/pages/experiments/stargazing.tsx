@@ -1,5 +1,6 @@
 import { Button, Card, Input, Text } from "@parssa/universal-ui";
 import { ExperimentWrapper } from "components/ExperimentWrapper";
+import { WIPCallout } from "components/WIPCallout";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cx, lerp, useDebouncedValue, useDimensions, useRequestAnimationFrame } from "utils";
 // import { Stage, ParticleContainer, Graphics, Container } from "@inlet/react-pixi";
@@ -8,7 +9,6 @@ import { cx, lerp, useDebouncedValue, useDimensions, useRequestAnimationFrame } 
 // import ShaderCanvas from "@signal-noise/react-shader-canvas";
 
 const DEBUG = false;
-
 
 const scaleCanvas = (canvas, context, width, height) => {
   // assume the device pixel ratio is 1 if the browser doesn't specify it
@@ -69,7 +69,6 @@ const useCanvasContext = (
 
   return [ref, ctxRef] as const;
 };
-
 
 const fastDistance = (x1: number, y1: number, x2: number, y2: number) => {
   return (x1 - x2) ** 2 + (y1 - y2) ** 2;
@@ -158,8 +157,8 @@ export const StargazingContainer = ({
     }
   }, [count]);
 
-  const vectorMap = useMemo(() => generateVectorMap(count), [count]);
-  const opacityMap = useMemo(() => generateOpacityMap(count), [count]);
+  const vectorMap = useMemo(() => generateVectorMap(1000), []);
+  const opacityMap = useMemo(() => generateOpacityMap(1000), [count]);
 
   const [paused, setPaused] = useState(false);
 
@@ -169,7 +168,7 @@ export const StargazingContainer = ({
 
       setItems((prev) => {
         const next = prev.map(({ size, x, y, color, opacity }, i) => {
-          const [vx, vy] = vectorMap[Math.min(i, vectorMap.length - 1)];
+          const [vx, vy] = vectorMap[Math.min(i, i % (vectorMap.length - 1))];
 
           let distanceFromMouse = 0;
           if (relativeMousePos.x !== 0 && relativeMousePos.y !== 0 && i % 2 === 0) {
@@ -204,7 +203,7 @@ export const StargazingContainer = ({
             : Math.max(size - UN_CHANGE_SPEED, 0.5);
           const newOpacity = nearMouse
             ? Math.min(opacity + CHANGE_SPEED, 1)
-            : Math.max(opacity - UN_CHANGE_SPEED, opacityMap[i] ?? 0.2);
+            : Math.max(opacity - UN_CHANGE_SPEED, opacityMap[i % (opacityMap.length - 1)] ?? 0.2);
 
           return {
             size: newSize,
@@ -217,7 +216,7 @@ export const StargazingContainer = ({
         return next;
       });
     },
-    [paused, vectorMap, opacityMap, speed, relativeMousePos]
+    [paused, speed, relativeMousePos]
   );
 
   useEffect(() => {
@@ -261,32 +260,13 @@ export const StargazingContainer = ({
     "data-dark": "true",
     "data-override": "true",
     "data-theme": "neutral",
-    className: cx("bg-black overflow-hidden relative", props.className),
+    className: cx("bg- overflow-hidden relative", props.className),
     children: (
       <>
         <div ref={parentRef} className={cx("absolute inset-0", backgroundClasses)}>
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(14deg, #0F071E 0%, #000000 100%)"
-            }}
-          />
-          <div className="absolute inset-0">
-            {/* {items.map(({ size, x, y, color, opacity }, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full"
-                style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  background: color,
-                  left: `${x}%`,
-                  top: `${y}%`,
-                  opacity
-                }}
-              />
-            ))} */}
-          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(14deg,#1B0D35_0%,#0B132D_100%)] dark:bg-[linear-gradient(14deg,#0F071E_0%,#000000_100%)]" />
+          {/* <div className="absolute inset-0 bg-[linear-gradient(14deg,#FFBC79_0%,#FFD3A6%)] dark:bg-[linear-gradient(14deg,#0F071E_0%,#000000_100%)]" /> */}
+
           <canvas
             ref={ref}
             className="relative scale-105 touch-none"
@@ -333,6 +313,7 @@ export default () => {
   const [toggle, setToggle] = useState<"canvas" | "pixi" | "both">("canvas");
   return (
     <ExperimentWrapper description="stars in the sky">
+      <WIPCallout className='mb-4'>still gotta add shooting stars + polish {"☺︎"}</WIPCallout>
       <StargazingContainer
         count={count}
         speed={speed}
@@ -355,26 +336,6 @@ export default () => {
           value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
         />
-        {/* <div className="flex gap-x-2">
-          <Button
-            onClick={() => setToggle("canvas")}
-            className={toggle === "canvas" ? "bg-theme-active" : ""}
-          >
-            canvas
-          </Button>
-          <Button
-            onClick={() => setToggle("pixi")}
-            className={toggle === "pixi" ? "bg-theme-active" : ""}
-          >
-            pixi
-          </Button>
-          <Button
-            onClick={() => setToggle("both")}
-            className={toggle === "both" ? "bg-theme-active" : ""}
-          >
-            both
-          </Button>
-        </div> */}
       </div>
     </ExperimentWrapper>
   );
