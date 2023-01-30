@@ -1,7 +1,50 @@
-import { Button, Input, Text } from "@parssa/universal-ui";
+import { Button, Card, Input, Text } from "@parssa/universal-ui";
 import { ExperimentWrapper } from "components/ExperimentWrapper";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cx, lerp, useDebouncedValue, useDimensions, useRequestAnimationFrame } from "utils";
+// import { Stage, ParticleContainer, Graphics, Container } from "@inlet/react-pixi";
+// import * as PIXI from "pixi.js";
+// import { Shaders, Node, GLSL } from "gl-react";
+// import ShaderCanvas from "@signal-noise/react-shader-canvas";
+
+const DEBUG = false;
+
+
+const scaleCanvas = (canvas, context, width, height) => {
+  // assume the device pixel ratio is 1 if the browser doesn't specify it
+  const devicePixelRatio = window.devicePixelRatio || 1;
+
+  // determine the 'backing store ratio' of the canvas context
+  const backingStoreRatio =
+    context.webkitBackingStorePixelRatio ||
+    context.mozBackingStorePixelRatio ||
+    context.msBackingStorePixelRatio ||
+    context.oBackingStorePixelRatio ||
+    context.backingStorePixelRatio ||
+    1;
+
+  // determine the actual ratio we want to draw at
+  const ratio = devicePixelRatio / backingStoreRatio;
+
+  if (devicePixelRatio !== backingStoreRatio) {
+    // set the 'real' canvas size to the higher width/height
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+
+    // ...then scale it back down with CSS
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+  } else {
+    // this is a normal 1:1 device; just scale it simply
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = "";
+    canvas.style.height = "";
+  }
+
+  // scale the drawing context so everything will work at the higher ratio
+  context.scale(ratio, ratio);
+};
 
 const useCanvasContext = (
   callback?: (ctx: CanvasRenderingContext2D) => void,
@@ -14,6 +57,8 @@ const useCanvasContext = (
     const canvas = ref.current;
     if (!canvas) return;
 
+    // scaleCanvas(canvas, canvas.getContext("2d")!, canvas.width, canvas.height);
+
     const ctx = canvas.getContext("2d");
 
     if (ctx) {
@@ -25,7 +70,6 @@ const useCanvasContext = (
   return [ref, ctxRef] as const;
 };
 
-const DEBUG = false;
 
 const fastDistance = (x1: number, y1: number, x2: number, y2: number) => {
   return (x1 - x2) ** 2 + (y1 - y2) ** 2;
@@ -36,7 +80,7 @@ const distance = (x1: number, y1: number, x2: number, y2: number) => {
 };
 
 export const StargazingContainer = ({
-  count = 20,
+  count = 100,
   speed = 0.005,
   as = "div",
   backgroundClasses,
@@ -50,11 +94,6 @@ export const StargazingContainer = ({
   const [ref, ctxRef] = useCanvasContext();
   const parentRef = React.useRef<HTMLDivElement>(null);
   const dimensions = useDimensions(parentRef);
-
-  // const dimensions = useDebouncedValue(actualDimensions, [
-  //   actualDimensions?.width,
-  //   actualDimensions?.height,
-  // ]);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const relativeMousePos = useMemo(() => {
@@ -288,8 +327,10 @@ export const StargazingContainer = ({
 };
 
 export default () => {
-  const [count, setCount] = useState(100);
+  const [count, setCount] = useState(400);
   const [speed, setSpeed] = useState(0.005);
+
+  const [toggle, setToggle] = useState<"canvas" | "pixi" | "both">("canvas");
   return (
     <ExperimentWrapper description="stars in the sky">
       <StargazingContainer
@@ -314,6 +355,26 @@ export default () => {
           value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
         />
+        {/* <div className="flex gap-x-2">
+          <Button
+            onClick={() => setToggle("canvas")}
+            className={toggle === "canvas" ? "bg-theme-active" : ""}
+          >
+            canvas
+          </Button>
+          <Button
+            onClick={() => setToggle("pixi")}
+            className={toggle === "pixi" ? "bg-theme-active" : ""}
+          >
+            pixi
+          </Button>
+          <Button
+            onClick={() => setToggle("both")}
+            className={toggle === "both" ? "bg-theme-active" : ""}
+          >
+            both
+          </Button>
+        </div> */}
       </div>
     </ExperimentWrapper>
   );

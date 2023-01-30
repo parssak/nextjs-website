@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </noscript>
       </Head>
       <UniversalUIConfigProvider
-        
         config={{
           components: {
             text: ({ variant, size }) => {
@@ -34,12 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               }
               return classes;
             }
-          },
-          // providers: {
-          //   theme: {
-          //     dark: true
-          //   }
-          // }
+          }
         }}
       >
         <div className={`min-h-screen bg-theme-pure overflow-hidden`}>

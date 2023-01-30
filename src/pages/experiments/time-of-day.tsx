@@ -34,13 +34,30 @@ const TIMES_TO_COLORS = {
   midnight: ["#2B3073", "#0B0C1D"],
   night: ["#536A9D", "#252750"],
   morning: ["#79ADE3", "#AE8178"],
-  afternoon: ["#84C6EC", "#7983E3"],
-  evening: ["#5086D9", "#7ACDE2"],
-  dusk: ["#89240D", "#0D0C24"]
+  afternoon: ["#7ACDE2", "#5086D9"],
+  evening: ["#7983E3", "#84C6EC"],
+  dusk: ["#89240D", "#1E1803"]
 };
 
 type Hour = keyof typeof HOURS_TO_TOD;
 type TimeOfDay = typeof HOURS_TO_TOD[Hour];
+
+export const useTimeOfDay = (hrOrDate?: Hour | Date) => {
+  return useMemo(() => {
+    let hrs = new Date().getHours();
+
+    if (hrOrDate) {
+      if (typeof hrOrDate === "number") {
+        hrs = hrOrDate;
+      } else {
+        hrs = hrOrDate.getHours();
+      }
+    }
+
+    return HOURS_TO_TOD[hrs] as TimeOfDay;
+  }, [hrOrDate]);
+  
+};
 
 export const TODContainer = ({
   timeOfDay,
@@ -51,7 +68,7 @@ export const TODContainer = ({
   ...props
 }: {
   timeOfDay?: TimeOfDay;
-  as?: string;
+  as?: string | React.ComponentType<any>;
   wrapperClasses?: string;
   backgroundClasses?: string;
 } & DivProps) => {
@@ -204,7 +221,11 @@ export default () => {
   return (
     <ExperimentWrapper description="adaptive based on time of day">
       <div>
-        <TODContainer className="h-96 grid place-items-center rounded-xl" timeOfDay={timeOfDay}>
+        <TODContainer
+          as={Card}
+          className="h-96 grid place-items-center rounded-xl"
+          timeOfDay={timeOfDay}
+        >
           <div className="contrast-200 ">
             <Text className="px-size-x text-theme-active italic">{timeOfDay}</Text>
           </div>

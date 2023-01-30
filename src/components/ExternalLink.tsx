@@ -1,6 +1,8 @@
 import { Button, Text, TextProps, Tooltip } from "@parssa/universal-ui";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { cx } from "utils";
 
 const Emojis = ({ didCopy }: { didCopy: boolean }) => {
@@ -58,7 +60,7 @@ const Emojis = ({ didCopy }: { didCopy: boolean }) => {
   );
 };
 
-const externalLinkClasses = (className?: string) =>
+const linkClasses = (className?: string) =>
   cx(
     // base
     "inline-block text-blue-500 dark:text-blue-300 ",
@@ -94,10 +96,15 @@ export const ExternalLink = ({
     imageHref?: string;
   } & TextProps) => {
   const [copied, setCopied] = useState(false);
+  const router = useRouter();
   const showTooltipPanel = !!imageHref || props.href.includes("mailto");
   const navigate = () => {
     if (typeof window !== "undefined") {
-      window.open(props.href, "_blank");
+      if (props.href.startsWith("http")) {
+        window.open(props.href, "_blank");
+      } else {
+        router.push(props.href);
+      }
     }
   };
 
@@ -116,10 +123,14 @@ export const ExternalLink = ({
       <Tooltip.Trigger as="span">
         <Text
           {...props}
-          as="a"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={externalLinkClasses(className)}
+          as={props.href.startsWith("http") ? "a" : Link}
+          // target="_blank"
+          // rel="noopener noreferrer"
+          // spread if it's a link
+          {...(props.href.startsWith("http")
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+          className={linkClasses(className)}
         >
           {children}
 
@@ -150,64 +161,79 @@ export const ExternalLink = ({
         }
         sideOffset={2}
       >
-        <a href={props.href} target="_blank" rel="noopener noreferrer">
-          {imageHref && (
-            <Image
-              alt={"Preview image for given link"}
-              width={1457}
-              height={918}
-              src={imageHref}
-              placeholder="blur"
-              blurDataURL={imageHref}
-              className="rounded object-cover w-full h-full transition-all group-hover:scale-110 ease-spring duration-500 group-hover:blur-md"
-            />
-          )}
-          {props.href.includes("mailto") && (
-            <div data-theme={copied ? "success" : "info"} className="h-36 relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-theme-base to-theme-base/20" />
-              <div className="absolute inset-0 bg-gradient-to-t from-theme-base saturate-200 dark:saturate-100 to-theme-active opacity-0 group-hover:opacity-100 transition-all duration-500" />
-              <Emojis didCopy={copied} />
-            </div>
-          )}
-          {props.href.includes("mailto") ? (
-            <div className="absolute z-10 inset-0 flex items-center justify-center flex-col gap-size-y saturate-0 opacity-90 group-hover:opacity-100 group-hover:saturate-100 ease-spring duration-500 pointer-events-none transition-all">
-              <Button
-                size="sm"
-                theme="info"
-                dark
-                onClick={navigate}
-                className="pl-size-2x backdrop-blur-lg pr-size-2x py-size-qy rounded-full bg-theme-base/90 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto "
-              >
-                Send Email
-              </Button>
-              <Button
-                size="sm"
-                theme={copied ? "success" : "warning"}
-                dark
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  copy();
-                }}
-                className="pl-size-2x backdrop-blur pr-size-2x py-size-qy rounded-full bg-theme-base/90 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
-              >
-                {copied ? "Copied Email!" : "Copy Email"}
-              </Button>
-            </div>
-          ) : (
-            <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 ease-spring duration-500 pointer-events-none">
-              <Button
-                size="sm"
-                theme="info"
-                dark
-                className="pl-size-2x pr-size-2x py-size-qy rounded-full bg-theme-base/50 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
-                onClick={navigate}
-              >
-                Visit &rarr;
-              </Button>
-            </div>
-          )}
-        </a>
+        {/* <a href={props.href} target="_blank" rel="noopener noreferrer">
+          
+        </a> */}
+
+        {React.createElement(
+          props.href.startsWith("http") ? "a" : Link,
+          {
+            ...props,
+            href: props.href,
+            ...(props.href.startsWith("https") && {
+              rel: "noopener noreferrer",
+              target: "_blank"
+            })
+          },
+          <>
+            {imageHref && (
+              <Image
+                alt={"Preview image for given link"}
+                width={1457}
+                height={918}
+                src={imageHref}
+                placeholder="blur"
+                blurDataURL={imageHref}
+                className="rounded object-cover w-full h-full transition-all group-hover:scale-110 ease-spring duration-500 group-hover:blur-md"
+              />
+            )}
+            {props.href.includes("mailto") && (
+              <div data-theme={copied ? "success" : "info"} className="h-36 relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-theme-base to-theme-base/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-theme-base saturate-200 dark:saturate-100 to-theme-active opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                <Emojis didCopy={copied} />
+              </div>
+            )}
+            {props.href.includes("mailto") ? (
+              <div className="absolute z-10 inset-0 flex items-center justify-center flex-col gap-size-y saturate-0 opacity-90 group-hover:opacity-100 group-hover:saturate-100 ease-spring duration-500 pointer-events-none transition-all">
+                <Button
+                  size="sm"
+                  theme="info"
+                  dark
+                  onClick={navigate}
+                  className="pl-size-2x backdrop-blur-lg pr-size-2x py-size-qy rounded-full bg-theme-base/90 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto "
+                >
+                  Send Email
+                </Button>
+                <Button
+                  size="sm"
+                  theme={copied ? "success" : "warning"}
+                  dark
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    copy();
+                  }}
+                  className="pl-size-2x backdrop-blur pr-size-2x py-size-qy rounded-full bg-theme-base/90 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
+                >
+                  {copied ? "Copied Email!" : "Copy Email"}
+                </Button>
+              </div>
+            ) : (
+              <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 ease-spring duration-500 pointer-events-none">
+                <Button
+                  size="sm"
+                  theme="info"
+                  dark
+                  className="pl-size-2x pr-size-2x py-size-qy rounded-full bg-theme-base/50 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
+                  onClick={navigate}
+                >
+                  Visit &rarr;
+                </Button>
+              </div>
+            )}
+          </>
+        )}
       </Tooltip.Content>
     </Tooltip.Root>
   );

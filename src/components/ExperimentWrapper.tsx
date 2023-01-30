@@ -65,7 +65,7 @@ export const ExperimentWrapper = ({
           />
         </div>
       </div>
-      <div className="pt-12 relative">{children}</div>
+      <div className="pt-6 relative">{children}</div>
     </div>
   );
 };

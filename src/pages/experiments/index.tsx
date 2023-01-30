@@ -21,7 +21,10 @@ const ExperimentCard = ({
     <Card
       as={Link}
       href={href}
-      className={cx("overflow-hidden rounded-xl border-theme-muted p-2 select-none", className)}
+      // theme='brand'
+      // dark={true}
+      // data-override='true'
+      className={cx("overflow-hidden bg-gradient-to-t from-theme-active/20 to-theme-active/50 rounded-xl border-theme-muted p-2 select-none", className)}
     >
       <div {...props} className="rounded-lg overflow-hidden border border-theme-muted" />
       <Text size="sm" className='pt-4 pb-2 border-theme-muted leading-none'>{description}</Text>
