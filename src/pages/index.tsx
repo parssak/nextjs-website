@@ -68,7 +68,7 @@ const projects = [
     items: [
       {
         title: "Scripts & CLIs",
-        href: "https://fig.io/blog/post/scripts-launch",
+        href: "https://fig.io/scripts",
         description: "frontend UI & script creation w/ GraphQL"
       },
       {
