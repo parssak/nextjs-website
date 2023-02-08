@@ -233,7 +233,7 @@ export default function Page() {
                 <ExternalLink
                   className="font-medium"
                   imageHref="/preview/scripts-preview.webp"
-                  href="https://fig.io/user-manual/scripts"
+                  href="https://fig.io/scripts"
                 >
                   scripts
                 </ExternalLink>{" "}
