@@ -45,9 +45,6 @@ export const useRequestAnimationFrame = (
   const requestRef = React.useRef<number>();
   const previousTimeRef = React.useRef<number>();
 
-
-
-
   const animate = (time: number) => {
     
     if (previousTimeRef.current != undefined) {
@@ -99,6 +96,10 @@ export const lerp = (a: number, b: number, amount: number) => {
   return a + amount * (b - a);
 };
 
+export const fastDistance = (x1: number, y1: number, x2: number, y2: number) => {
+  return (x1 - x2) ** 2 + (y1 - y2) ** 2;
+};
+
 export const useKeyDown = (
   callback: (event: KeyboardEvent) => void,
   deps?: React.DependencyList
@@ -111,7 +112,6 @@ export const useKeyDown = (
 
 export const useDimensions = (ref: React.RefObject<HTMLElement>) => {
   const [dimensions, setDimensions] = useState<DOMRect>();
-  // ResizeObserver
 
   const [resizeObserver] = useState<null | ResizeObserver>(() =>
     typeof window === "undefined"
