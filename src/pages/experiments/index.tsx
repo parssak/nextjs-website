@@ -61,10 +61,7 @@ export default () => {
         </ExperimentCard>
 
         <ExperimentCard href="/experiments" description={"more coming soon!"}>
-          <div
-            className="p-size-4y group h-48 text-center relative"
-            // backgroundClasses="group-hover:scale-110 transition-all duration-500"
-          >
+          <div className="p-size-4y group h-48 text-center relative">
             <div
               data-theme="warning"
               className="absolute inset-0 bg-gradient-to-t from-amber-500/30 to-orange-800/50"

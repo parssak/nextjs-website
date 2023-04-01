@@ -26,8 +26,7 @@ const things = [
         Building an open-source{" "}
         <ExternalLink
           imageHref="/preview/universal-preview.webp"
-          href="
-      https://universal-ui.vercel.app"
+          href="https://universal-ui.vercel.app"
         >
           React UI library
         </ExternalLink>{" "}
@@ -39,12 +38,8 @@ const things = [
     emoji: "🧪",
     text: (
       <>
-        Trying out new things in {" "}
-        <ExternalLink
-          imageHref="/preview/universal-preview.webp"
-          href="
-      /experiments"
-        >
+        Trying out new things in{" "}
+        <ExternalLink href="/experiments">
           experiments
         </ExternalLink>{" "}
       </>

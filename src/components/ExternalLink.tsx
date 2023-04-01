@@ -97,7 +97,8 @@ export const ExternalLink = ({
   } & TextProps) => {
   const [copied, setCopied] = useState(false);
   const router = useRouter();
-  const showTooltipPanel = !!imageHref || props.href.includes("mailto");
+  const showTooltipPanel =
+    !!imageHref || props.href.includes("mailto") || props.href === "/experiments";
   const navigate = () => {
     if (typeof window !== "undefined") {
       if (props.href.startsWith("http")) {
@@ -186,6 +187,17 @@ export const ExternalLink = ({
                 blurDataURL={imageHref}
                 className="rounded object-cover w-full h-full transition-all group-hover:scale-110 ease-spring duration-500 group-hover:blur-md"
               />
+            )}
+            {props.href === "/experiments" && (
+              <div className="p-size-4y group h-full text-center relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/30 to-green-800/50"></div>
+                <div className="absolute inset-0 danger-zone opacity-20 mix-blend-multiply animate-repeat-x-slow"></div>
+                <div className="relative grid place-items-center w-full h-full">
+                  <Text className="relative text-3xl" variant="h4">
+                    🧪
+                  </Text>
+                </div>
+              </div>
             )}
             {props.href.includes("mailto") && (
               <div data-theme={copied ? "success" : "info"} className="h-36 relative">
