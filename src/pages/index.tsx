@@ -4,6 +4,7 @@ import { FancyGradient } from "components/FancyGradient";
 import { HeaderSection } from "components/HeaderSection";
 import { useEffect, useState } from "react";
 import { useDebouncedEffect } from "utils";
+import { PageRepresentationConverter } from "utils/PageRepresentation";
 
 const things = [
   {
@@ -38,10 +39,7 @@ const things = [
     emoji: "🧪",
     text: (
       <>
-        Trying out new things in{" "}
-        <ExternalLink href="/experiments">
-          experiments
-        </ExternalLink>{" "}
+        Trying out new things in <ExternalLink href="/experiments">experiments</ExternalLink>{" "}
       </>
     )
   },
@@ -252,9 +250,6 @@ export default function Page() {
                 >
                   <div className="flex w-full justify-between items-center">
                     <div className="flex items-center">
-                      {/* <div className="w-5 h-5 rounded bg-gradient-to-t from-violet-500 to-indigo-600 mr-2">
-                        <img src="/fig.png" alt="" className='w-full h-full object-cover scale-110' />
-                      </div> */}
                       <Text variant="h5" className="font-medium">
                         {project.title}
                       </Text>
@@ -276,9 +271,9 @@ export default function Page() {
                           key={item.title}
                           size="sm"
                           theme="info"
-                          className="py-size-2y leading-normal -mx-size-y px-size-y rounded text-theme-base ease-linear group-hover:bg-theme-active/20 group-hover:text-theme-active cursor-pointer transition-all duration-[150ms]"
+                          className="pt-size-2y pb-size-2y leading-normal -mx-size-y px-size-y rounded text-theme-base ease-linear group-hover:bg-theme-active/20 group-hover:text-theme-pure cursor-pointer transition-all duration-[150ms]"
                         >
-                          <span className="font-medium mr-2 block md:text-right xl:min-w-[12ch] sm:inline-block text-theme-active">
+                          <span className="font-medium mr-2 block md:text-right xl:min-w-[12ch] sm:inline-block text-theme-pure">
                             {item.title}
                           </span>{" "}
                           <span className="relative">
