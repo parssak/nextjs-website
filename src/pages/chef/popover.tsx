@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Checkbox, Popover, Text } from "@parssa/universal-ui";
 
 export default () => {
-  const [counter, setCounter] = useState(0);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-theme-muted pb-[50vh]">
       <Popover.Root>
