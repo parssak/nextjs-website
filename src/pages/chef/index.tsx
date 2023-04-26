@@ -29,6 +29,9 @@ export default () => {
         <Button href="/chef/select" as={Link}>
           Select
         </Button>
+        <Button href="/chef/calendar" as={Link}>
+          Calendar
+        </Button>
       </div>
     </div>
   );
