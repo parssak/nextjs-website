@@ -15,7 +15,7 @@ export default () => {
         <Button href="/chef/button" as={Link}>
           Button
         </Button>
-        <Button href="/chef/button" as={Link}>
+        <Button href="/chef/input" as={Link}>
           Input
         </Button>
       </div>
