@@ -10,13 +10,10 @@ export default () => {
           <Button>Change Settings</Button>
         </Popover.Trigger>
         <Popover.Content>
-          {/* <label className="flex items-center gap-size-hx">
+          <label className="flex items-center gap-size-hx">
             <Checkbox aria-label="Enable Telemetry" />
             <Text>Enable Telemetry</Text>
-          </label> */}
-          <Button onClick={() => setTelemetryEnabled((p) => !p)}>
-            {telemetryEnabled ? "Disable" : "Enable"} Telemetry
-          </Button>
+          </label>
         </Popover.Content>
       </Popover.Root>
     </div>

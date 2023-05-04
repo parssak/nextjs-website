@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@parssa/universal-ui": "^0.2.20",
+    "@parssa/universal-ui": "^0.2.21",
     "date-fns": "^2.29.3",
     "lucide-react": "^0.180.0",
     "next": "13.0.5",
