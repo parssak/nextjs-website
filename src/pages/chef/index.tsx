@@ -18,6 +18,12 @@ export default () => {
         <Button href="/chef/input" as={Link}>
           Input
         </Button>
+        <Button href="/chef/trimming" as={Link}>
+          Trimming (Scroll)
+        </Button>
+        <Button href="/chef/sensitive" as={Link}>
+          Sensitive Check
+        </Button>
       </div>
       <Text variant="h3" as="h2" className="mt-size-4y">
         Dynamic
