@@ -18,6 +18,13 @@ export default () => {
         <Button href="/chef/input" as={Link}>
           Input
         </Button>
+        <Button href="/chef/textarea" as={Link}>
+          Textarea
+        </Button>
+        <Button href="/chef/content-editable" as={Link}>
+          ContentEditable
+        </Button>
+
         <Button href="/chef/trimming" as={Link}>
           Trimming (Scroll)
         </Button>
