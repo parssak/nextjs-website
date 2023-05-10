@@ -11,9 +11,7 @@ export default () => {
         <Card size="lg" className="w-full mt-2 overflow-hidden">
           <Card.Content
             contentEditable
-            dangerouslySetInnerHTML={{
-              __html: "This content is editable."
-            }}
+            aria-label="post content box"
             className="focus:outline-none focus:bg-theme-active/50 transition-colors"
           />
         </Card>
