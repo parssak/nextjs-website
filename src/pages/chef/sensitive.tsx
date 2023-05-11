@@ -16,7 +16,7 @@ export default () => {
         </Button>
         {showPassword && (
           <form className="w-full">
-            <Input className="w-full hidden" type="password" placeholder="Password" />
+            <Input className="w-full" type="password" placeholder="Password" />
           </form>
         )}
       </div>
