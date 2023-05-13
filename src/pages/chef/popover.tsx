@@ -15,7 +15,7 @@ export default () => {
             <Text>Enable Telemetry</Text>
           </label> */}
           <Button onClick={() => setTelemetryEnabled((p) => !p)}>
-            {telemetryEnabled ? "Disable" : "Enable"} Telemetry
+            {telemetryEnabled ? "Telemetry is enabled" : "Telemetry is disabled"} 
           </Button>
         </Popover.Content>
       </Popover.Root>
