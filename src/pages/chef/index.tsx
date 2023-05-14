@@ -24,6 +24,9 @@ export default () => {
         <Button href="/chef/content-editable" as={Link}>
           ContentEditable
         </Button>
+        <Button href="/chef/navigate" as={Link}>
+          Navigate Follow-through
+        </Button>
 
         <Button href="/chef/trimming" as={Link}>
           Trimming (Scroll)
