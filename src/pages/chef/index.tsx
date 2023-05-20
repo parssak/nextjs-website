@@ -21,6 +21,9 @@ export default () => {
         <Button href="/chef/textarea" as={Link}>
           Textarea
         </Button>
+        <Button href="/chef/needs-verify" as={Link}>
+          Needs Verify
+        </Button>
         <Button href="/chef/content-editable" as={Link}>
           ContentEditable
         </Button>
