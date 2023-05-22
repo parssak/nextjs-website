@@ -11,7 +11,7 @@ export default () => {
       <Text variant="h3" as="h2" className="mt-size-4y">
         Basic
       </Text>
-      <div className="mt-size-2y flex gap-3">
+      <div className="mt-size-2y flex gap-3 flex-wrap">
         <Button href="/chef/button" as={Link}>
           Button
         </Button>
@@ -41,7 +41,7 @@ export default () => {
       <Text variant="h3" as="h2" className="mt-size-4y">
         Dynamic
       </Text>
-      <div className="mt-size-2y flex gap-3">
+      <div className="mt-size-2y flex gap-3  flex-wrap">
         <Button href="/chef/popover" as={Link}>
           Popover
         </Button>
