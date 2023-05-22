@@ -237,7 +237,7 @@ export const ExternalLink = ({
                   size="sm"
                   theme="info"
                   dark
-                  className="pl-size-2x pr-size-2x py-size-qy rounded-full bg-theme-base/50 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
+                  className="pl-size-2x pr-size-2x py-size-qy rounded-full is-dark:bg-theme-base/50 transition-all hover:bg-theme-base cursor-pointer pointer-events-auto"
                   onClick={navigate}
                 >
                   Visit &rarr;

@@ -10,12 +10,14 @@ const things = [
     emoji: "🧑🏻‍💻",
     text: (
       <>
-        Lead frontend engineer & designer{" "}
-        <ExternalLink imageHref="/preview/fig-preview.webp" href="https://www.fig.io">
-          @fig
+        Software Engineer{" "}
+        <ExternalLink imageHref="/preview/minion-preview.png" href="https://www.minion.ai">
+          @minion.ai
         </ExternalLink>
-        {/*  md:inline */}
-        <span className="hidden">, we're hiring!</span>
+        , led frontend & design{" "}
+        <ExternalLink imageHref="/preview/fig-preview.webp" href="https://fig.io">
+          @fig.io
+        </ExternalLink>
       </>
     )
   },
@@ -55,7 +57,7 @@ const things = [
 const projects = [
   {
     title: "fig.io",
-    date: "2022 — Present",
+    date: "2022 — 2023",
     subtitle: "Lead frontend engineer & designer",
     items: [
       {
@@ -224,12 +226,12 @@ export default function Page() {
                 Currently building{" "}
                 <ExternalLink
                   className="font-medium"
-                  imageHref="/preview/scripts-preview.webp"
-                  href="https://fig.io/scripts"
+                  imageHref="/preview/minion-preview.png"
+                  href="https://minion.ai"
                 >
-                  scripts
+                  minion
                 </ExternalLink>{" "}
-                at fig and working on{" "}
+                and working on{" "}
                 <ExternalLink
                   className="font-medium"
                   imageHref="/preview/universal-preview.webp"
