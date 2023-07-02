@@ -166,8 +166,7 @@ const buildBaseUIFromSchema = (schema: string[]) => {
     ]
   })`;
 
-  console.debug("code", code.split('').filter(c => c !== '\n' && c !== '\t' && c !== '\r').join(''));
-  return formatLLMCode(code);
+  return code;
 };
 
 const useMounted = () => {
@@ -209,18 +208,18 @@ const proxy = new Proxy(aState, handler);
 export default () => {
   const [prompt, setPrompt] = useState("");
   const [data, setData] = useState<any>();
-  const [response, setResponse] = useState(``);
+  const [modelFriendlyUI, setModelFriendlyUI] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const [formatted, setFormatted] = useState<string>("");
-  const [mounted, setMounted] = useState(false);
+  // const [formatted, setFormatted] = useState<string>("");
+
   const [_, setAppState] = useState({});
 
+  const [showSchema, setShowSchema] = useState(true);
   const schema = useMemo(() => {
     if (!data) return [];
     try {
-      console.debug("got into try");
       const parsed = JSON.parse(data);
       proxy["data"] = parsed;
       const schemas = JsonToTS(parsed);
@@ -233,13 +232,13 @@ export default () => {
     }
   }, [data]);
 
-  // const onDataSet = (e: any) => {
-  //   setData(e.target.value);
-  //   proxy["data"] = e.target.value;
+  const onDataSet = () => {
+    const ui = buildBaseUIFromSchema(schema);
+    setModelFriendlyUI(ui);
+    // setFormatted(formatLLMCode(ui));
+  };
 
   useEffect(() => {
-    setMounted(true);
-
     // @ts-ignore
     window.setState = (key: string, value: any) => {
       proxy[key] = value;
@@ -252,7 +251,6 @@ export default () => {
   }, []);
 
   const onSubmit = async () => {
-    return;
     if (loading) return;
     if (!prompt) {
       setError("Please enter a prompt");
@@ -264,17 +262,22 @@ export default () => {
       return;
     }
 
+    if (!formatted) {
+      setError("Please set your data");
+      return;
+    }
+
     setLoading(true);
     try {
       const response = await fetch("/api/llm", {
         method: "POST",
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ prompt, schema, ui: modelFriendlyUI })
       });
       const { completion }: { completion: string } = await response.json();
       console.debug(completion);
-      setResponse(completion);
-      const formatted = formatLLMCode(completion);
-      setFormatted(formatted);
+      setModelFriendlyUI(completion);
+      // const formatted = formatLLMCode(completion);
+      // setFormatted(formatted);
     } catch (e) {
       console.error(e);
       setError(e.message);
@@ -282,6 +285,8 @@ export default () => {
       setLoading(false);
     }
   };
+
+  const formatted = useMemo(() => formatLLMCode(modelFriendlyUI), [modelFriendlyUI]);
 
   return (
     <ExperimentWrapper description="Fun with GPT4">
@@ -300,17 +305,22 @@ export default () => {
           onKeyPress={(e) => e.key === "Enter" && onSubmit()}
           disabled={loading}
         />
+        <UI.Button onClick={onDataSet}>Set Data</UI.Button>
       </div>
-      {/* {schema && schema.length > 0 && (
+      {schema && schema.length > 0 && (
         <UI.Card>
           <UI.Card.Content>
-            <UI.Text variant="h3">Schema</UI.Text>
-            <pre>
-              {Array.isArray(schema) ? schema.map((obj, i) => <pre key={i}>{obj}</pre>) : schema}
-            </pre>
+            <UI.Text onClick={() => setShowSchema((p) => !p)} variant="h3">
+              Schema
+            </UI.Text>
+            {showSchema && (
+              <pre>
+                {Array.isArray(schema) ? schema.map((obj, i) => <pre key={i}>{obj}</pre>) : schema}
+              </pre>
+            )}
           </UI.Card.Content>
         </UI.Card>
-      )} */}
+      )}
       {loading && <UI.Text>Loading...</UI.Text>}
       {!!error && (
         <UI.Card theme="error" className="my-size-x">
@@ -322,7 +332,7 @@ export default () => {
       )}
 
       <div className="pt-4">
-        <RenderedUI code={formatted || buildBaseUIFromSchema(schema)} />
+        <RenderedUI code={formatted} />
       </div>
     </ExperimentWrapper>
   );

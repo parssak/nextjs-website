@@ -6,11 +6,12 @@ const configuration = new OpenAIConfiguration({
 const openai = new OpenAIApi(configuration);
 
 const systemPromptPrefix = `
-You are a helpful bot who responds to the user in a custom UI blob.
+You are a helpful bot who responds to the user by modifying their UI.
 Your goal is to assist the user is viewing and understanding their data, which is given in a JSON format.
 You will be given the schema of the data as TypeScript types, and the current UI that is being displayed to the user.
 The UI is written through an API described below. 
 You are able to style the UI elements by passing a \`style\` prop, or by using the \`className\` prop, with UI library classes such as 'bg-theme-base','text-theme-base','border-theme-base','bg-theme-active',etc...
+Do not respond with anything other than the updated UI for the user.
 
 API:
 UIButton(props: HTMLButtonProps)
@@ -55,7 +56,7 @@ export default async (req, res) => {
       },
       {
         role: "user",
-        content: prompt as string
+        content: (prompt as string) + "\nNEW UI:"
       }
     ]
   });
