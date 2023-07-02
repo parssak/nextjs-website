@@ -27,7 +27,10 @@ const formatLLMCode = (completion: string) => {
       .split("")
       .filter((c) => c !== "\n" && c !== "\t" && c !== "\r")
       .join("")
-      .replaceAll(/UI(\w+)\({(.*)}\)/g, (_, p1, p2) => {
+      .replaceAll(/UI(\w+|\w+\.(\w+))\({(.*)}\)/g, (_, p1, p2, p3) => {
+        if (p3) {
+          return ` React.createElement(UI?.${p1} ?? 'div', {${p3}})`;
+        }
         if (p2) {
           return ` React.createElement(UI?.${p1} ?? 'div', {${p2}})`;
         }
@@ -37,13 +40,13 @@ const formatLLMCode = (completion: string) => {
     done = prev === withElements;
   }
 
-  done = false;
-  while (!done) {
-    const prev = withElements;
+  // done = false;
+  // while (!done) {
+  //   const prev = withElements;
 
-    withElements = withElements.replaceAll(/UIPopover/g, "Popover");
-    done = prev === withElements;
-  }
+  //   withElements = withElements.replaceAll(/UIPopover\./g, "UI?.Popover?.");
+  //   done = prev === withElements;
+  // }
 
   // const withOptionalArrayChains = withElements.replaceAll(/(\w+).(map|join)\(/g, "$1?.($2)(");
   console.debug(withElements);
@@ -96,7 +99,7 @@ const buildBaseUIFromSchema = (schema: string[]) => {
           key: \`RootObject-\$\{i\}\`,
           children: [
             ${types
-              .filter(([_, value]) => false && PRIMITIVE_TYPES.has(value))
+              .filter(([_, value]) => PRIMITIVE_TYPES.has(value))
               .map(([key]) => {
                 return `UIdiv({
                 key: '${key}',
@@ -143,7 +146,7 @@ const buildBaseUIFromSchema = (schema: string[]) => {
                           })
                         ]
                       }),
-                      UIPopoverContent({
+                      UIPopover.Content({
                         key: '${key}-content',
                         children: [
                           UIText({
@@ -163,6 +166,7 @@ const buildBaseUIFromSchema = (schema: string[]) => {
     ]
   })`;
 
+  console.debug("code", code.split('').filter(c => c !== '\n' && c !== '\t' && c !== '\r').join(''));
   return formatLLMCode(code);
 };
 
