@@ -278,6 +278,7 @@ export default () => {
       setModelFriendlyUI(completion);
       // const formatted = formatLLMCode(completion);
       // setFormatted(formatted);
+      setError("");
     } catch (e) {
       console.error(e);
       setError(e.message);

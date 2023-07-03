@@ -12,6 +12,10 @@ You will be given the schema of the data as TypeScript types, and the current UI
 The UI is written through an API described below. 
 You are able to style the UI elements by passing a \`style\` prop, or by using the \`className\` prop, with UI library classes such as 'bg-theme-base','text-theme-base','border-theme-base','bg-theme-active',etc...
 Do not respond with anything other than the updated UI for the user.
+Do not leave any comments, always write out the full updated UI.
+Do not leave any comments depicting that things are the "same as before", always write out the full updated UI that can be run directly.
+For example, do not any include any comments such as: "// All the UIdivs for each property as before "
+Do not expect the user to be able to modify the UI themselves, they are not a developer.
 
 API:
 UIButton(props: HTMLButtonProps)
@@ -48,7 +52,7 @@ export default async (req, res) => {
   const completion = await openai.createChatCompletion({
     model: "gpt-4-32k",
     temperature: 0,
-    max_tokens: 1024,
+    max_tokens: 12000,
     messages: [
       {
         role: "system",
