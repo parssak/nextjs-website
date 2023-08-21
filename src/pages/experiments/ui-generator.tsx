@@ -183,6 +183,10 @@ const RenderedUI = ({ code }: { code: string }) => {
     // @ts-ignore
     UI.Fragment = React.Fragment;
     // @ts-ignore
+    UI.Img = (props) => React.createElement("img", props);
+    // @ts-ignore
+    UI.img = (props) => React.createElement("img", props);
+    // @ts-ignore
     window.UI = UI;
   }, []);
   if (!mounted) return null;
