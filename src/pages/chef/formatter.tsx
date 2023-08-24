@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { Input } from "@parssa/universal-ui";
+import { Button, Input } from "@parssa/universal-ui";
 
+const LIMIT = 70;
 export default () => {
   const [content, setContent] = useState("");
+  const [hidePasses, setHidePasses] = useState(false);
 
   const formatted = useMemo(() => {
     const DELIMITER =
@@ -22,20 +24,23 @@ export default () => {
         name,
         pass
       }))
-      .map(({ name, pass }) => `${name.padEnd(70, " ")} ${pass}`)
+      .filter(({ pass }) => (hidePasses && pass !== "True") || !hidePasses)
+      .map(({ name, pass }) => `${name.padEnd(LIMIT, " ")} ${pass}`)
       .join("\n");
 
     return formatted;
-  }, [content]);
+  }, [content, hidePasses]);
 
   return (
     <div>
       <div className="container py-36">
-        <Input
-          className="mb-size-4y"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+        <div className="flex items-center gap-size-x mb-size-4y">
+          <Input value={content} onChange={(e) => setContent(e.target.value)} />
+          <Button onClick={() => setHidePasses(!hidePasses)}>
+            {hidePasses ? "Show" : "Hide"} Passes
+          </Button>
+        </div>
+
         {formatted && (
           <pre
             onClick={() => {
@@ -43,7 +48,18 @@ export default () => {
             }}
             className="cursor-pointer active:bg-theme-active transition-colors p-2 border rounded border-theme-base"
           >
-            <code>{formatted}</code>
+            <code>
+              {formatted.split("\n").map((line) => {
+                const name = line.slice(0, LIMIT);
+                const pass = line.slice(LIMIT);
+                return (
+                  <div data-theme={pass.trim() === "True" ? "success" : "error"} className='bg-theme-active/20'>
+                    <span className="text-theme-base">{name}</span>
+                    <span className="text-theme-active">{pass}</span>
+                  </div>
+                );
+              })}
+            </code>
           </pre>
         )}
       </div>
