@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Popover, Text, Select } from "@parssa/universal-ui";
+import { Text  } from "@parssa/universal-ui";
 
 export default () => {
   return (
@@ -8,14 +8,15 @@ export default () => {
         <Text size="sm" className="font-medium mb-2">
           Pick your favorite fruit.
         </Text>
-        <Select>
-          <Select.Trigger />
-          <Select.Panel>
-            <Select.Item value="apple">Apple</Select.Item>
-            <Select.Item value="banana">Banana</Select.Item>
-            <Select.Item value="orange">Orange</Select.Item>
-          </Select.Panel>
-        </Select>
+        <select name="pets" id="pet-select">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
       </div>
     </div>
   );

@@ -30,7 +30,9 @@ export default () => {
         <Button href="/chef/navigate" as={Link}>
           Navigate Follow-through
         </Button>
-
+        <Button href="/chef/ui-select" as={Link}>
+          Simple Select
+        </Button>
         <Button href="/chef/trimming" as={Link}>
           Trimming (Scroll)
         </Button>
@@ -45,8 +47,8 @@ export default () => {
         <Button href="/chef/popover" as={Link}>
           Popover
         </Button>
-        <Button href="/chef/select" as={Link}>
-          Select
+        <Button href="/chef/ui-select" as={Link}>
+          Select 
         </Button>
         <Button href="/chef/calendar" as={Link}>
           Calendar
