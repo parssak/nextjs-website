@@ -7,7 +7,7 @@ export const Footer = ({ ...props }: DivProps & {}) => {
   return (
     <footer {...props} className="py-size-2y border-t border-theme-base/20 container">
       <Text size="xs" className="text-theme-base/50">
-        Parssa Kyanzadeh &copy; 2023
+        Parssa Kyanzadeh &copy; {new Date().getFullYear()}
       </Text>
     </footer>
   );
