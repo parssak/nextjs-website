@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import ogImage from "@/public/og-image.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +26,9 @@ export const metadata: Metadata = {
     siteName: title,
     images: [
       {
-        url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "parssa kyanzadeh, product engineer"
       }
     ]
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
-    images: [ogImage.src],
+    images: ["/og-image.png"],
     site: ogUrl
   },
   icons: {

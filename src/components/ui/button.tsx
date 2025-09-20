@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-tight transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex active:scale-95 ease-spring select-none  items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-tight transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -13,10 +13,11 @@ const buttonVariants = cva(
           "[&::selection]:bg-transparent [&::selection]:text-lime-900 bg-gradient-to-t mx-px from-lime-300 via-lime-400 to-lime-200 hover:brightness-125 border border-lime-300 ring-[0.75px] ring-lime-600 text-black/95 focus-visible:ring-lime-300",
         lime: "[&::selection]:bg-transparent [&::selection]:text-lime-900 bg-gradient-to-t mx-px from-lime-300 via-lime-400 to-lime-200 hover:brightness-125 border border-lime-300 ring-[0.75px] ring-lime-600 text-black/95 focus-visible:ring-lime-300 relative after:absolute after:inset-x-2 after:top-[6%] after:rounded-full after:bg-gradient-to-t after:from-transparent after:to-white/40 after:h-1.5",
         orange:
-          "[&::selection]:bg-transparent [&::selection]:text-orange-900 bg-gradient-to-t mx-px from-orange-300 via-orange-400 to-orange-200 hover:brightness-125 border border-orange-300 ring-[0.75px] ring-orange-600 text-black/95 focus-visible:ring-orange-300",
-        pink: "[&::selection]:bg-transparent [&::selection]:text-pink-900 bg-gradient-to-t mx-px from-pink-300 via-pink-400/80 to-pink-200 hover:brightness-125 border border-pink-300 ring-[0.75px] ring-pink-600 text-black/95 focus-visible:ring-pink-300",
-        sky: "[&::selection]:bg-transparent [&::selection]:text-sky-900 bg-gradient-to-t mx-px from-sky-300 via-sky-400 to-sky-200 hover:brightness-125 border border-sky-300 ring-[0.75px] ring-sky-600 text-black/95 focus-visible:ring-sky-300",
-        yellow: "[&::selection]:bg-transparent [&::selection]:text-yellow-900 bg-gradient-to-t mx-px from-yellow-300 via-yellow-400 to-yellow-200 hover:brightness-125 border border-yellow-300 ring-[0.75px] ring-yellow-600 text-black/95 focus-visible:ring-yellow-300",
+          "[&::selection]:bg-transparent [&::selection]:text-orange-900 bg-gradient-to-t mx-px from-orange-300 via-orange-400 to-orange-200 hover:brightness-125 border border-orange-300 ring-[0.75px] ring-orange-600 text-black/95 focus-visible:ring-orange-300 relative after:absolute after:inset-x-2 after:top-[6%] after:rounded-full after:bg-gradient-to-t after:from-transparent after:to-white/40 after:h-1.5",
+        pink: "[&::selection]:bg-transparent [&::selection]:text-pink-900 bg-gradient-to-t mx-px from-pink-300 via-pink-400/80 to-pink-200 hover:brightness-125 border border-pink-300 ring-[0.75px] ring-pink-600 text-black/95 focus-visible:ring-pink-300 relative after:absolute after:inset-x-2 after:top-[6%] after:rounded-full after:bg-gradient-to-t after:from-transparent after:to-white/40 after:h-1.5",
+        sky: "[&::selection]:bg-transparent [&::selection]:text-sky-900 bg-gradient-to-t mx-px from-sky-300 via-sky-300 to-sky-200 hover:brightness-125 border border-sky-300 ring-[0.75px] ring-sky-600 text-black/95 focus-visible:ring-sky-300 relative after:absolute after:inset-x-2 after:top-[6%] after:rounded-full after:bg-gradient-to-t after:from-transparent after:to-white/40 after:h-1.5",
+        yellow:
+          "[&::selection]:bg-transparent [&::selection]:text-yellow-900 bg-gradient-to-t mx-px from-yellow-300 via-yellow-400 to-yellow-200 hover:brightness-125 border border-yellow-300 ring-[0.75px] ring-yellow-600 text-black/95 focus-visible:ring-yellow-300 relative after:absolute after:inset-x-2 after:top-[6%] after:rounded-full after:bg-gradient-to-t after:from-transparent after:to-white/40 after:h-1.5",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:

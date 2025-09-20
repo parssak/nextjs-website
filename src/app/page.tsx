@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="font-semibold text-4xl tracking-tight">parssa kyanzadeh</h1>
         <p className="text-2xl tracking-tight opacity-80">product engineer</p>
 
-        <p className="mt-24 text-lg leading-relaxed text-balance">
+        <p className="mt-12 sm:mt-24 text-lg leading-[1.78] text-balance">
           i like building useful (and fun!) things
           <br />
           <br />
@@ -26,7 +26,7 @@ export default function Home() {
             <Link target="_blank" href="https://gooseparty.gg">
               goose party
             </Link>
-          </Button>
+          </Button>{" "}which is a party game platform for friends.
           <br />
           <br />
           previously worked on browser agents at{" "}
@@ -35,7 +35,7 @@ export default function Home() {
               minion ai
             </Link>
           </Button>{" "}
-          which was merged into Perplexity Comet
+          which is now part of <span className="whitespace-nowrap">Perplexity Comet</span>
           <br />
           <br />
           before that, i led frontend engineering at{" "}
@@ -43,7 +43,7 @@ export default function Home() {
             <Link target="_blank" href="https://fig.io/home">
               fig
             </Link>
-          </Button>{" "}
+          </Button>{" , "}
           which was acquired by AWS
           <br />
           <br />
