@@ -11,7 +11,7 @@ export default function Home() {
         <p className="text-2xl tracking-tight opacity-80">product engineer</p>
 
         <p className="mt-12 sm:mt-24 text-lg leading-[1.81] text-balance">
-          i like building useful (and fun!) things
+          i like building useful (and fun!) things.
           <br />
           <br />
           currently working on{" "}
@@ -35,7 +35,7 @@ export default function Home() {
               minion ai
             </Link>
           </Button>{" "}
-          which is now part of <span className="whitespace-nowrap">Perplexity Comet</span>
+          which is now part of <span className="whitespace-nowrap">Perplexity Comet.</span>
           <br />
           <br />
           before that, i led frontend engineering at{" "}
@@ -44,7 +44,7 @@ export default function Home() {
               fig
             </Link>
           </Button>{" , "}
-          which was acquired by AWS
+          which was acquired by AWS.
           <br />
           <br />
           you can dm me{" "}
@@ -53,7 +53,7 @@ export default function Home() {
               @parssakyanzadeh
             </Link>
           </Button>{" "}
-          on twitter
+          on twitter.
         </p>
       </div>
     </>
