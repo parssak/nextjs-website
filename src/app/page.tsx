@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="font-semibold text-4xl tracking-tight">parssa kyanzadeh</h1>
         <p className="text-2xl tracking-tight opacity-80">product engineer</p>
 
-        <p className="mt-12 sm:mt-24 text-lg leading-[1.78] text-balance">
+        <p className="mt-12 sm:mt-24 text-lg leading-[1.81] text-balance">
           i like building useful (and fun!) things
           <br />
           <br />
