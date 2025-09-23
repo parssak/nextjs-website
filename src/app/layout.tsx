@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: title,
     images: [
       {
-        url: "/og-image.png",
+        url: "https://parssak.com/og.png",
         width: 1200,
         height: 630,
         alt: "parssa kyanzadeh, product engineer"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
-    images: ["/og-image.png"],
+    images: ["https://parssak.com/og.png"],
     site: ogUrl
   },
   icons: {
