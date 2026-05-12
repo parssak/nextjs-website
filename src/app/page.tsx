@@ -14,22 +14,23 @@ export default function Home() {
           i like building useful (and fun!) things.
           <br />
           <br />
-          currently working on{" "}
+          currently building{" "}
           <Button variant="orange" asChild size="sm" className="text-base">
+            <Link target="_blank" href="https://usebogi.com">
+              bogi
+            </Link>
+          </Button>
+          , the agent that grows with you.
+          <br />
+          <br />
+          previously worked on{" "}
+          <Button variant="lime" asChild size="sm" className="text-base">
             <Link target="_blank" href="https://hercules.app">
               hercules
             </Link>
           </Button>
           {" — "}
-          an agentic app builder, and in my free time i&apos;m building{" "}
-          <Button asChild size="sm" className="text-base" variant="lime">
-            <Link target="_blank" href="https://gooseparty.gg">
-              goose party
-            </Link>
-          </Button>{" "}which is a party game platform for friends.
-          <br />
-          <br />
-          previously worked on browser agents at{" "}
+          an agentic app builder, and before that, browser agents at{" "}
           <Button asChild size="sm" className="text-base" variant="yellow">
             <Link target="_blank" href="https://perplexity.ai/comet">
               minion ai
@@ -38,13 +39,21 @@ export default function Home() {
           which is now part of <span className="whitespace-nowrap">Perplexity Comet.</span>
           <br />
           <br />
-          before that, i led frontend engineering at{" "}
+          pre-ai, i led frontend engineering at{" "}
           <Button asChild size="sm" className="text-base" variant="pink">
-            <Link target="_blank" href="https://fig.io/home">
+            <Link target="_blank" href="https://kiro.dev/">
               fig
             </Link>
           </Button>{" , "}
           which was acquired by AWS.
+          <br />
+          <br />
+          also made party games for friends &rarr;{" "}
+          <Button asChild size="sm" className="text-base" variant="lime">
+            <Link target="_blank" href="https://gooseparty.gg">
+              goose party
+            </Link>
+          </Button>
           <br />
           <br />
           you can dm me{" "}
